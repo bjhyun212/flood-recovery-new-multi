@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.34 (복구계획 마커 드래그 위치조정 + 범례 금액표시 + 페이지 하단여백 제거)</title>
+<title>복구설계시스템(BJH) ver8.36 (재해대장에 복구계획 단면도 페이지 자동 추가 — 사진별 표준단면도 박스 렌더링)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.34</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.36</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -8110,11 +8110,19 @@ function renderAna(r) {
       } else {
         btnHtml = '<span style="color:var(--text2);font-size:10px;" title="이 형식은 단면도 미지원">—</span>';
       }
+      // ★ ver8.35: 비고란에 사진 파일명(a001_축대붕괴 형식) prefix 배지 — 다현장 일괄분석 시 어느 사진의 구조물인지 명시
+      var srcPrefix = '';
+      if (st._srcPhoto) {
+        var fname = String(st._srcPhoto).replace(/\.[^.]+$/, '');  // 확장자 제거 (a001_축대붕괴.jpg → a001_축대붕괴)
+        srcPrefix = '<span style="display:inline-block;padding:1px 6px;border-radius:9px;background:rgba(124,77,255,0.18);color:#B388FF;font-size:10px;font-weight:700;margin-right:4px;white-space:nowrap;">📷 ' + _esc(fname) + '</span>';
+      }
+      // 기존 note에 '📷힌트' 패턴이 있으면 중복 방지로 제거 (배지로 표시)
+      var cleanNote = (st.note || '').replace(/📷[^·]*·\s*/g, '').replace(/^📷[^\s·]*\s*$/, '').trim();
       stHtml += '<tr style="background:'+(i%2===0?'transparent':'rgba(255,255,255,.03)')+'">'
         + '<td style="font-weight:600;">'+st.name+'</td>'
         + '<td>'+st.type+'</td>'
         + '<td style="font-size:11px;">'+shortSpec+'</td>'
-        + '<td style="font-size:11px;color:var(--text2);">'+(st.note||'')+'</td>'
+        + '<td style="font-size:11px;color:var(--text2);">' + srcPrefix + _esc(cleanNote) + '</td>'
         + '<td style="text-align:center;">'+btnHtml+'</td></tr>';
     });
     stHtml += '</tbody></table></div>';
@@ -8761,6 +8769,8 @@ function _renderDR() {
     var groupItems = grouped.groups[photoKey];
     var photoUrl = _findPhotoUrl(photoKey);
     pages2HTML += _buildDRPage2(groupItems, photoUrl, photoKey, gIdx + 1, totalPages2);
+    // ★ ver8.36: 페이지 2 뒤에 복구계획 단면도 페이지 추가 (단면도 지원 구조물이 있을 때만)
+    pages2HTML += _buildDRPage3(groupItems, photoKey, gIdx + 1);
   });
   
   // 페이지2가 하나도 없으면 빈 페이지 폴백 (이론상 도달 안 함, items.length === 0 케이스는 위에서 early return)
@@ -8899,28 +8909,22 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
   // 우측 복구내역 HTML — 같은 피해사진 + 복구계획 라벨 오버레이
   var recoveryHTML;
   if (photoUrl) {
-    // ★ ver8.34: 사진 위는 동그라미 번호 마커만 (드래그 가능)
-    //   - 위치는 localStorage에 photoKey:markerIdx 기준 저장/복원
-    //   - 텍스트(공종명·산출근거·금액)는 사진 아래 범례에만 표시
+    // ★ ver8.35: 마커 작게(18px) + 피해유형 키워드 기반 초기 위치 추정
+    //   - damageType의 좌안/우안/상부/하단 등 키워드로 사진 내 위치 자동 배치
+    //   - 사용자가 드래그로 미세 조정 가능 (위치 저장)
     var photoKeyEsc = (photoLabel || '__SINGLE__').replace(/['"\\]/g, '_');
     var savedPos = _loadDRMarkerPositions();
     
     var overlayMarkers = recoveryStructList.slice(0, 8).map(function(s, idx) {
       var num = '①②③④⑤⑥⑦⑧'[idx] || ('(' + (idx+1) + ')');
-      // 저장된 위치 우선, 없으면 기본 배치 (좌상단·우상단·좌중·우중·좌하·우하 — 6포인트 회전)
-      var defaults = [
-        { top:'10%', left:'8%'  }, { top:'10%', left:'78%' },
-        { top:'42%', left:'8%'  }, { top:'42%', left:'78%' },
-        { top:'74%', left:'8%'  }, { top:'74%', left:'78%' },
-        { top:'26%', left:'42%' }, { top:'58%', left:'42%' }
-      ];
+      // 저장된 위치 우선 → 없으면 피해유형 키워드 기반 자동 추정
       var key = photoKeyEsc + '::' + idx;
-      var pos = savedPos[key] || defaults[idx] || { top:'50%', left:'50%' };
+      var pos = savedPos[key] || _guessDRMarkerPos(s.type, idx, recoveryStructList.length);
       return '<div class="dr-marker" data-photokey="' + _escDR(photoKeyEsc) + '" data-idx="' + idx + '" '
         + 'style="position:absolute;top:' + pos.top + ';left:' + pos.left + ';'
-        + 'width:26px;height:26px;border-radius:50%;background:#E53935;color:#fff;'
-        + 'display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;'
-        + 'cursor:move;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.5);'
+        + 'width:18px;height:18px;border-radius:50%;background:#E53935;color:#fff;'
+        + 'display:flex;align-items:center;justify-content:center;font-weight:900;font-size:10px;'
+        + 'cursor:move;border:1.5px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.55);'
         + 'user-select:none;z-index:10;line-height:1;" '
         + 'title="' + _escDR(s.type) + ' · ' + s.cost.toLocaleString() + '원 (드래그로 위치 조정)">'
         + num + '</div>';
@@ -9027,6 +9031,43 @@ function _saveDRMarkerPosition(photoKey, idx, top, left) {
   } catch(e) { console.warn('마커 위치 저장 실패', e); }
 }
 
+// ★ ver8.35: 피해유형 키워드로 사진 내 마커 초기 위치 추정
+//   - 좌안/우안/상부/하단/사면/도로/석축 등 키워드를 분석해 사진 영역에 배치
+//   - 같은 위치 겹침 방지: idx에 따라 자동 오프셋
+function _guessDRMarkerPos(damageType, idx, total) {
+  var dt = String(damageType || '');
+  var x = 50, y = 50; // 기본 중앙
+  
+  // 좌우 추정
+  if (/좌안|좌측|왼쪽|left/i.test(dt))       x = 22;
+  else if (/우안|우측|오른쪽|right/i.test(dt)) x = 78;
+  else if (/중앙|중간|center/i.test(dt))      x = 50;
+  // 한쪽으로 치우치는 패턴 보강
+  if (/낙석|절토|성토부/i.test(dt) && x === 50) x = 30;
+  
+  // 상하 추정 — 시설 종류로 사진 내 보통 위치 추정
+  if (/상부|상단|지붕|천단|crest/i.test(dt))         y = 18;
+  else if (/하부|기초|하단|근입|foundation/i.test(dt)) y = 82;
+  else if (/사면|비탈면|법면|slope/i.test(dt))         y = 35;
+  else if (/도로|노반|노면|포장|차로/i.test(dt))       y = 65;
+  else if (/석축|호안|옹벽|축대|wall/i.test(dt))       y = 55;
+  else if (/흄관|배수|관거|culvert/i.test(dt))         y = 75;
+  else if (/교량|교각|교대|bridge/i.test(dt))          y = 45;
+  else if (/제방|뚝|levee/i.test(dt))                  y = 40;
+  else if (/산사태|토사유실|침식/i.test(dt))           y = 30;
+  
+  // 충돌 방지 오프셋: 같은 사진 안 여러 항목이 비슷한 위치면 자연스럽게 흩뿌림
+  if (idx > 0) {
+    var ring = idx % 6;        // 0~5 회전
+    var dx = [0, 14, -14, 7, -7, 18][ring];
+    var dy = [0, 10, 10, -8, -8, 0][ring];
+    x = Math.max(4, Math.min(92, x + dx));
+    y = Math.max(4, Math.min(88, y + dy));
+  }
+  
+  return { top: y.toFixed(1) + '%', left: x.toFixed(1) + '%' };
+}
+
 // 드래그 이벤트 바인딩 (재해대장 렌더링 직후 호출)
 function _initDRMarkerDrag() {
   var markers = document.querySelectorAll('.dr-marker');
@@ -9120,6 +9161,154 @@ function _initDRMarkerDrag() {
     marker.addEventListener('mousedown', onMouseDown);
     marker.addEventListener('touchstart', onTouchStart, { passive: false });
   });
+}
+
+// ★ ver8.36: 복구계획 단면도 페이지 빌더
+//   - 각 사진(그룹)에 속한 ANA.structures 중 단면도 지원 형식만 추려서 박스 안에 그림
+//   - 페이지 2(피해/복구 세부내역) 뒤에 위치
+function _buildDRPage3(groupItems, photoKey, pageIdx) {
+  if (!ANA || !ANA.structures || ANA.structures.length === 0) return '';
+  
+  // 해당 사진에 속한 구조물 필터 (단일분석은 모든 구조물 한 페이지에 표시)
+  var structs;
+  if (photoKey === '__SINGLE__' || !photoKey) {
+    structs = ANA.structures.slice();
+  } else {
+    structs = ANA.structures.filter(function(st) {
+      return st._srcPhoto === photoKey || st._srcHint && photoKey.indexOf(st._srcHint) >= 0;
+    });
+  }
+  
+  if (structs.length === 0) return '';
+  
+  // detectSectionType이 반환하는 구조물만 (표준단면도 지원)
+  var sectionable = structs.filter(function(st) {
+    try { return detectSectionType(st.type) !== null; }
+    catch(e) { return false; }
+  });
+  
+  if (sectionable.length === 0) return '';
+  
+  // 각 구조물 단면도 SVG 생성
+  var boxes = sectionable.map(function(st, i) {
+    var svg = _generateSectionSVG(st);
+    if (!svg) return '';
+    var label = SECTION_LABELS[detectSectionType(st.type)] || st.type;
+    var specShort = (st.spec || '').length > 80 
+      ? (st.spec || '').substring(0, 78) + '…' 
+      : (st.spec || '');
+    return '<div style="border:1.5px solid #000;padding:6px 8px 8px;background:#fff;break-inside:avoid;page-break-inside:avoid;">'
+      + '<div style="text-align:center;font-weight:700;font-size:11px;color:#1565C0;margin-bottom:3px;border-bottom:1px solid #1565C0;padding-bottom:3px;">' 
+        + (i+1) + '. ' + _escDR(label) + ' &mdash; ' + _escDR(st.name || '')
+      + '</div>'
+      + '<div style="font-size:9.5px;color:#444;margin-bottom:4px;text-align:left;line-height:1.4;"><b style="color:#666;">규격:</b> ' + _escDR(specShort) + '</div>'
+      + '<div style="text-align:center;background:#FAFAFA;border:1px solid #ddd;border-radius:3px;padding:4px;">' + svg + '</div>'
+      + '</div>';
+  }).filter(Boolean).join('');
+  
+  if (!boxes) return '';
+  
+  // 그리드 레이아웃: 구조물 수에 따라 1·2·3열 선택
+  var cnt = sectionable.length;
+  var cols = (cnt === 1) ? 1 : (cnt <= 4 ? 2 : 3);
+  
+  var photoTitle = (photoKey && photoKey !== '__SINGLE__') 
+    ? '📷 ' + String(photoKey).replace(/\.[^.]+$/, '')
+    : '📷 단일현장 종합';
+  
+  return ''
+    + '<div class="dr-page" style="width:297mm;padding:10mm 12mm;margin:0 auto 10mm;background:#fff;color:#000;font-family:\'Malgun Gothic\',\'맑은 고딕\',sans-serif;font-size:11px;page-break-after:always;box-shadow:0 0 10px rgba(0,0,0,0.15);">'
+    + '<div style="font-weight:700;font-size:12px;margin:0 0 6px;display:flex;align-items:center;flex-wrap:wrap;">'
+      + '<span>□ 복구계획 단면도</span>'
+      + '<span style="margin-left:14px;font-weight:600;color:#7B1FA2;">' + _escDR(photoTitle) + '</span>'
+      + '<span style="margin-left:auto;font-size:10px;color:#666;font-weight:400;">' + cnt + '개 구조물 표준단면도</span>'
+    + '</div>'
+    + '<div style="display:grid;grid-template-columns:repeat(' + cols + ',1fr);gap:6px;">'
+    + boxes
+    + '</div>'
+    + '</div>';
+}
+
+// ★ ver8.36: 단면도 SVG 추출 — 기존 secUpdate 흐름을 이용해 SVG 문자열만 받아옴
+function _generateSectionSVG(st) {
+  if (!st || typeof detectSectionType !== 'function') return '';
+  var secType;
+  try { secType = detectSectionType(st.type); }
+  catch(e) { return ''; }
+  if (!secType) return '';
+  
+  // 임시 hidden 요소 생성 (secUpdate가 innerHTML로 SVG를 씀)
+  var tempPreview = null, tempReview = null, tempValidation = null;
+  var origPreview = document.getElementById('secSvgPreview');
+  var origReview = document.getElementById('secReview');
+  var origValidation = document.getElementById('secValidation');
+  
+  if (!origPreview) {
+    tempPreview = document.createElement('div');
+    tempPreview.id = 'secSvgPreview';
+    tempPreview.style.cssText = 'display:none;visibility:hidden;position:absolute;top:-9999px;left:-9999px;';
+    document.body.appendChild(tempPreview);
+  }
+  if (!origReview) {
+    tempReview = document.createElement('div');
+    tempReview.id = 'secReview';
+    tempReview.style.cssText = 'display:none;';
+    document.body.appendChild(tempReview);
+  }
+  if (!origValidation) {
+    tempValidation = document.createElement('div');
+    tempValidation.id = 'secValidation';
+    tempValidation.style.cssText = 'display:none;';
+    document.body.appendChild(tempValidation);
+  }
+  
+  // _secState 백업
+  var origState = window._secState;
+  var svg = '';
+  
+  try {
+    var parsed = (typeof parseSpec === 'function') ? parseSpec(st.spec || '') : {};
+    
+    // openSectionModal과 동일한 초기 상태 구성
+    window._secState = {
+      structIdx: -1, secType: secType,
+      structName: st.name || '', structType: st.type || '',
+      H: parsed.H || 2.0, L: parsed.L || 20.0,
+      embedment: parsed.embedment || 0.5,
+      B1: parsed.B1 || parsed.W || 0.4, B2: parsed.B2 || 2.0,
+      t: parsed.t || 0.4, toe: parsed.toe || 0.5,
+      topW: parsed.topW || parsed.W || 0.4, botW: parsed.botW || 1.0,
+      slope: parsed.slope || 0.3, foundW: parsed.foundW || 0.5, foundH: 0.4,
+      gabA: parsed.gabA || 1.0, gabB: parsed.gabB || 1.0, gabC: parsed.gabC || 1.0,
+      tiers: parsed.tiers || 1,
+      hoanH: parsed.H || 2.5, hoanSlope: parsed.slope || 1.5,
+      hoanCrestW: parsed.W || 0.5, blockT: 0.15, stoneSize: 0.3,
+      gB: parsed.B || 0.6, gH: parsed.H || 0.6, gT: parsed.t || 0.15,
+      pipeD: parsed.D || 600, pipeBedT: 0.1,
+      boxB: parsed.B || 1.0, boxH: parsed.H || 1.0, boxTw: 0.2, boxTs: 0.2,
+      gPostH: 0.7, gPostEmb: 0.4, gBeamH: 0.31,
+      gFootB: 0.5, gFootH: 0.5, gPostSpacing: 2.0
+    };
+    
+    if (typeof secUpdate === 'function') {
+      secUpdate();
+    }
+    
+    var preview = document.getElementById('secSvgPreview');
+    svg = preview ? preview.innerHTML : '';
+  } catch (e) {
+    console.warn('단면도 SVG 생성 실패:', st.name, e);
+    svg = '<div style="padding:20px;color:#999;font-size:10px;text-align:center;">단면도 생성 실패 — ' + _escDR(st.type || '') + '</div>';
+  } finally {
+    // 상태 복원
+    window._secState = origState;
+    // 임시 요소 제거 (원본이 있었으면 그대로 둠)
+    if (tempPreview) tempPreview.remove();
+    if (tempReview) tempReview.remove();
+    if (tempValidation) tempValidation.remove();
+  }
+  
+  return svg;
 }
 
 // 행 헬퍼 (라벨 / 값)
@@ -22612,8 +22801,10 @@ function _batchMergeResults(results, baseLoc) {
       addedDamage += (it.damageCost || 0);
     });
 
-    // 구조물 병합
+    // 구조물 병합 — 사진 출처 정보를 전용 필드에 저장 (비고란 prefix 표시용)
     (ana.structures || []).forEach(function(st) {
+      st._srcPhoto = r.file;   // ★ ver8.35: 파일명 (예: a001_축대붕괴.jpg)
+      st._srcHint = r.hint;    // ★ ver8.35: 간결 힌트 (예: 축대붕괴)
       st.note = st.note ? ('📷' + r.hint + ' · ' + st.note) : ('📷' + r.hint);
       base.structures.push(st);
     });
