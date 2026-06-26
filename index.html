@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.21 (일괄분석 탭 추가 - 여러 사진 자동 순차 분석)</title>
+<title>복구설계시스템(BJH) ver8.30 (편람기준 시설명 명시 + 복구산출근거 종별·규격·페이지 강화)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAA2ADYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7LoopGIVSx6AZoAo67rOk6Fp76hrOpWmn2ifemuJQi/TJ6n2rz+6+PvwpgnjiHiiObecboreQhfr8tfK3inVPFvxn8f3moEvHYQymO1jkb91axA4UDtuI5J6kn0xXU2vwI002PmXep3X2nGd4IwD9P/r1nOrCDszop4apUV1sfZGnXtpqNjBfWNxHc2s6CSKWNtyupGQQe4qevhTwN4y8U/B34lWem3WpXFzoTypFPbu5MTwM2NyqeFZck8ehB6191qQQCDkHvVppq6MJRcXZhRRRTEFMnaNYXaUgRhSWJ6Y70+kdVZSrAFSMEEdRQB8iWehR6dYyW2nTWrWLSmWzactGjoXbL5AyWI28HoO3WrupLrcunWMF20YheEvCJ5DErASsMsVHXZswOOpPsOx11BpeqXumQ2TyJbXBRYI8Z2dV6kcbSKwbGSOCcyR6fqik/KfOuhMqc5zjccdfy+leY23c+hp0k4XWxxms+DG8Sa34Zs9RYQW0upLGZpH+7bb1+VjxknkKcDORX2cihUCqAABgAdq8O8FaJ/wkni21a4heS0sZBPOwI27gcoD9WUfka9yrrw7bjqeVjYxjPTcKKKK6DjCvL/il8cfBXgO8/suaabVdX6fYrEBjGT0EjE7Uz6cn2rxT41/GXxD4mvtX8O+FdWGnaXEzxLPakpJcoOC28jIBOeFxxjrmvmdLh0uI5lI8yOTdzz8wP+NbKl1ZLetj6G1T4ka5rXjG41i4iitJLr/V2yruEca8Krepxznr19hW1HresXUWxbW2t1bneqZ3V8wfatS/tT+0RfSC4T7rZxj2A6Yr0/TviLbQ+E5yzJDqagRhWJ4OP9YPb29eK4cXh3z3gtGephMXaHLJ2sfTf7O/j/wje2E3hr7ZaWevJfTRNFLN+8vdp4kXPXjjaOm017RX5Uvf3bXBkaTaud67OCr5zuz1zyea9v8Agf8AtE+K/C08Oja67+INH4VRcS/6Rbgf3JD94Y/hb8CK6o0mopI86c+aTZ9z0VS0LVbHW9HtNX0y4S4s7uJZYZFPDKR/P1HY0VIj839YNkJJ4U+0LIp2lsgjOP5VyEzEX06YAAbOB0FFFdkpNrUi1thwc7mxVxomn0h5WfISVU2kdjRRSiDKDdaLdSbqIKeS4A5xRRUrcGffX7Ht1JL8GbezkA/0C+uIFI7gsJP/AGciiiisJ/Eylsf/2Q==" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.21</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.30</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -178,13 +178,13 @@ select.fc option{background:var(--navy2);}
 
 <!-- 탭 -->
 <nav class="nav">
-  <button class="tab on" onclick="go(0)" id="t0">📸 현장사진 AI 피해분석 <span class="tnum">1</span></button>
+  <button class="tab on" onclick="go(0)" id="t0">📸 단일현장 피해분석 <span class="tnum">1</span></button>
   <button class="tab" onclick="go(1)" id="t1">💰 설계내역서 <span class="tnum">2</span></button>
   <button class="tab" onclick="go(2)" id="t2" style="display:none;">📐 복구단면도 <span class="tnum">3</span></button>
   <button class="tab" onclick="go(3)" id="t3">📄 보고서 작성 <span class="tnum">4</span></button>
   <button class="tab" onclick="go(4)" id="t4" style="display:none;">📊 검증·이력 <span class="tnum">5</span></button>
   <!-- ★ ver7.10: 관리자 잠금 아이콘 (탭 우측 끝) - 일반 사용자에게는 작은 자물쇠로만 보임 -->
-  <button class="tab" onclick="goBatch()" id="tb" style="background:rgba(124,77,255,0.12);border:1px solid rgba(124,77,255,0.35);color:#B388FF;font-weight:700;" title="여러 사진을 한꺼번에 자동 분석">📦 일괄분석</button>
+  <button class="tab" onclick="goBatch()" id="tb" style="background:rgba(124,77,255,0.12);border:1px solid rgba(124,77,255,0.35);color:#B388FF;font-weight:700;" title="여러 현장 사진을 한꺼번에 자동 분석 (사진 1장 = 1현장)">📦 다현장 일괄분석</button>
   <button id="adminLockBtn" onclick="_showAdminLoginModal()" style="margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,0.10);color:rgba(255,255,255,0.35);padding:5px 10px;border-radius:6px;font-size:11px;cursor:pointer;transition:all 0.15s;" title="관리자 모드">🔒</button>
 </nav>
 
@@ -200,6 +200,7 @@ select.fc option{background:var(--navy2);}
       <div class="upzone" id="upzone">
         <div class="up-icon">📷</div>
         <div class="up-txt">사진을 선택해주세요</div>
+        <div style="font-size:11px;color:var(--accent);margin-top:4px;line-height:1.5;">한 곳(현장)의 피해를 여러 각도로 찍은 사진들을 올리면 <b>종합 1건</b>으로 분석합니다.<br><span style="color:var(--text2);">여러 곳을 사진 1장씩 한꺼번에 분석하려면 → 상단 <b style="color:#B388FF;">📦 다현장 일괄분석</b> 탭</span></div>
         <div style="margin-top:14px;">
           <input type="file" id="fi" accept="image/*" multiple
             style="font-size:14px;color:#fff;">
@@ -231,7 +232,7 @@ select.fc option{background:var(--navy2);}
           <input type="text" class="fc" id="memo" placeholder="예: 집중호우 후 제방 유실, 긴급복구 필요">
         </div>
       </div>
-      <button class="btn btn-p btn-w" id="anaBtn" onclick="analyze()">🤖 AI 피해분석 시작</button>
+      <button class="btn btn-p btn-w" id="anaBtn" onclick="analyze()">🤖 단일현장 분석 시작</button>
     </div>
 
     <div class="card">
@@ -251,22 +252,19 @@ select.fc option{background:var(--navy2);}
     <div class="ctitle" style="justify-content:space-between;flex-wrap:wrap;gap:8px;">
       <span>피해·복구 대장</span>
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
-        <button class="btn btn-o" onclick="_expandAllRows(true)" style="font-size:11px;padding:5px 12px;">▼ 전체 펼치기</button>
-        <button class="btn btn-o" onclick="_expandAllRows(false)" style="font-size:11px;padding:5px 12px;">▶ 전체 접기</button>
-        <button class="btn btn-o" onclick="resetColumnWidths()" style="font-size:11px;padding:5px 12px;" title="드래그로 조절한 열 너비를 기본값으로 되돌립니다.">↔ 열너비 초기화</button>
         <button class="btn" id="dmgDeleteBtn" onclick="_deleteSelectedDamages()" style="font-size:11px;padding:5px 12px;background:linear-gradient(135deg,#EF5350,#C62828);color:#fff;border:1px solid rgba(239,83,80,0.5);display:none;">🗑 선택 삭제 <span id="dmgDeleteCount"></span></button>
         <button class="btn" id="dmgUndoBtn" onclick="_undoDamageDeletion()" style="font-size:11px;padding:5px 12px;background:linear-gradient(135deg,#26A69A,#00695C);color:#fff;border:1px solid rgba(38,166,154,0.5);display:none;">↩ 되돌리기 <span id="dmgUndoCount"></span></button>
-        <button class="btn btn-o" onclick="toTab2()" id="toTab2Btn">💰 설계내역서 생성</button>
       </div>
     </div>
-    <details style="margin-bottom:8px;background:rgba(0,180,216,0.08);border:1px solid rgba(0,180,216,0.2);border-radius:6px;">
-      <summary style="padding:7px 10px;font-size:11px;color:var(--accent);font-weight:700;cursor:pointer;user-select:none;list-style:none;">💡 사용법 안내 <span style="color:var(--text2);font-weight:400;font-size:10px;">(클릭하여 펼치기 ▾)</span></summary>
-      <div style="padding:0 10px 8px;font-size:11px;color:var(--text2);line-height:1.5;">
-        복구구분 컬럼의 <span style="display:inline-block;padding:1px 7px;border-radius:10px;background:rgba(46,204,113,0.18);color:#2ECC71;font-weight:700;font-size:10px;">♻️ 원형</span> / <span style="display:inline-block;padding:1px 7px;border-radius:10px;background:rgba(231,76,60,0.18);color:#e74c3c;font-weight:700;font-size:10px;">🔧 개선</span> 배지를 클릭하면 즉시 변경됩니다. 여러 항목 토글 후 화면 우하단 <b style="color:#43A047;">[⚡ AI 환원 적용]</b> 버튼을 눌러 일괄 처리하세요. <span style="color:#FFB74D;">★ 환원 완료 후 설계내역서에 반영하려면 [💰 설계내역서 생성] 버튼을 직접 누르세요.</span><br>
-        <span style="color:#EF9A9A;">🗑 <b>항목 삭제</b>: 좌측 체크박스로 불필요한 항목 선택 → [선택 삭제] → 설계내역서·구조물제원 자동 갱신. [되돌리기]로 복원 가능.</span><br>
-        <span style="color:#81D4FA;">↔ <b>열 너비 조절</b>: 표 제목줄(헤더) 우측 경계에 마우스를 대면 ↔ 커서가 나타납니다. 드래그하여 열 너비를 늘리거나 줄일 수 있습니다 (조절값 자동 저장, [↔ 열너비 초기화]로 복원).</span>
-      </div>
-    </details>
+    <!-- ★ 분석에 사용한 사진 갤러리 (대장과 비교용) -->
+    <div id="dmgPhotoStrip" style="display:none;"></div>
+    <!-- 대장 조작 버튼바 (우측 정렬) -->
+    <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+      <button class="btn btn-o" onclick="_expandAllRows(true)" style="font-size:11px;padding:5px 12px;">▼ 전체 펼치기</button>
+      <button class="btn btn-o" onclick="_expandAllRows(false)" style="font-size:11px;padding:5px 12px;">▶ 전체 접기</button>
+      <button class="btn btn-o" onclick="resetColumnWidths()" style="font-size:11px;padding:5px 12px;" title="드래그로 조절한 열 너비를 기본값으로 되돌립니다.">↔ 열너비 초기화</button>
+      <button class="btn btn-o" onclick="toTab2()" id="toTab2Btn">💰 설계내역서 생성</button>
+    </div>
     <!-- ★ ver7.92: 산정근거·참고사항 컬럼 표시 옵션 (기본 숨김) -->
     <div style="margin-bottom:8px;padding:6px 10px;background:rgba(255,183,77,0.06);border:1px solid rgba(255,183,77,0.2);border-radius:6px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:11px;">
       <span style="color:var(--text2);font-weight:600;">👁 컬럼 표시 옵션:</span>
@@ -287,14 +285,17 @@ select.fc option{background:var(--navy2);}
           <col style="width:3.5%">
           <col style="width:7%">
           <col style="width:9%">
-          <col style="width:7%">
-          <col style="width:13%" data-col="basis">
           <col style="width:6%">
-          <col style="width:17.5%">
-          <col style="width:17.5%">
-          <col style="width:16.5%" data-col="note">
+          <col style="width:10%" data-col="basis">
+          <col style="width:5%">
+          <col style="width:12%">
+          <col style="width:11%">
+          <col style="width:11%" data-col="recbasis">
+          <col style="width:6%">
+          <col style="width:7%" data-col="srcphoto">
+          <col style="width:9.5%" data-col="note">
         </colgroup>
-        <thead id="dmgThead"><tr><th style="padding:4px;width:32px;"><input type="checkbox" id="dmgSelectAll" onclick="_toggleAllDamages(this.checked)" style="cursor:pointer;width:14px;height:14px;" title="전체 선택/해제"></th><th style="width:36px;">순번</th><th style="width:120px;">피해유형</th><th style="width:320px;">피해물량</th><th style="width:95px;">피해금액(원)</th><th style="width:220px;" data-col="basis">산정근거</th><th style="width:70px;">복구구분</th><th style="width:200px;">복구공법</th><th style="width:200px;">복구물량</th><th data-col="note">참고사항</th></tr></thead>
+        <thead id="dmgThead"><tr><th style="padding:4px;width:32px;"><input type="checkbox" id="dmgSelectAll" onclick="_toggleAllDamages(this.checked)" style="cursor:pointer;width:14px;height:14px;" title="전체 선택/해제"></th><th style="width:36px;">순번</th><th style="width:120px;">피해유형</th><th style="width:320px;">피해물량</th><th style="width:95px;">피해금액(원)</th><th style="width:220px;" data-col="basis">산정근거</th><th style="width:70px;">복구구분</th><th style="width:200px;">복구공법</th><th style="width:200px;">복구물량</th><th style="width:200px;" data-col="recbasis">복구산출근거</th><th style="width:95px;">복구금액(원)</th><th style="width:90px;" data-col="srcphoto">사진출처</th><th data-col="note">참고사항</th></tr></thead>
         <tbody id="dmgBody"></tbody>
       </table>
     </div>
@@ -391,15 +392,7 @@ select.fc option{background:var(--navy2);}
         <label class="fl">공통 특이사항 (선택)</label>
         <input type="text" class="fc" id="batchMemo" placeholder="예: 2024년 7월 집중호우 피해">
       </div>
-      <div class="fg">
-        <label class="fl">사진 간 대기시간 (초) — Rate Limit 방지</label>
-        <select class="fc" id="batchDelay">
-          <option value="3">3초 (권장)</option>
-          <option value="2">2초</option>
-          <option value="5">5초 (안전)</option>
-          <option value="1">1초 (Tier2 이상)</option>
-        </select>
-      </div>
+
     </div>
 
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;">
@@ -1169,7 +1162,7 @@ function resetAll() {
   // ★ ver7.98: 분석 버튼 텍스트 복원 (새 작업 시 "재분석"이 아닌 "AI 피해분석 시작"으로)
   var anaBtnEl = document.getElementById('anaBtn');
   if (anaBtnEl) {
-    anaBtnEl.innerHTML = '🤖 AI 피해분석 시작';
+    anaBtnEl.innerHTML = '🤖 단일현장 분석 시작';
     anaBtnEl.disabled = false;
   }
   // ★ ver7.98: 삭제 이력 스택 초기화 (이전 작업의 [되돌리기] 잔존 방지)
@@ -1426,7 +1419,7 @@ function loadProject(key) {
   // ★ ver7.98: 분석 버튼 텍스트를 불러온 ANA 상태에 맞춰 갱신
   var _anaBtn = document.getElementById('anaBtn');
   if (_anaBtn) {
-    _anaBtn.innerHTML = (ANA && ANA.items && ANA.items.length > 0) ? '🔄 재분석 (기존결과 초기화)' : '🤖 AI 피해분석 시작';
+    _anaBtn.innerHTML = (ANA && ANA.items && ANA.items.length > 0) ? '🔄 재분석 (기존결과 초기화)' : '🤖 단일현장 분석 시작';
     _anaBtn.disabled = false;
   }
   // ★ ver7.98: 삭제 이력 스택 초기화 (이전 작업의 [되돌리기] 잔존 방지)
@@ -1635,7 +1628,7 @@ function importProject(files) {
       // ★ ver7.98: 분석 버튼 텍스트를 불러온 ANA 상태에 맞춰 갱신
       var _anaBtn = document.getElementById('anaBtn');
       if (_anaBtn) {
-        _anaBtn.innerHTML = (ANA && ANA.items && ANA.items.length > 0) ? '🔄 재분석 (기존결과 초기화)' : '🤖 AI 피해분석 시작';
+        _anaBtn.innerHTML = (ANA && ANA.items && ANA.items.length > 0) ? '🔄 재분석 (기존결과 초기화)' : '🤖 단일현장 분석 시작';
         _anaBtn.disabled = false;
       }
       // ★ ver7.98: 삭제 이력 스택 초기화 (이전 작업의 [되돌리기] 잔존 방지)
@@ -2082,14 +2075,14 @@ function _saveColumnWidths() {
     var cols = colgroup.querySelectorAll('col');
     var widths = [];
     cols.forEach(function(c){ widths.push(c.style.width || ''); });
-    localStorage.setItem('dmgColWidths', JSON.stringify(widths));
+    localStorage.setItem('dmgColWidths_v2', JSON.stringify(widths));
   } catch(e) { /* 저장 실패 무시 */ }
 }
 
 // 저장된 컬럼 너비 복원
 function _restoreColumnWidths() {
   try {
-    var saved = localStorage.getItem('dmgColWidths');
+    var saved = localStorage.getItem('dmgColWidths_v2');
     if (!saved) return;
     var widths = JSON.parse(saved);
     var colgroup = document.getElementById('dmgColgroup');
@@ -2104,11 +2097,11 @@ function _restoreColumnWidths() {
 // 컬럼 너비를 기본값으로 초기화 (헤더 우클릭 또는 버튼)
 function resetColumnWidths() {
   try {
-    localStorage.removeItem('dmgColWidths');
+    localStorage.removeItem('dmgColWidths_v2');
     var colgroup = document.getElementById('dmgColgroup');
     if (!colgroup) return;
     var cols = colgroup.querySelectorAll('col');
-    var defaults = ['3%','3.5%','7%','9%','7%','13%','6%','17.5%','17.5%','16.5%'];
+    var defaults = ['3%','3.5%','7%','9%','6%','10%','5%','12%','11%','11%','6%','7%','9.5%'];
     cols.forEach(function(c, i){
       if (defaults[i]) c.style.width = defaults[i];
     });
@@ -2349,6 +2342,26 @@ function _buildAnalyzePrompt(imgCount, fac, loc, memo, _prevContext) {
     + '     - 현장 조건이 단가표 표준과 어떻게 다른지\n'
     + '     - 유사단가 조정/개별공종 합산의 근거\n\n'
     + '   ★★★★★ [0단계: 단가표 우선 검토] (★ 분석의 첫 출발점 ★) ★★★★★\n'
+    + '   ★★ [0-A단계: 편람 시설명 식별 (★최우선·필수★)] ★★\n'
+    + '   ◆ 사진 분석 첫 행동 = 「2024 자연재난조사 편람」 공공시설피해관리 시설분류표(48개)에서 ★해당 시설명 결정★\n'
+    + '     공통원칙 9번의 시설명 리스트 참조하여 매칭. 임의 명칭 창작 절대 금지.\n'
+    + '   ◆ 시설 식별 절차:\n'
+    + '     ① 사진의 시설 종류 1차 판별 (도로 / 교량 / 옹벽 / 석축·호안 / 흄관 / 측구 / 하천 / 산림 / 농업시설 등)\n'
+    + '     ② 편람 시설명 매칭 (예: 도로 → 시군도 vs 농어촌도로 vs 일반국도 vs 비법정도로)\n'
+    + '     ③ 사진만으로 결정 불가 시 → facilityUncertain=true + facilityQuestions 명기 (임의 추정 금지)\n'
+    + '   ◆ damageType 작성 형식 = "[편람시설명] 구체피해" — 머리에 [편람시설명] 대괄호로 명시 필수\n'
+    + '     - "[소하천] 좌안 석축 호안 붕괴·유실"\n'
+    + '     - "[농어촌도로(면·리·농도)] 비탈면 토사 유실"\n'
+    + '     - "[암거·날개벽·배수관] 흄관 노출·파손"\n'
+    + '     - "[옹벽(중력식·역T형·보강토)] 본체 전도"\n'
+    + '     - "[토공(도로사태·침식·유실)] 도로 사면 유실"\n'
+    + '   ◆ 시설명 → 단가 종별 일치 검증:\n'
+    + '     - 「소하천」 → 소하천 단가표(p.188~190) 우선\n'
+    + '     - 「농어촌도로(면·리·농도)」 → 1,216,868원/m (p.169)\n'
+    + '     - 「시군도(통합)」 → 2,575,872원/m (p.169) 또는 일반도로 폭원별\n'
+    + '     - 「옹벽(중력식·역T형·보강토)」 → 옹벽 합성단가 (p.170)\n'
+    + '     - 「암거·날개벽·배수관」 → 배수관 단가표 (p.171)\n'
+    + '     - 「토공(도로사태·침식·유실)」 → 토공 단가 (p.170)\n\n'
     + '   ◆ 사진을 보고 피해유형을 정하기 ★전에★ 반드시 다음 절차를 거친다:\n'
     + '     ① 사진에서 관찰되는 피해 시설을 식별 (도로, 석축, 호안, 흄관, 옹벽 등)\n'
     + '     ② 2024 자연재난조사 복구단가표(REF)에서 적용 가능한 공종을 우선 검색\n'
@@ -3032,18 +3045,44 @@ function _buildAnalyzePrompt(imgCount, fac, loc, memo, _prevContext) {
     + '★ 산정식(괄호 안)은 항상 보존. 그러나 측정 방법 정보는 quantity에서 제외.\n\n'
     + '## ★★★ 필드별 역할 분리 + 길이 제한 (★ 절대 규칙 ★) ★★★\n'
     + '◆ 각 필드는 정해진 역할만 담는다. 다른 필드 내용 침범 절대 금지:\n'
-    + '   ▸ damageType (피해유형): 40자 이내(최대 60자) 짧은 피해 묘사만\n'
-    + '     올바른 예: "좌안 도로 노반·포장 편측 유실 (하천 인접)"\n'
+    + '   ▸ damageType (피해유형): 형식 = "[편람시설명] 구체피해" / 60자 이내(최대 80자)\n'
+    + '     ★ 머리에 반드시 [편람시설명] 대괄호로 명시 (공통원칙 9번의 48개 시설명 중 선택)\n'
+    + '     올바른 예: "[소하천] 좌안 석축 호안 붕괴·유실"\n'
+    + '     올바른 예: "[농어촌도로(면·리·농도)] 비탈면 토사 유실"\n'
+    + '     올바른 예: "[암거·날개벽·배수관] 흄관 노출·파손 및 기초 유실"\n'
     + '     잘못된 예: "도로 노반 및 포장 편측 유실 (하천 인접 도로 편측 피해): 농어촌도로 표준단면 복구: 노상정리(t=300mm) + 보조기층..." ← 복구공법 침범 ✗\n'
+    + '     잘못된 예: "소하천 좌안 석축 호안 붕괴" ← [편람시설명] 대괄호 누락 ✗\n'
     + '     금지 단어: "노상정리, 보조기층, 아스콘, 재포장, 합성단가, 복구단가, 비례적용, 재시공, t=NNmm"\n'
     + '   ▸ method (복구공법): 복구 방법·재료·시공 절차 (별도 필드)\n'
     + '     예: "노상정리 t=300mm + 보조기층 t=150mm + 아스콘 표층 t=50mm 재포장"\n'
     + '   ▸ note (비고): 60자 이내 변경사유·특이사항만 (최대 100자)\n'
     + '◆ 응답 전 자기검증: 각 piece의 damageType이 60자 초과? 복구공법 단어 포함? → 즉시 수정\n\n'
+    + '◆ ★ recoveryCost (복구금액) 필수 산정 ★\n'
+    + '   - recoveryCost = 복구단가 × 복구물량(recoveryQty) — 각 item마다 숫자로 산정\n'
+    + '   - 원형복구: 피해물량과 동일 단가 적용, 복구물량(안전율 포함)에 곱함 → 통상 damageCost와 근접하거나 약간 큼\n'
+    + '   - 개선복구(단면확대·공법강화·신설): 변경 규격·공법 단가로 재산정 → damageCost보다 클 수 있음\n'
+    + '   - ★ 신설(피해없음, damageCost=0) 항목도 복구는 발생하므로 recoveryCost는 0이 아닌 실제 복구금액 산정\n'
+    + '   - recoveryCost 산정 단가·물량 근거는 damageCostBasis 또는 method에 간략 명기\n\n'
+    + '   - ★★ recoveryCostBasis (복구산출근거) 표기 형식 = ★[종별]공종명 규격 물량단위 × 단가원/단위 합산★ ★★\n'
+    + '     · 「2024 자연재난조사 복구단가(공공시설)」의 [종별][공종명][규격][단가][단위] 5요소 ★모두★ 명시\n'
+    + '     · 복구물량(recoveryQty)에 포함된 각 공종마다 "[종별]공종명 규격 물량단위 × 단가원/단위"를 + 로 연결, 끝에 = 합계원 (p.NNN)\n'
+    + '     · ★ 곱셈기호는 x 또는 ×, 단가 뒤에는 "원/단위", 물량 뒤에는 단위(m, m², m³, 개소 등)\n'
+    + '     · 형식: [종별1]공종1 규격1 물량1단위 × 단가1원/단위 + [종별2]공종2 규격2 물량2단위 × 단가2원/단위 = 합계원 (p.NNN)\n'
+    + '     · 올바른 예) "[공통]석축 찰쌓기 H<3m 30m² × 301,906원/m² + [소하천]석축-찰쌓기 철거 30m² × 19,277원/m² = 9,636,990원 (p.168,189)"\n'
+    + '     · 올바른 예) 단일공종: "[도로]농어촌도로 표준단면 15m × 1,216,868원/m = 18,253,020원 (p.169)"\n'
+    + '     · 올바른 예) "[배수관]흄관 D=600mm 24m × 217,257원/m = 5,214,168원 (p.171)"\n'
+    + '     · 잘못된 예) "301906원x30m² + 19277원x30m² = 9636990원" ← 종별·공종·규격 누락 ✗\n'
+    + '     · 잘못된 예) "석축 30m² × 301906원 = 9057180원" ← 규격(H<3m) 누락 ✗\n'
+    + '     · ★ = 우측 합계값(숫자)은 recoveryCost와 반드시 일치 (불일치 금지)\n'
+    + '     · ★★ 중간 계산과정 나열 금지: "= 38631780 + 11561462 = 51044466" 처럼 곱셈결과 나열 금지. "단가x물량 + 단가x물량 = 최종합계" 형식으로 = 한 번만\n'
+    + '     · 단가 출처 페이지(p.NNN)는 끝에 괄호로 표기 필수\n'
+    + '     · 천단위 콤마는 시스템이 자동 처리하므로 숫자만 표기 (콤마 직접 입력 불필요)\n'
+    + '   - ★★ damageCostBasis (피해산정근거)도 동일 형식 적용 ★★\n\n'
     + 'JSON 스키마 (이대로만 출력, 다른 텍스트 일체 없이):\n'
     + '{"summary":"요약","severity":"경미|중간|심각|매우심각","scaleRef":"참조물: 사람(1.7m) 기준, 1px≈0.014m",'
+    + '"facilityUncertain":false,"facilityQuestions":[],'
     + '"overallRecoveryType":"원형복구|개선복구","overallRecoveryReason":"판정사유(법령호번 포함)",'
-    + '"items":[{"no":1,"damageType":"피해유형(좌안/우안 구분)","quantity":"피해물량(산출근거)","damageCost":5000000,"damageCostBasis":"공종명 물량×단가=금액(단가출처)","recoveryType":"원형복구|개선복구","method":"복구공법","recoveryQty":"공종명 수량단위(산출근거)","note":"비고 [자가검증✓]"}],"totalDamage":5000000,"urgent":"긴급조치","structures":[{"name":"구조물명(좌안/우안)","type":"형식","spec":"규격","note":"비고"}],"selfAudit":{"passed":true,"summary":"7가지 검증 모두 통과 또는 발견된 주요 수정사항 1~3줄","checks":[{"id":"규격-단가","ok":true,"msg":"흄관 φ300 단가 정확히 적용"},{"id":"물량산식","ok":true,"msg":"L×W×D 산식 일치"},{"id":"부대공","ok":true,"msg":"노상정리·뒷채움 포함"}]}}';
+    + '"items":[{"no":1,"damageType":"[편람시설명] 구체피해","quantity":"피해물량(산출근거)","damageCost":5000000,"damageCostBasis":"[종별]공종명 규격 물량단위 × 단가원/단위 = 금액원 (p.NNN)","recoveryType":"원형복구|개선복구","method":"복구공법","recoveryQty":"공종명 수량단위(산출근거)","recoveryCost":복구금액숫자,"recoveryCostBasis":"[종별]공종명 규격 물량단위 × 단가원/단위 + ... = 복구금액원 (p.NNN)","note":"비고 [자가검증✓]"}],"totalDamage":5000000,"urgent":"긴급조치","structures":[{"name":"구조물명(좌안/우안)","type":"형식","spec":"규격","note":"비고"}],"selfAudit":{"passed":true,"summary":"7가지 검증 모두 통과 또는 발견된 주요 수정사항 1~3줄","checks":[{"id":"규격-단가","ok":true,"msg":"흄관 φ300 단가 정확히 적용"},{"id":"물량산식","ok":true,"msg":"L×W×D 산식 일치"},{"id":"부대공","ok":true,"msg":"노상정리·뒷채움 포함"}]}}';
   return prompt;
 }
 
@@ -3098,7 +3137,7 @@ async function analyze() {
         var btnEl = document.getElementById('anaBtn');
         if (btnEl) {
           btnEl.disabled = false;
-          btnEl.innerHTML = '🤖 AI 피해분석 시작';
+          btnEl.innerHTML = '🤖 단일현장 분석 시작';
         }
         return;
       }
@@ -3232,7 +3271,7 @@ async function analyze() {
               role: 'user',
               content: '아래 분석 보고서를 다음 JSON 스키마로 정확히 변환해라. JSON 외 어떤 텍스트도 응답 금지.\n\n'
                 + '## 스키마:\n'
-                + '{"summary":"요약","severity":"경미|중간|심각|매우심각","scaleRef":"참조물 정보","overallRecoveryType":"원형복구|개선복구","overallRecoveryReason":"판정사유","items":[{"no":1,"damageType":"피해유형","quantity":"피해물량(산출식)","damageCost":숫자,"damageCostBasis":"산식","recoveryType":"원형복구|개선복구","method":"복구공법","recoveryQty":"복구물량(산출식)","note":"비고"}],"totalDamage":숫자,"urgent":"긴급조치","structures":[{"name":"구조물명","type":"형식","spec":"규격","note":"비고"}]}\n\n'
+                + '{"summary":"요약","severity":"경미|중간|심각|매우심각","scaleRef":"참조물 정보","overallRecoveryType":"원형복구|개선복구","overallRecoveryReason":"판정사유","items":[{"no":1,"damageType":"피해유형","quantity":"피해물량(산출식)","damageCost":숫자,"damageCostBasis":"산식","recoveryType":"원형복구|개선복구","method":"복구공법","recoveryQty":"복구물량(산출식)","recoveryCost":숫자,"recoveryCostBasis":"단가원x물량단위 = 금액원","note":"비고"}],"totalDamage":숫자,"urgent":"긴급조치","structures":[{"name":"구조물명","type":"형식","spec":"규격","note":"비고"}]}\n\n'
                 + '## 원본 분석 보고서:\n' + raw
                 + '\n\n위 보고서의 모든 피해 항목·물량·금액·구조물 정보를 위 JSON 스키마에 정확히 매핑하여 JSON만 출력하라.'
             }]
@@ -3288,6 +3327,25 @@ async function analyze() {
       }, 1800);
     }
     
+    // ★★★ ver8.30: 편람 시설명 + 산출근거 종별·규격 명시 검증 ★★★
+    setTimeout(function() {
+      try {
+        var facilityMissing = _detectMissingFacilityName(ANA.items);
+        var specMissing = _detectMissingSpecInBasis(ANA.items);
+        if ((facilityMissing.missings && facilityMissing.missings.length > 0) ||
+            (specMissing.missings && specMissing.missings.length > 0)) {
+          _showFacilitySpecMissingAlert(facilityMissing, specMissing);
+        }
+      } catch(e) { console.warn('편람·산출근거 검증 오류', e); }
+    }, 2400);
+    
+    // ★★★ ver8.30: AI가 시설 식별 불가(facilityUncertain) 시 사용자 확인 요청 ★★★
+    if (ANA.facilityUncertain === true && Array.isArray(ANA.facilityQuestions) && ANA.facilityQuestions.length > 0) {
+      setTimeout(function() {
+        _showFacilityUncertainModal(ANA.facilityQuestions);
+      }, 800);
+    }
+    
     // ★ 원본 보존 (탭 이동 후에도 일관성 유지)
     ANA._original = JSON.parse(JSON.stringify(ANA.items));
     // ★ 최초 분석 시 타임스탬프 (curCost는 아직 없음)
@@ -3315,7 +3373,7 @@ async function analyze() {
     setDot(false, '오류 발생');
   }
   btn.disabled = false;
-  btn.innerHTML = (ANA && ANA.items && ANA.items.length > 0) ? '🔄 재분석 (기존결과 초기화)' : '🤖 AI 피해분석 시작';
+  btn.innerHTML = (ANA && ANA.items && ANA.items.length > 0) ? '🔄 재분석 (기존결과 초기화)' : '🤖 단일현장 분석 시작';
 }
 
 // ★★★ 신설 항목 자동 일관성 보정 (ver6.7) ★★★
@@ -3837,20 +3895,20 @@ function _autoCleanFieldOverflow(ana) {
     var cleaned = orig;
     var changed = false;
     
-    // 1. damageType이 60자 초과거나 복구공법 단어 포함 시 → 핵심만 추출
+    // 1. damageType이 80자 초과거나 복구공법 단어 포함 시 → 핵심만 추출 (ver8.30: 편람시설명 명시로 60→80자)
     var hasMethodKeyword = methodKeywords.test(cleaned);
-    var tooLong = cleaned.length > 60;
+    var tooLong = cleaned.length > 80;
     
     if (hasMethodKeyword || tooLong) {
       // 콜론(:) 앞 부분이 핵심 피해 묘사인 경우가 많음
       // 예: "도로 노반 및 포장 편측 유실 (하천 인접 도로 편측 피해): 농어촌도로 표준단면..."
       // → "도로 노반 및 포장 편측 유실 (하천 인접 도로 편측 피해)"
       var colonIdx = cleaned.indexOf(':');
-      if (colonIdx > 5 && colonIdx < 80) {
+      if (colonIdx > 5 && colonIdx < 100) {
         var before = cleaned.substring(0, colonIdx).trim();
         var after = cleaned.substring(colonIdx + 1).trim();
         // 콜론 앞이 깔끔하고 콜론 뒤가 복구공법 설명이면 → 앞만 채택
-        if (before.length <= 60 && !methodKeywords.test(before) && (after.length > 30 || methodKeywords.test(after))) {
+        if (before.length <= 80 && !methodKeywords.test(before) && (after.length > 30 || methodKeywords.test(after))) {
           // 잘린 부분(복구공법 설명)이 method 필드에 없으면 그쪽으로 이동
           if (!it.method || it.method.length < after.length) {
             it.method = (it.method ? it.method + ' / ' : '') + after;
@@ -3860,8 +3918,8 @@ function _autoCleanFieldOverflow(ana) {
         }
       }
       
-      // 여전히 길거나 복구공법 단어 포함 → 60자에서 잘라내기
-      if (cleaned.length > 60 || methodKeywords.test(cleaned)) {
+      // 여전히 길거나 복구공법 단어 포함 → 80자에서 잘라내기 (ver8.30: 편람시설명 명시로 60→80)
+      if (cleaned.length > 80 || methodKeywords.test(cleaned)) {
         // 복구공법 단어부터 시작하는 후반부 잘라내기
         var match = cleaned.match(methodKeywords);
         if (match) {
@@ -3876,9 +3934,9 @@ function _autoCleanFieldOverflow(ana) {
             changed = true;
           }
         }
-        // 그래도 60자 초과면 단순 절단
-        if (cleaned.length > 60) {
-          cleaned = cleaned.substring(0, 57).trim().replace(/[,;:\s]+$/, '') + '…';
+        // 그래도 80자 초과면 단순 절단
+        if (cleaned.length > 80) {
+          cleaned = cleaned.substring(0, 77).trim().replace(/[,;:\s]+$/, '') + '…';
           changed = true;
         }
       }
@@ -5465,6 +5523,296 @@ function _detectBasisCostMismatch(anaItems) {
   });
   
   return { mismatches: mismatches };
+}
+
+// ★★★ ver8.30: 편람기준 시설명 누락 검증 ★★★
+// damageType이 "[편람시설명] 구체피해" 형식을 따르지 않으면 경고
+// 편람 48개 시설명 중 하나를 머리에 [대괄호]로 명시해야 함
+function _detectMissingFacilityName(anaItems) {
+  var missings = [];
+  if (!anaItems || anaItems.length === 0) return { missings: missings };
+  
+  // 편람기준 48개 시설명 (공통원칙 9번 기준)
+  var FACILITY_NAMES = [
+    '고속국도', '일반국도', '지방도', '특별·광역시도', '시도', '군도', '구도', '시군도', '시군도(통합)',
+    '농어촌도로', '농어촌도로(면·리·농도)', '비법정도로',
+    '고속국도내 교량', '일반국도내 교량', '지방도내 교량', '시군도내 교량', '농어촌도로·비법정도로내 교량',
+    '토공', '토공(도로사태·침식·유실)', '포장공', '포장공(아스콘·콘크리트)',
+    '옹벽', '옹벽(중력식·역T형·보강토)', '암거·날개벽·배수관', 'L형측구·산마루측구',
+    '낙석방지책·방호벽·가드레일', '낙석방지책', '방호벽', '가드레일',
+    '국가하천', '지방하천', '지방하천(대규모)', '지방하천(중소규모)',
+    '소하천',
+    '광역상수도', '광역상수도(K-water)', '지방상수도·마을상수도',
+    '하수처리시설·하수관거',
+    '국립공원 탐방로', '도립공원', '군립공원',
+    '저수지·양수장·배수장·취입보', '용배수로·방조제·관정',
+    '항만', '항만(T.T.P·피복석·사석)', '지방어항·소규모항',
+    '학교 담장·교사·부속시설',
+    '산사태·사방시설', '사방댐·야계사방·골막이', '임도·자연휴양림·수목원', '가로수',
+    '궤도·노반·도상·교대·교각',
+    '농로', '소교량', '세천·세월교', '세천', '세월교',
+    '병영건물·울타리·심정·탄약고',
+    '건물·기단·담장·성곽·석축',
+    '임시조립주택', '자전거도로'
+  ];
+  
+  anaItems.forEach(function(it, idx) {
+    var dt = (it.damageType || '').trim();
+    if (!dt) return;
+    
+    // 머리에 [대괄호] 형식이 있는지 검사
+    var hasBracket = /^\s*\[[^\]]+\]/.test(dt);
+    var bracketMatch = dt.match(/^\s*\[([^\]]+)\]/);
+    var bracketContent = bracketMatch ? bracketMatch[1].trim() : '';
+    
+    // 편람 시설명 매칭 검사
+    var matchedName = null;
+    for (var i = 0; i < FACILITY_NAMES.length; i++) {
+      var nm = FACILITY_NAMES[i];
+      if (bracketContent && bracketContent.indexOf(nm) !== -1) {
+        matchedName = nm;
+        break;
+      }
+      // 대괄호 없어도 본문에 시설명 포함되어 있는지 후보 검사
+      if (!matchedName && dt.indexOf(nm) !== -1) {
+        matchedName = nm;
+      }
+    }
+    
+    if (!hasBracket || !matchedName) {
+      missings.push({
+        idx: idx,
+        no: it.no || (idx + 1),
+        damageType: dt,
+        hasBracket: hasBracket,
+        bracketContent: bracketContent,
+        matchedName: matchedName,
+        reason: !hasBracket ? '[편람시설명] 대괄호 누락' : (matchedName ? '시설명 형식 부정확' : '편람 48개 시설명에 해당 없음')
+      });
+    }
+  });
+  
+  return { missings: missings };
+}
+
+// ★★★ ver8.30: 산출근거 종별·규격 명시 누락 검증 ★★★
+// damageCostBasis / recoveryCostBasis에 [종별]공종명 규격이 명시되어 있는지 확인
+function _detectMissingSpecInBasis(anaItems) {
+  var missings = [];
+  if (!anaItems || anaItems.length === 0) return { missings: missings };
+  
+  anaItems.forEach(function(it, idx) {
+    var problems = [];
+    
+    // damageCostBasis 검사 (피해금액이 0이 아닐 때만)
+    var dcb = (it.damageCostBasis || '').trim();
+    var dCost = it.damageCost || 0;
+    if (dCost > 0 && dcb) {
+      var dcbHasBracket = /\[[^\]]+\]/.test(dcb);
+      var dcbHasPage = /p\.\s*\d+/i.test(dcb);
+      if (!dcbHasBracket || !dcbHasPage) {
+        problems.push({
+          field: 'damageCostBasis',
+          hasBracket: dcbHasBracket,
+          hasPage: dcbHasPage,
+          reason: (!dcbHasBracket ? '[종별] 누락' : '') + (!dcbHasBracket && !dcbHasPage ? ', ' : '') + (!dcbHasPage ? '단가 출처(p.NNN) 누락' : '')
+        });
+      }
+    }
+    
+    // recoveryCostBasis 검사
+    var rcb = (it.recoveryCostBasis || '').trim();
+    var rCost = it._recoveryCostVal || it.recoveryCost || 0;
+    if (rCost > 0 && rcb) {
+      var rcbHasBracket = /\[[^\]]+\]/.test(rcb);
+      var rcbHasPage = /p\.\s*\d+/i.test(rcb);
+      if (!rcbHasBracket || !rcbHasPage) {
+        problems.push({
+          field: 'recoveryCostBasis',
+          hasBracket: rcbHasBracket,
+          hasPage: rcbHasPage,
+          reason: (!rcbHasBracket ? '[종별] 누락' : '') + (!rcbHasBracket && !rcbHasPage ? ', ' : '') + (!rcbHasPage ? '단가 출처(p.NNN) 누락' : '')
+        });
+      }
+    }
+    
+    if (problems.length > 0) {
+      missings.push({
+        idx: idx,
+        no: it.no || (idx + 1),
+        damageType: (it.damageType || '').substring(0, 40),
+        problems: problems
+      });
+    }
+  });
+  
+  return { missings: missings };
+}
+
+// ★★★ ver8.30: 편람 시설명 + 종별·규격 누락 통합 경고 모달 ★★★
+function _showFacilitySpecMissingAlert(facilityMissing, specMissing) {
+  if ((!facilityMissing || !facilityMissing.missings || facilityMissing.missings.length === 0) &&
+      (!specMissing || !specMissing.missings || specMissing.missings.length === 0)) return;
+  
+  var existing = document.getElementById('facilitySpecMissingModal');
+  if (existing) existing.remove();
+  
+  // 최근 경고 기록
+  try {
+    var fcnt = (facilityMissing && facilityMissing.missings) ? facilityMissing.missings.length : 0;
+    var scnt = (specMissing && specMissing.missings) ? specMissing.missings.length : 0;
+    _recordAlert('facilitySpec', '편람시설명 ' + fcnt + '건 / 종별·규격 ' + scnt + '건 미명시', { facility: facilityMissing, spec: specMissing });
+  } catch(_) {}
+  
+  var modal = document.createElement('div');
+  modal.id = 'facilitySpecMissingModal';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:10001;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);padding:20px;';
+  
+  var bodyH = '';
+  if (facilityMissing && facilityMissing.missings && facilityMissing.missings.length > 0) {
+    bodyH += '<div style="margin-bottom:14px;">'
+      + '<div style="font-weight:700;color:#FFD180;font-size:13px;margin-bottom:8px;">📋 피해유형에 편람 시설명 미명시 (' + facilityMissing.missings.length + '건)</div>'
+      + '<div style="font-size:11px;color:var(--text2);margin-bottom:8px;line-height:1.6;">「2024 자연재난조사 편람」 공공시설피해관리 시설분류표(48개)의 시설명을 [대괄호]로 머리에 명시해야 합니다. 예: <b style="color:#90CAF9;">[소하천] 좌안 석축 호안 붕괴·유실</b></div>';
+    facilityMissing.missings.slice(0, 5).forEach(function(m) {
+      bodyH += '<div style="background:rgba(255,209,128,0.06);border-left:3px solid #FFD180;padding:8px 10px;margin-bottom:5px;border-radius:0 6px 6px 0;font-size:11.5px;">'
+        + '<div style="color:#FFE0B2;font-weight:600;margin-bottom:3px;">#' + m.no + ' — ' + _esc(m.damageType.substring(0, 60)) + '</div>'
+        + '<div style="color:var(--text2);font-size:10.5px;">↳ ' + m.reason + '</div>'
+        + '</div>';
+    });
+    if (facilityMissing.missings.length > 5) {
+      bodyH += '<div style="color:var(--text2);font-size:10.5px;margin-top:4px;">… 외 ' + (facilityMissing.missings.length - 5) + '건</div>';
+    }
+    bodyH += '</div>';
+  }
+  
+  if (specMissing && specMissing.missings && specMissing.missings.length > 0) {
+    bodyH += '<div style="margin-bottom:14px;">'
+      + '<div style="font-weight:700;color:#A5D6A7;font-size:13px;margin-bottom:8px;">💰 산출근거에 [종별]·규격·페이지 미명시 (' + specMissing.missings.length + '건)</div>'
+      + '<div style="font-size:11px;color:var(--text2);margin-bottom:8px;line-height:1.6;">「2024 복구단가표」의 [종별]공종명 규격 물량단위 × 단가원/단위 = 금액원 (p.NNN) 형식으로 작성. 예: <b style="color:#90CAF9;">[공통]석축 찰쌓기 H&lt;3m 30m² × 301,906원/m² = 9,057,180원 (p.168)</b></div>';
+    specMissing.missings.slice(0, 5).forEach(function(m) {
+      bodyH += '<div style="background:rgba(165,214,167,0.06);border-left:3px solid #A5D6A7;padding:8px 10px;margin-bottom:5px;border-radius:0 6px 6px 0;font-size:11.5px;">'
+        + '<div style="color:#C8E6C9;font-weight:600;margin-bottom:3px;">#' + m.no + ' — ' + _esc(m.damageType) + '</div>'
+        + '<div style="color:var(--text2);font-size:10.5px;">↳ ' + m.problems.map(function(p){ return p.field + ': ' + p.reason; }).join(' / ') + '</div>'
+        + '</div>';
+    });
+    if (specMissing.missings.length > 5) {
+      bodyH += '<div style="color:var(--text2);font-size:10.5px;margin-top:4px;">… 외 ' + (specMissing.missings.length - 5) + '건</div>';
+    }
+    bodyH += '</div>';
+  }
+  
+  modal.innerHTML = ''
+    + '<div style="background:linear-gradient(135deg,#1a2940,#0d1825);border:1px solid rgba(255,209,128,0.4);border-radius:14px;padding:22px;max-width:680px;width:96%;max-height:88vh;overflow-y:auto;box-shadow:0 12px 40px rgba(0,0,0,0.7);">'
+      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">'
+        + '<div style="font-size:30px;">📑</div>'
+        + '<div>'
+          + '<div style="font-size:15px;font-weight:800;color:#FFD180;">편람기준·복구단가 출처 명시 확인</div>'
+          + '<div style="font-size:11px;color:var(--text2);margin-top:2px;">감사 대비 — 시설명과 단가 출처를 명확히 표기하세요</div>'
+        + '</div>'
+      + '</div>'
+      + bodyH
+      + '<div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:6px;">'
+        + '<button onclick="document.getElementById(\'facilitySpecMissingModal\').remove()" style="background:rgba(255,255,255,0.06);color:var(--text2);border:1px solid rgba(255,255,255,0.15);padding:9px 16px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;">닫기</button>'
+        + '<button onclick="_autoFixFacilitySpec()" style="background:linear-gradient(135deg,#00B4D8,#0096B7);color:#fff;border:none;padding:9px 18px;border-radius:7px;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 3px 8px rgba(0,180,216,0.4);">🤖 AI 상담으로 정리하기</button>'
+      + '</div>'
+    + '</div>';
+  document.body.appendChild(modal);
+}
+
+// AI 상담으로 시설명·산출근거 정리 요청
+function _autoFixFacilitySpec() {
+  var modal = document.getElementById('facilitySpecMissingModal');
+  if (modal) modal.remove();
+  
+  var prompt = '전체 피해항목의 피해유형(damageType)에 「2024 자연재난조사 편람」 공공시설피해관리 시설분류표(48개)의 시설명을 [대괄호] 머리에 명시하고, '
+    + '산출근거(damageCostBasis, recoveryCostBasis)에 [종별]공종명 규격 물량단위 × 단가원/단위 = 금액원 (p.NNN) 형식으로 종별·규격·페이지를 모두 명기하도록 정리해줘. '
+    + '시설명·단가 종별 정합성도 확인. 다른 필드는 변경하지 말 것.';
+  
+  try {
+    var inputEl = document.getElementById('planReq');
+    if (inputEl) {
+      inputEl.value = prompt;
+      inputEl.focus();
+      // 채팅창 위치로 스크롤
+      inputEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  } catch(e) { console.warn('planReq 접근 실패', e); }
+}
+
+// ★★★ ver8.30: AI가 시설 식별 불가 시 사용자에게 확인 요청 모달 ★★★
+function _showFacilityUncertainModal(questions) {
+  if (!Array.isArray(questions) || questions.length === 0) return;
+  
+  var existing = document.getElementById('facilityUncertainModal');
+  if (existing) existing.remove();
+  
+  var modal = document.createElement('div');
+  modal.id = 'facilityUncertainModal';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10002;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);padding:20px;';
+  
+  var questionsH = questions.slice(0, 5).map(function(q, i) {
+    return '<div style="background:rgba(255,193,7,0.08);border:1px solid rgba(255,193,7,0.25);border-left:3px solid #FFC107;padding:10px 12px;margin-bottom:8px;border-radius:0 6px 6px 0;">'
+      + '<div style="color:#FFE082;font-weight:600;font-size:12.5px;margin-bottom:5px;">❓ ' + _esc(q) + '</div>'
+      + '<input type="text" id="facUncAns_' + i + '" placeholder="답변을 입력하세요 (예: 농어촌도로, 소하천, 지방하천 등)" style="width:100%;background:rgba(0,0,0,0.3);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:8px 10px;border-radius:5px;font-size:12px;outline:none;">'
+      + '</div>';
+  }).join('');
+  
+  modal.innerHTML = ''
+    + '<div style="background:linear-gradient(135deg,#1a2940,#0d1825);border:1px solid rgba(255,193,7,0.5);border-radius:14px;padding:24px;max-width:620px;width:96%;max-height:88vh;overflow-y:auto;box-shadow:0 12px 40px rgba(0,0,0,0.7);">'
+      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">'
+        + '<div style="font-size:32px;">🔍</div>'
+        + '<div>'
+          + '<div style="font-size:16px;font-weight:800;color:#FFC107;">편람기준 시설 식별 확인 요청</div>'
+          + '<div style="font-size:11px;color:var(--text2);margin-top:2px;">사진만으로 편람 시설명을 결정하기 어려운 항목이 있습니다</div>'
+        + '</div>'
+      + '</div>'
+      + '<div style="background:rgba(255,193,7,0.06);border:1px solid rgba(255,193,7,0.2);border-radius:8px;padding:10px 12px;margin-bottom:14px;font-size:11.5px;line-height:1.7;color:var(--text2);">'
+        + '💡 답변을 입력하시면 해당 시설명에 맞춰 피해금액·복구계획이 재산정됩니다. 일단 잠정 적용된 결과를 확인하시고 필요 시 답변 후 재분석하세요.'
+      + '</div>'
+      + questionsH
+      + '<div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:14px;">'
+        + '<button onclick="document.getElementById(\'facilityUncertainModal\').remove()" style="background:rgba(255,255,255,0.06);color:var(--text2);border:1px solid rgba(255,255,255,0.15);padding:9px 16px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;">잠정 결과 유지</button>'
+        + '<button onclick="_applyFacilityAnswers(' + questions.length + ')" style="background:linear-gradient(135deg,#FFA726,#F57C00);color:#fff;border:none;padding:9px 18px;border-radius:7px;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 3px 8px rgba(255,167,38,0.4);">📝 답변 적용 후 AI 정리</button>'
+      + '</div>'
+    + '</div>';
+  document.body.appendChild(modal);
+  // 첫 입력란 자동 포커스
+  setTimeout(function(){ var f = document.getElementById('facUncAns_0'); if (f) f.focus(); }, 100);
+}
+
+// 사용자 답변을 받아 AI 채팅창에 전달
+function _applyFacilityAnswers(count) {
+  var answers = [];
+  for (var i = 0; i < count; i++) {
+    var el = document.getElementById('facUncAns_' + i);
+    if (el && el.value.trim()) {
+      var q = (ANA.facilityQuestions && ANA.facilityQuestions[i]) ? ANA.facilityQuestions[i] : '질문' + (i+1);
+      answers.push('• ' + q + ' → ' + el.value.trim());
+    }
+  }
+  document.getElementById('facilityUncertainModal').remove();
+  
+  if (answers.length === 0) {
+    alert('답변을 1개 이상 입력해주세요.');
+    return;
+  }
+  
+  // facilityUncertain 플래그 해제 (재분석 트리거 후 다시 모달 뜨지 않도록)
+  ANA.facilityUncertain = false;
+  
+  var prompt = '편람기준 시설 식별 답변을 반영하여 전체 피해항목의 피해유형(damageType) 및 적용 단가를 재정리해줘.\n\n'
+    + '【사용자 확인 답변】\n' + answers.join('\n') + '\n\n'
+    + '※ damageType은 "[편람시설명] 구체피해" 형식으로 작성하고, 단가도 해당 시설명 종별에 맞춰 재산정. '
+    + '산출근거(damageCostBasis/recoveryCostBasis)도 [종별]공종명 규격 ~ (p.NNN) 형식으로 재작성.';
+  
+  try {
+    var inputEl = document.getElementById('planReq');
+    if (inputEl) {
+      inputEl.value = prompt;
+      inputEl.focus();
+      inputEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  } catch(e) { console.warn('planReq 접근 실패', e); }
 }
 
 // 일관성 모순 알림 모달
@@ -7360,6 +7708,198 @@ function _applyRestoreRecommendation() {
   _showDeleteToast('✓ ' + list.length + '개 항목 복원됨 (AI 권장)');
 }
 
+// ★★★ 복구금액(recoveryCost) 산정 헬퍼 ★★★
+// 우선순위: ① AI가 산정한 it.recoveryCost(숫자) → ② 폴백 산정 → ③ 0
+//  폴백 규칙(감사 안전): 원형복구는 피해금액(damageCost)을 복구금액 근사값으로 사용.
+//  신설(피해없음, damageCost=0)인데 recoveryCost도 없으면 산정 불가 → 0 + 재산정 표시.
+function _resolveRecoveryCost(it) {
+  if (!it) return { value: 0, derived: false };
+  // ① AI 산정값 우선 (숫자이고 0보다 큼)
+  var rc = it.recoveryCost;
+  if (typeof rc === 'string') rc = parseFloat(rc.replace(/[^0-9.\-]/g, ''));
+  if (typeof rc === 'number' && isFinite(rc) && rc > 0) {
+    return { value: Math.round(rc), derived: false };
+  }
+  // ② 폴백: 원형복구 + 피해금액 있음 → 피해금액을 복구금액 근사로 사용
+  var dc = it.damageCost || 0;
+  var irt = it.recoveryType || '원형복구';
+  if (dc > 0 && irt !== '개선복구') {
+    return { value: Math.round(dc), derived: true };
+  }
+  // ③ 산정 불가 (신설·개선인데 AI 미산정)
+  return { value: 0, derived: false };
+}
+
+// 복구금액 셀 HTML
+function _recoveryCostCellHtml(it) {
+  var v = (typeof it._recoveryCostVal === 'number') ? it._recoveryCostVal : _resolveRecoveryCost(it).value;
+  var derived = !!it._recoveryCostDerived;
+  if (v > 0) {
+    var html = fmtK(v);
+    if (derived) {
+      // 폴백 산정값 → 작은 ≈ 표시 (AI가 직접 산정한 값이 아님)
+      html = '<span title="AI가 복구금액을 직접 산정하지 않아 피해금액 기준으로 추정한 값입니다. 정밀 산정은 AI 상담에서 요청하세요.">≈ ' + html + '</span>';
+    }
+    return html;
+  }
+  // 0원: 신설/개선인데 미산정이면 재산정 안내, 그 외 0
+  var noteStr = (it.note || '') + ' ' + (it.damageCostBasis || '') + ' ' + (it.method || '');
+  var isNewOrImprove = (it.recoveryType === '개선복구') || /신설|개선|단면\s*확대|공법\s*강화/.test(noteStr);
+  if (isNewOrImprove) {
+    return '<span style="color:#FFB74D;font-size:10px;background:rgba(255,183,77,0.15);padding:1px 5px;border-radius:3px;" title="신설·개선 항목은 복구금액이 발생합니다. AI 상담에서 복구금액 산정을 요청하세요.">⚠ 산정필요</span>';
+  }
+  return '<span style="color:var(--text2);font-size:11px;">0</span>';
+}
+
+// ★ 산출근거 내 금액(4자리 이상 숫자)을 천단위 콤마로 포맷
+//   예: "301906*50 = 15095300 (p.168)" → "301,906*50 = 15,095,300 (p.168)"
+//   (p.168 등 3자리 이하는 콤마 미적용, 페이지·치수 보존)
+function _commaInBasis(str) {
+  if (!str) return '';
+  return String(str).replace(/\d{4,}/g, function(n) {
+    return Number(n).toLocaleString('en-US');
+  });
+}
+
+// ★ 산출근거에서 중간 계산과정 생략
+//   "A x a + B x b = 38,631,780 + 11,561,462 = 51,044,466원" 처럼 = 가 2개 이상이면
+//   중간 계산(각 항의 곱셈 결과 나열)을 제거하고 "A x a + B x b = 최종합계원" 만 남김
+function _stripCalcSteps(str) {
+  if (!str) return '';
+  var s = String(str);
+  var eqCount = (s.match(/=/g) || []).length;
+  if (eqCount >= 2) {
+    var first = s.indexOf('=');
+    var last = s.lastIndexOf('=');
+    s = s.substring(0, first).trim() + ' = ' + s.substring(last + 1).trim();
+  }
+  return s;
+}
+
+// ★ 사진 썸네일 맵 (세션 메모리, localStorage 미저장 → 저장공간 절약)
+//   파일명 → dataURL. 일괄분석/단일분석 시 채워지고, 대장 '사진출처' hover 시 미리보기.
+var _SRC_THUMBS = {};
+
+// 사진출처 hover 미리보기
+function _showSrcThumb(ev, fname) {
+  try {
+    var url = _SRC_THUMBS[fname];
+    if (!url) return;
+    var box = document.getElementById('_srcThumbPreview');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = '_srcThumbPreview';
+      box.style.cssText = 'position:fixed;z-index:99999;pointer-events:none;border:2px solid #B388FF;border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,0.6);background:#000;padding:3px;';
+      document.body.appendChild(box);
+    }
+    box.innerHTML = '<img src="' + url + '" style="max-width:320px;max-height:240px;display:block;border-radius:5px;">'
+      + '<div style="font-size:10px;color:#B388FF;text-align:center;padding:3px 0 1px;font-weight:700;">📷 ' + _esc(fname) + '</div>';
+    box.style.display = 'block';
+    var x = ev.clientX + 18, y = ev.clientY + 14;
+    // 화면 밖으로 안 나가게 보정
+    if (x + 340 > window.innerWidth)  x = ev.clientX - 350;
+    if (y + 270 > window.innerHeight) y = window.innerHeight - 280;
+    box.style.left = Math.max(6, x) + 'px';
+    box.style.top  = Math.max(6, y) + 'px';
+  } catch(e) {}
+}
+function _hideSrcThumb() {
+  var box = document.getElementById('_srcThumbPreview');
+  if (box) box.style.display = 'none';
+}
+
+// 사진출처 셀 HTML — 다중분석(일괄) 시 어느 사진(파일명)에서 나온 항목인지 표시 + hover 미리보기
+function _srcPhotoCellHtml(it) {
+  if (!it) return '<span style="color:var(--text2);font-size:10px;">현장종합</span>';
+  var file = it._srcPhoto || '';   // 실제 파일명 (예: a002_소하천유실.png)
+  var hint = it._srcHint || '';
+  // 구버전 호환: note의 📷태그에서 추출
+  if (!file && it.note) {
+    var m = (it.note || '').match(/📷\s*([^\s·|,]+)/);
+    if (m) hint = m[1];
+  }
+  // ★ 파일명 우선 기재 (없으면 힌트)
+  var fname = file || hint;
+  if (!fname) return '<span style="color:var(--text2);font-size:10px;">현장종합</span>';
+  var disp = fname.replace(/\.[^.]+$/, '');  // 확장자 제거하여 표시
+  var label = disp.length > 18 ? disp.substring(0, 17) + '…' : disp;
+  var hasThumb = !!_SRC_THUMBS[fname];
+  var hoverAttr = hasThumb
+    ? ' onmouseover="_showSrcThumb(event,\'' + _esc(fname).replace(/'/g, "\\'") + '\')" onmousemove="_showSrcThumb(event,\'' + _esc(fname).replace(/'/g, "\\'") + '\')" onmouseout="_hideSrcThumb()" style="cursor:zoom-in;"'
+    : ' style="cursor:default;"';
+  return '<span title="' + _esc(fname) + (hasThumb ? ' (마우스를 올리면 사진 미리보기)' : '') + '"' + hoverAttr
+    + '><span style="display:inline-block;padding:2px 7px;border-radius:10px;background:rgba(124,77,255,0.15);color:#B388FF;font-size:10px;font-weight:700;white-space:nowrap;">📷 ' + _esc(label) + '</span></span>';
+}
+
+
+// ★★★ 대장 위 '분석에 사용한 사진' 갤러리 ★★★
+//   일괄분석: 각 항목의 _srcPhoto(파일명) → _SRC_THUMBS 썸네일
+//   단일분석: IMGS 전체 사진
+//   대장의 '사진출처' 컬럼과 대조하며 피해현황을 바로 비교 가능
+function _renderDmgPhotoStrip(r) {
+  var el = document.getElementById('dmgPhotoStrip');
+  if (!el) return;
+  var photos = [];   // {name, url}
+  var seen = {};
+  // 1) 일괄분석: items의 _srcPhoto 수집
+  (r && r.items ? r.items : []).forEach(function(it) {
+    var f = it._srcPhoto;
+    if (f && !seen[f] && _SRC_THUMBS[f]) {
+      photos.push({ name: f, url: _SRC_THUMBS[f] });
+      seen[f] = 1;
+    }
+  });
+  // 2) 단일분석: 위에서 못 찾았으면 IMGS 사용
+  if (photos.length === 0 && typeof IMGS !== 'undefined' && IMGS && IMGS.length > 0) {
+    IMGS.forEach(function(im) {
+      if (im && im.name && !seen[im.name]) {
+        var url = im.data || (im.base64 ? ('data:' + (im.fileType || 'image/jpeg') + ';base64,' + im.base64) : '');
+        if (url) { photos.push({ name: im.name, url: url }); seen[im.name] = 1; }
+      }
+    });
+  }
+  if (photos.length === 0) { el.style.display = 'none'; el.innerHTML = ''; return; }
+  el.style.display = 'block';
+
+  var cards = photos.map(function(p) {
+    var disp = p.name.replace(/\.[^.]+$/, '');
+    var label = disp.length > 16 ? disp.substring(0, 15) + '…' : disp;
+    var safeUrl = (p.url || '').replace(/'/g, "\\'");
+    var safeName = _esc(p.name).replace(/'/g, "\\'");
+    return '<div onclick="_showBigPhoto(\'' + safeUrl + '\',\'' + safeName + '\')" '
+      + 'style="width:120px;cursor:zoom-in;flex-shrink:0;" title="클릭하면 크게 보기">'
+      + '<img src="' + p.url + '" style="width:120px;height:88px;object-fit:cover;border-radius:6px;border:1px solid var(--border);display:block;">'
+      + '<div style="font-size:9px;color:#B388FF;margin-top:3px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700;">📷 ' + _esc(label) + '</div>'
+      + '</div>';
+  }).join('');
+
+  el.innerHTML =
+    '<details open style="margin-bottom:10px;background:rgba(124,77,255,0.06);border:1px solid rgba(124,77,255,0.22);border-radius:8px;">'
+    + '<summary style="padding:8px 12px;font-size:12px;color:#B388FF;font-weight:700;cursor:pointer;user-select:none;">'
+    +   '📷 분석에 사용한 사진 <span style="color:var(--accent);">(' + photos.length + '장)</span> '
+    +   '<span style="color:var(--text2);font-weight:400;font-size:10px;">— 아래 대장의 \'사진출처\'와 대조하여 비교하세요 (클릭 시 확대)</span>'
+    + '</summary>'
+    + '<div style="display:flex;flex-wrap:wrap;gap:10px;padding:6px 12px 12px;">' + cards + '</div>'
+    + '</details>';
+}
+
+// 사진 확대 모달
+function _showBigPhoto(url, name) {
+  if (!url) return;
+  var ov = document.getElementById('_bigPhotoModal');
+  if (!ov) {
+    ov = document.createElement('div');
+    ov.id = '_bigPhotoModal';
+    ov.style.cssText = 'position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,0.88);display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:zoom-out;';
+    ov.onclick = function(){ ov.style.display = 'none'; };
+    document.body.appendChild(ov);
+  }
+  ov.innerHTML = '<img src="' + url + '" style="max-width:92vw;max-height:84vh;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,0.7);">'
+    + '<div style="color:#B388FF;font-size:13px;font-weight:700;margin-top:12px;">📷 ' + _esc(name || '') + '</div>'
+    + '<div style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:6px;">(클릭하면 닫기)</div>';
+  ov.style.display = 'flex';
+}
+
 function renderAna(r) {
   var sc = { '경미':'var(--success)', '중간':'var(--gold)', '심각':'var(--warn)', '매우심각':'#e74c3c' };
   // ★ 복구구분 배지 (원형/개선)
@@ -7382,6 +7922,16 @@ function renderAna(r) {
   document.getElementById('anaResult').innerHTML = h;
   // ★ 순번 자동 재부여 (삭제/추가 후 연속번호 유지)
   (r.items || []).forEach(function(it, idx) { it.no = idx + 1; });
+  // ★★★ 복구금액(recoveryCost) 산정 + 합계 ★★★
+  // 우선순위: AI 산정 it.recoveryCost > 폴백(원형복구=피해금액 환산) > 0
+  var _totalRecovery = 0;
+  (r.items || []).forEach(function(it) {
+    var rc = _resolveRecoveryCost(it);
+    it._recoveryCostVal = rc.value;      // 표시용 캐시
+    it._recoveryCostDerived = rc.derived; // 폴백 산정 여부
+    _totalRecovery += rc.value;
+  });
+  r.totalRecovery = _totalRecovery;
   var rows = '';
   (r.items || []).forEach(function(it, idx) {
     // ★ 각 item의 복구구분 배지 (클릭 가능 토글)
@@ -7446,12 +7996,17 @@ function renderAna(r) {
       + '<td>' + irtBadge + '</td>'
       + '<td style="font-size:11px;text-align:left;' + textStyle + '">' + methodCell + '</td>'
       + '<td style="font-size:11px;text-align:left;' + textStyle + '">' + recQtyCell + '</td>'
+      + '<td data-col="recbasis" style="font-size:11px;text-align:left;line-height:1.4;' + textStyle + '">' + _expandableText(_commaInBasis(_stripCalcSteps(it.recoveryCostBasis || '')), 80, 'rb' + idx) + '</td>'
+      + '<td class="num" style="font-size:11px;' + textStyle + '">' + _recoveryCostCellHtml(it) + '</td>'
+      + '<td data-col="srcphoto" style="font-size:10px;text-align:left;">' + _srcPhotoCellHtml(it) + '</td>'
       + '<td data-col="note" style="text-align:left;padding:5px 6px;' + textStyle + '">' + _formatNoteWithCheck(it.note||'') + '</td>'
       + '</tr>';
   });
-  rows += '<tr class="trow"><td colspan="4">합  계</td><td class="num">' + fmtK(r.totalDamage) + '</td><td colspan="5"></td></tr>';
+  rows += '<tr class="trow"><td colspan="4">합  계</td><td class="num">' + fmtK(r.totalDamage) + '</td><td colspan="5"></td><td class="num">' + fmtK(r.totalRecovery || 0) + '</td><td colspan="2"></td></tr>';
   document.getElementById('dmgBody').innerHTML = rows;
   document.getElementById('dmgCard').style.display = 'block';
+  // ★ 대장 위 '분석에 사용한 사진' 갤러리 갱신
+  try { _renderDmgPhotoStrip(r); } catch(e) {}
   // 체크박스 상태 초기화 + 되돌리기 버튼 표시
   _updateDamageDeleteUi();
   // ★ ver7.92: 컬럼 표시 옵션 상태 재적용 (재렌더링 시 토글 상태 유지)
@@ -7475,7 +8030,7 @@ function renderAna(r) {
       + '<button onclick="rpCopyStructSpec()" title="구분·형식·규격만 복사하여 다른 곳에 활용" style="margin-left:10px;background:linear-gradient(135deg,#1565C0,#00B4D8);color:#fff;border:none;padding:4px 10px;border-radius:5px;font-size:11px;font-weight:700;cursor:pointer;">📋 복사</button>'
       + '<span style="margin-left:auto;font-size:10px;font-weight:400;color:var(--text2);">📐 버튼: 해당 행 형식에 맞는 표준단면도</span>'
       + '</div>'
-      + '<div style="overflow-x:auto;"><table class="tbl"><thead><tr>'
+      + '<div style="overflow-x:auto;"><table class="tbl" id="structTbl"><thead><tr>'
       + '<th style="width:20%">구분</th><th style="width:14%">형식</th>'
       + '<th style="width:34%">규격</th><th style="width:22%">비고</th>'
       + '<th style="width:10%;text-align:center;">단면도</th>'
@@ -7518,7 +8073,9 @@ function renderAna(r) {
     var stDiv = document.createElement('div');
     stDiv.id = 'structCard';
     stDiv.innerHTML = stHtml;
-    document.getElementById('dmgCard').after(stDiv);
+    // ★ AI상담(planCard) 아래에 구조물제원 배치 → 대장 → AI상담 → 구조물제원
+    var _stAnchor = document.getElementById('planCard') || document.getElementById('dmgCard');
+    _stAnchor.after(stDiv);
   }
 
     // ★ 복구계획 자동 생성
@@ -9434,7 +9991,55 @@ function _commonPrinciples() {
     + '   ▸ 적용 원칙: ① 돌망태 단독 vs ② 상부 호안공법(호안블럭·식생매트) 조합을 현장 여건·수리특성으로 판단.\n'
     + '     산정근거에 선정 사유 명기 (예: "설계유속 V=○m/s, 허용소류력 기준 돌망태+호안블럭 조합 적정").\n'
     + '     수치 정보 없으면 "현장 유속·소류력 검토 필요" 명기 후 보수적으로 기초보호(돌망태) 우선 계상.\n'
-    + '   ▸ 자기검증: 호안·하천 구조물 복구 시 응답 폐기 전 "기초 세굴방지(돌망태) 검토했나 + 상부 공법이 소류력에 적정한가" 자문.\n\n';
+    + '   ▸ 자기검증: 호안·하천 구조물 복구 시 응답 폐기 전 "기초 세굴방지(돌망태) 검토했나 + 상부 공법이 소류력에 적정한가" 자문.\n\n'
+    + '◆ ★★★ 원칙 9 (편람기준 시설명 필수 명시 - 피해유형 작성 규칙) ★★★\n'
+    + '   ▸ 「2024 자연재난조사 및 복구계획수립 편람」 공공시설피해관리 시설분류표 (48개 시설명, 16개 대분류)\n'
+    + '     - 「도로」: 고속국도, 일반국도, 지방도, 특별·광역시도, 시도, 군도, 구도, 시군도(통합)\n'
+    + '     - 「농어촌도로」: 농어촌도로(면·리·농도) / 「비법정도로」: 비법정도로\n'
+    + '     - 「교량」: 고속국도내 교량, 일반국도내 교량, 지방도내 교량, 시군도내 교량, 농어촌도로·비법정도로내 교량\n'
+    + '     - 「도로시설물」: 토공(도로사태·침식·유실), 포장공(아스콘·콘크리트), 옹벽(중력식·역T형·보강토), 암거·날개벽·배수관, L형측구·산마루측구, 낙석방지책·방호벽·가드레일\n'
+    + '     - 「하천」: 국가하천, 지방하천(대규모), 지방하천(중소규모) / 「소하천」: 소하천\n'
+    + '     - 「상수도」: 광역상수도(K-water), 지방상수도·마을상수도 / 「하수도」: 하수처리시설·하수관거\n'
+    + '     - 「공원시설」: 국립공원 탐방로, 도립공원, 군립공원\n'
+    + '     - 「농업시설(수리)」: 저수지·양수장·배수장·취입보, 용배수로·방조제·관정\n'
+    + '     - 「항만어항시설」: 항만(T.T.P·피복석·사석), 지방어항·소규모항\n'
+    + '     - 「학교시설」: 학교 담장·교사·부속시설\n'
+    + '     - 「산림시설」: 산사태·사방시설, 사방댐·야계사방·골막이, 임도·자연휴양림·수목원, 가로수\n'
+    + '     - 「철도시설」: 궤도·노반·도상·교대·교각 / 「소규모시설」: 농로, 소교량, 세천·세월교\n'
+    + '     - 「군시설」: 병영건물·울타리·심정·탄약고 / 「문화재시설」: 건물·기단·담장·성곽·석축\n'
+    + '     - 「임시주거시설」: 임시조립주택 / 「행안부기타」: 자전거도로\n'
+    + '   ▸ damageType(피해유형) 작성 형식 = "[편람시설명] 구체피해 묘사" — 시설명을 반드시 머리에 명시\n'
+    + '     - 올바른 예: "[소하천] 좌안 석축 호안 붕괴·유실"\n'
+    + '     - 올바른 예: "[농어촌도로(면·리·농도)] 비탈면 토사 유실"\n'
+    + '     - 올바른 예: "[암거·날개벽·배수관] 흄관 노출·파손 및 기초 유실"\n'
+    + '     - 올바른 예: "[옹벽(중력식·역T형·보강토)] 본체 전도 및 기초 세굴"\n'
+    + '     - 올바른 예: "[토공(도로사태·침식·유실)] 도로 사면 토사 유실"\n'
+    + '     - 잘못된 예: "소하천 우안 석축 붕괴" ← 대괄호[]로 시설명 명시 안 됨 ✗\n'
+    + '     - 잘못된 예: "도로 사면 유실" ← 편람 시설명 미명시, 불명확 ✗\n'
+    + '   ▸ 시설 식별 불가 시 처리:\n'
+    + '     - 사진만으로 편람 시설명을 결정할 수 없을 때 (예: 시군도/농어촌도로/비법정도로 구분 불가, 국가하천/지방하천/소하천 구분 불가 등)\n'
+    + '     - 임의 추정 금지. 응답 JSON에 facilityUncertain=true, facilityQuestions=["사진의 도로가 시군도인지 농어촌도로인지 확인 필요", "..."] 명기\n'
+    + '     - 보수적으로 가장 보편적인 분류 (예: 도로 → 시군도, 하천 → 소하천)를 잠정 적용하고 위 facilityQuestions로 사용자 확인 요청\n'
+    + '   ▸ 시설명-단가 정합성: damageType의 편람시설명과 적용 단가의 종별이 일치해야 함\n'
+    + '     - 「소하천」 시설 → 소하천 단가표(p.188~190) 우선 적용\n'
+    + '     - 「농어촌도로」 시설 → 농어촌도로 단가 1,216,868원/m (p.169)\n'
+    + '     - 「시군도」 시설 → 시군도 단가 2,575,872원/m (p.169) 또는 일반도로 폭원별\n'
+    + '     - 「옹벽」 시설 → 옹벽 합성단가 (p.170)\n'
+    + '     - 시설명과 단가 종별이 다르면 자가검증에서 즉시 수정\n\n'
+    + '◆ ★★★ 원칙 10 (복구산출근거 = 종별·규격 명시 단가의 산출근거) ★★★\n'
+    + '   ▸ 「2024 자연재난조사 복구단가(공공시설)」 단가표는 [종별][공종명][규격][단가][단위] 5개 요소로 구성\n'
+    + '     - 예: 종별=공통, 공종=석축 찰쌓기, 규격=H=3m미만, 단가=301,906원, 단위=m²\n'
+    + '     - 예: 종별=도로, 공종=농어촌도로, 규격=표준단면, 단가=1,216,868원, 단위=m\n'
+    + '     - 예: 종별=배수관, 공종=흄관, 규격=D=600mm, 단가=217,257원, 단위=m\n'
+    + '   ▸ recoveryCostBasis(복구산출근거) 표기 형식 ★강화★:\n'
+    + '     형식: "[종별]공종명 규격 물량단위 × 단가원/단위 + [종별]공종명 규격 물량단위 × 단가원/단위 = 합계원 (p.NNN)"\n'
+    + '     - 올바른 예: "[공통]석축 찰쌓기 H<3m 30m² × 301,906원/m² + [소하천]석축-찰쌓기 철거 30m² × 19,277원/m² = 9,636,990원 (p.168,189)"\n'
+    + '     - 올바른 예: "[도로]농어촌도로 표준단면 15m × 1,216,868원/m = 18,253,020원 (p.169)"\n'
+    + '     - 올바른 예: "[배수관]흄관 D=600mm 24m × 217,257원/m = 5,214,168원 (p.171)"\n'
+    + '     - 잘못된 예: "301906원x30m² + 19277원x30m² = 9636990원" ← 종별·공종·규격 누락 ✗\n'
+    + '     - 잘못된 예: "석축 30m² × 301906원 = 9057180원" ← 규격(H<3m) 누락 ✗\n'
+    + '   ▸ damageCostBasis(피해산정근거)도 동일 형식 적용 (피해물량 기준)\n'
+    + '   ▸ 자기검증: recoveryCostBasis에 (종별/공종명/규격/단가/단위/페이지)가 모두 명기됐는지 응답 폐기 전 자문\n\n';
 }
 
 // ============================================================
@@ -20845,6 +21450,8 @@ function _batchPickFiles(files) {
         if (pending === 0) {
           // 원래 선택 순서대로 정렬
           _BATCH.files.sort(function(a, b){ return a._order - b._order; });
+          // ★ 사진출처 hover 미리보기용 썸네일 맵 채우기 (파일명 → dataURL)
+          _BATCH.files.forEach(function(bf){ if (bf.dataUrl) _SRC_THUMBS[bf.name] = bf.dataUrl; });
           _renderBatchFileList();
         }
       }
@@ -20912,7 +21519,7 @@ async function _batchStart() {
   var fac = document.getElementById('batchFacType').value || '공공시설';
   var baseLoc = document.getElementById('batchLoc').value || '';
   var memo = document.getElementById('batchMemo').value || '';
-  var delay = parseFloat(document.getElementById('batchDelay').value || '3') * 1000;
+  var delay = 3000;  // 사진 간 대기 3초 고정 (Rate Limit 방지)
 
   // UI 전환
   document.getElementById('batchStartBtn').style.display = 'none';
@@ -21057,12 +21664,10 @@ function _batchMergeResults(results, baseLoc) {
     if (s > maxSev) { maxSev = s; base.severity = ana.severity; }
     if (ana.overallRecoveryType === '개선복구') hasImprove = true;
 
-    // 항목 병합 (출처 사진명 태그)
+    // 항목 병합 (출처 사진명을 전용 필드에 저장 → 대장 '사진출처' 컬럼에 표시)
     (ana.items || []).forEach(function(it) {
-      // note 앞에 출처 사진 표시 (대장에서 어느 사진인지 식별)
-      var srcTag = '📷' + r.hint;
-      it.note = it.note ? (srcTag + ' · ' + it.note) : srcTag;
-      it._srcPhoto = r.file;
+      it._srcPhoto = r.file;   // 원본 파일명 (전체)
+      it._srcHint = r.hint;    // 간결 힌트 (예: 축대붕괴)
       base.items.push(it);
       addedItems++;
       addedDamage += (it.damageCost || 0);
