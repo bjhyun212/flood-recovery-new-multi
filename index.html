@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.47 (미사용 코드 정리 - 옛 함수 37개 제거 약 1,350줄 감량)</title>
+<title>복구설계시스템(BJH) ver8.48 (옛 버전 변경이력 주석 정리 - 18개 블록 약 180줄 추가 감량)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -126,7 +126,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.47</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.48</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -1655,13 +1655,6 @@ function go(i) {
   }
 }
 
-// ============================================================
-// ★★★ ver7.10: 관리자 모드 (탭5 검증·이력 접근 제한) ★★★
-// ============================================================
-// 기본 비밀번호: "kgt2026" (한국종합기술 2026)
-// 변경: localStorage에 'admin_pw_hash' 저장 (FNV-1a 해시)
-// 인증: localStorage에 'admin_session' 저장 (true/false)
-// 강의 시: 우측 상단 🔓 클릭 → 로그아웃 → 학생들은 탭5 못 봄
 
 var _DEFAULT_ADMIN_PW = 'kgt2026';  // 기본 비밀번호 (한국종합기술 2026)
 var _ADMIN_SESSION_KEY = 'flood_admin_session';
@@ -3315,24 +3308,7 @@ async function analyze() {
   btn.innerHTML = (ANA && ANA.items && ANA.items.length > 0) ? '🔄 재분석 (기존결과 초기화)' : '🤖 단일현장 분석 시작';
 }
 
-// ★★★ 신설 항목 자동 일관성 보정 (ver6.7) ★★★
-// AI 응답에서 note/damageCostBasis에 "신설"/"개선" 키워드가 있으나
-// recoveryType이 일치하지 않는 모순을 자동 보정합니다.
-// 보정 규칙:
-//   1. note 또는 damageCostBasis에 신설 키워드 있음
-//      → recoveryType = "개선복구" 강제
-//      → damageCost = 0 강제 (신설은 피해없음)
-//      → 보정 흔적: note 끝에 "[자동보정-개선신설]" 추가
-//   2. note에 "[개선복구-단면확대]" 또는 "[개선복구-공법강화]" 명기
-//      → recoveryType = "개선복구" 강제 (damageCost는 그대로 둠)
 
-// ★★★ 피해금액 0원 자동 복원 (ver6.8) ★★★
-// AI 상담(revisePlan) 시 사용자가 "정리/통합/재작성" 요청 시 AI가 잘못 damageCost=0으로 만든 경우 복원
-// 복원 조건 (모두 충족 시):
-//   1. ANA._original에 해당 piece의 이전 damageCost가 > 0으로 기록됨
-//   2. 현재 damageCost === 0
-//   3. note + damageCostBasis 어디에도 신설 키워드 없음 (진짜 신설이 아닌데 0으로 잘못 변경됨)
-//   4. damageType이 유지됨 (완전히 다른 항목으로 교체된 경우 제외)
 function _restoreDamageCostIfWronglyZeroed(ana) {
   var result = { count: 0, items: [] };
   if (!ana || !ana.items || !ana._original) return result;
@@ -4130,12 +4106,6 @@ function _showRoadUnitWarningAlert(detection) {
   document.body.appendChild(modal);
 }
 
-// ★★★ ver7.87: 단가-단위-공종명 정합성 자동 검증 ★★★
-// AI가 비슷한 공종을 헷갈려 잘못된 단가 적용한 경우 감지
-// 예: "소하천 석축-찰쌓기 철거"에 "소하천정비 표준"의 단가(1,770,739원/m) 적용
-// ★ ver7.95: 단가 검증 수동 트리거 (헤더 [🔍 단가 검증] 버튼 onclick)
-// 형님이 30년 경험으로 단가가 의심스러울 때 언제든 한 번에 검증.
-// curCost(수정용) 우선, 없으면 COST(원본) 검증.
 function manualUnitMismatchCheck() {
   var target = null;
   var targetLabel = '';
@@ -5361,13 +5331,6 @@ function _detectBasisCostMismatch(anaItems) {
     if (!basis) return;
     if (cost === undefined || cost === null) return;
     
-    // ★ ver7.94: 산정근거에서 최종 금액 추출 - 우선순위 적용
-    // [1순위] "합계 / 총 / 소계 / 총액 / 총합" 키워드 동반 금액 (최종 합산값)
-    //   예: "= 합계 6,266,437원", "총 6,266,437원", "소계 NN원"
-    // [2순위] 마지막 "= NN원" (단일 산식인 경우)
-    //   예: "1.4m³ × 38,575원 = 54,005원"
-    // → 형님 케이스: 산정근거 한 줄에 합성단가 + 부속공종 합산이 있을 때
-    //   마지막 = 29,024원(부속공종)이 아닌 합계 6,266,437원을 인식해야 정상
     var basisAmount = null;
     
     // 1순위: 합계 키워드 매칭
@@ -6905,15 +6868,6 @@ function _showRecoveryDoneNotice() {
   }, 30000);
 }
 
-// ============================================================
-// ★★★ ver7.20: 피해대장 항목 삭제/복원 시스템 ★★★
-// ============================================================
-// 삭제 = soft delete (deletedItems 스택에 보관 → 되돌리기 가능)
-// 삭제 시 연관 데이터 자동 갱신:
-//   - ANA.items에서 제거
-//   - curCost(설계내역서)에서 동일 damageNo 항목 제거
-//   - 총 피해금액 재계산
-//   - 단면도는 그대로 (사용자가 필요시 재생성)
 
 var _deletedDamageStack = [];  // 삭제 이력 (스택 - 최근 삭제부터 복원)
 
@@ -7237,16 +7191,6 @@ function _showDeleteToast(msg) {
   setTimeout(function(){ t.remove(); }, 3000);
 }
 
-// ============================================================
-// ★★★ ver7.21: AI 삭제 항목 복원 검토 ★★★
-// ============================================================
-// 사용자가 체크박스로 항목을 삭제한 후, 그중 "복구가 반드시 필요한" 
-// 항목을 AI가 다시 검토하여 자동 복원 추천
-//
-// 동작:
-// 1. _deletedDamageStack의 모든 삭제 항목 수집
-// 2. AI에게 "복구 필수 여부" 판정 요청
-// 3. 응답에 따라 자동 복원 또는 사용자 선택 모달
 async function _aiCheckDeletedItems() {
   if (_deletedDamageStack.length === 0) {
     alert('삭제된 항목이 없습니다.');
@@ -9922,12 +9866,6 @@ async function toTab2() {
     
     renderCostItems();
     calcCost();
-    // ※ ver5.5의 자동 syncDamageCost() 호출은 제거됨 (ver5.6)
-    //   이유: 설계내역서의 부속공종(석축·돌망태 등)이 부정확한 damageNo로 매핑되어
-    //   엉뚱한 본체(전신주 등)에 거액의 피해금액이 잘못 배분되는 문제 발생.
-    //   피해금액은 AI 피해분석 단계의 단가표 기준 산정값을 신뢰하고,
-    //   복구금액(설계내역서)은 별도로 운용. 필요시 ⚖️ 동기화 버튼으로 수동 호출.
-    // ★ ver5.9: 설계내역서 생성 완료 시 자동 이력 저장 (검증·이력 탭에서 편차 분석용)
     if (typeof _autoSaveCostHistory === 'function') {
       try { _autoSaveCostHistory(); } catch(e){}
     }
@@ -10859,12 +10797,6 @@ function renderChat() {
 }
 
 
-// ============================================================
-// ★ ver7.97: 공통 원칙 모듈 (모든 시스템프롬프트 공유)
-// 5개 프롬프트(analyze/toTab2/revisePlan/costChatSend/externalExtract)가
-// 동일하게 따라야 하는 핵심 원칙 5가지. 이전엔 각 프롬프트에 분산 중복되어
-// 약 30,000 토큰을 차지했으나, 한 함수로 모아 호출 시 약 1,500 토큰으로 압축.
-// ============================================================
 function _commonPrinciples() {
   return '【수해복구 설계 공통 핵심 원칙 - 모든 응답에 적용】\n'
     + '◆ 원칙 1 (합성단가 우선): NDMS 등재 H/규격이 현장 조건의 ±0.5m 이내면 합성단가 단독 적용. 부속공종(터파기·기초콘·뒷채움·거푸집·노상정리·보조기층·아스콘 등) 별도 계상 절대 금지. 합성단가에 이미 포함됨.\n'
@@ -12386,17 +12318,6 @@ function _fixFormulaResult(formula, newQty) {
   return src;
 }
 
-// ★ ver7.33: recoveryQty 텍스트의 중복 수량 메타 정보 정리
-// 설계내역서 수량 변경을 피해대장에 동기화하기 전에 반드시 호출
-// 
-// 정리 대상 (사용자가 적어두거나 AI가 생성한 텍스트):
-//   1. "[중복 제거: ..." 형태 메타 태그
-//   2. "[단일 적용: ..." / "[#1+#4 통합: ..." 형태
-//   3. 직전에 우리가 추가한 "[XX 수량변경: NNm²]" 태그
-//   4. "단일물량 1,200m³ 적용" 같은 통합 안내 문구
-//   5. "692m² → 700m² 단일 적용" 같은 화살표 변환 문구
-//
-// 정리 후 결과: 순수한 "공종명 NN단위(산식)" 목록만 남김
 function _cleanRedundantQtyText(text) {
   if (!text) return '';
   var src = text;
@@ -12445,16 +12366,6 @@ function _cleanRedundantQtyText(text) {
   return src;
 }
 
-// 산식 문자열에서 수량을 계산 (편집된 산식 전용 파서)
-// "L=15 × W=2.5 × H=0.3 = 11.25" 또는 "15 × 2.5 × 0.3" 같은 형태
-// 우선순위: "= NN" 우측 값 → 단순 곱셈식 직접 계산
-// ★★★ ver7.6: 산출근거 자동 단순화 ★★★
-// AI가 사고 과정을 길게 적은 경우 → 핵심 산식만 추출
-// 원칙:
-//   1. 첫 곱셈식과 결과만 남김
-//   2. "재매설", "신설가 N%", "단가 적용" 같은 단가 산출 설명 제거
-//   3. "→", "≑", "약 N원/m" 같은 추정/대안 표현 제거
-//   4. 100자 넘으면 핵심 산식만 추출
 function _simplifyCalcFormula(calc) {
   if (!calc || typeof calc !== 'string') return calc || '';
   
@@ -13016,13 +12927,6 @@ function _closeQtyChangeModal() {
   window._pendingQtyChange = null;
 }
 
-// ★★★★★ ver7.46: 수량 변경 후 ANA 전체 AI 정합화 ★★★★★
-// 사용자가 설계내역 수량을 직접 수정한 것은 "초기 AI 피해물량 분석을 바로잡은" 의미.
-// → 단순 recoveryQty 패턴 치환을 넘어 damageType·quantity·damageCostBasis·damageCost
-//    까지 일관되게 갱신해야 하며, 분석요약(summary)과 구조물제원(structures)에도 
-//    동일 항목 관련 수치가 있다면 함께 갱신되어야 함.
-// 구현: AI에게 변경 항목 + 현재 ANA(해당 item·structures·summary)를 보내고,
-//       정합화된 JSON을 받아 사용자 확인 후 반영.
 async function _aiSyncAnaAfterQtyChange(costIdx, oldQty, newQty, newCalc, anaItem) {
   if (!CURRENT_USER_ID) return;
   if (!ANA || !anaItem) return;
@@ -13481,8 +13385,6 @@ function syncDamageCost() {  if (!ANA || !ANA.items || !curCost || curCost.lengt
 // ============================================================
 
 
-
-
 // ============================================================
 // 초기에는 빈 상태 (피해대장 전송 시 자동 채워짐)
 // addItem(); // 빈 행 없이 시작
@@ -13490,7 +13392,6 @@ function syncDamageCost() {  if (!ANA || !ANA.items || !curCost || curCost.lengt
 
 // ============================================================
 // ★ 다른 이름으로 저장 (showSaveFilePicker API)
-// ============================================================
 // ============================================================
 // xlsx 파일에 인쇄 설정 직접 주입 (xlsx-js-style의 한계 우회)
 // xlsx-js-style은 !pageSetup/!printHeader를 출력 안 함 → JSZip으로 ZIP 내부 XML 직접 수정
@@ -13705,15 +13606,6 @@ async function saveAsXlsx(wb, defaultName, targetDirHandle, printSettings) {
   setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
 }
 
-// ============================================================
-// ★ 여러 JSON 취합 → 1줄씩 엑셀 저장
-// ============================================================
-// ★ ver7.26: 일반 취합 - 파일 선택 후 저장 폴더 선택
-// 1) 사용자가 [📊 취합] 클릭 → 파일 다중 선택
-// 2) 저장 폴더 선택 (showDirectoryPicker - 브라우저 지원 시)
-// 3) 미지원 시 다운로드 폴더로 fallback
-// ★ ver7.27: 취합 시작 - 폴더 선택 먼저 → 파일 선택 (사용자 제스처 컨텍스트 보존)
-// ★ ver7.28: 사용자 혼동 방지 - 폴더 선택 단계 명확한 안내
 async function startMerge() {
   // ★ 안내 토스트 (폴더 선택 단계 명확히 표시)
   var stepInfo = document.createElement('div');
@@ -13799,27 +13691,6 @@ async function startMerge() {
   inp.click();
 }
 
-// ============================================================
-// ★★★ ver7.34: NDMS 표준 엑셀 일괄 변환 시스템 ★★★
-// ============================================================
-// 흐름:
-//   1. [📋 NDMS 일괄] 클릭
-//   2. 저장 폴더 선택 (사용자 제스처)
-//   3. JSON 다중 선택
-//   4. 시트 선택 모달 (체크박스 5개)
-//   5. 기본 정보 입력 (재난번호, 보고기관 등)
-//   6. AI 매핑 (시설코드·재난원인 추론) - 사업별 1회 호출
-//   7. NDMS 엑셀 생성 + 저장
-//
-// AI 매핑 항목:
-//   - 시설코드 (5-01 국가하천, 3-02 시도 등 15분류 + 세부)
-//   - 재난원인 코드 (10 호우, 20 태풍 등 10종)
-//   - 개선복구 세분류 (단면확대/공법강화/신설 등)
-//   - 심각도 코드 (경미/중간/심각/매우심각)
-//
-// 메모:
-//   - 사용자가 검토·수정 가능하도록 모달에 미리보기
-//   - 매핑 결과 캐시 (동일 파일 재변환 시 빠름)
 window._ndmsPending = null;  // 현재 변환 진행 상태
 
 async function startNDMSExport() {
@@ -14094,12 +13965,6 @@ async function _executeNDMSExport() {
     _updateNDMSProgress('파일 저장 중...', 95);
     var defaultName = 'NDMS_수해피해조사_' + new Date().toISOString().slice(0,10);
     
-    // ★ ver7.35: 시트별 반복 헤더 (선택된 시트 순서대로)
-    // 시트①: 1~8행 (타이틀+보고정보+헤더 2단)
-    // 시트②: 1~4행 (타이틀+헤더)
-    // 시트③: 없음 (1페이지로 끝)
-    // 시트④: 1~4행 (타이틀+헤더)
-    // 시트⑤: 없음 (참고용)
     var multiSheetTitles = [];
     if (opts.sheets.s1) multiSheetTitles.push({ titleRows: '1:8' });
     if (opts.sheets.s2) multiSheetTitles.push({ titleRows: '1:4' });
@@ -15590,7 +15455,6 @@ function _ndmsBuildSheet5(wb, sites, opts) {
 }
 
 
-
 // ★ 폴더취합 - showDirectoryPicker로 폴더 선택 (읽기+쓰기 권한)
 // 폴더 안의 모든 JSON 재귀 탐색 → 취합 → 같은 폴더에 결과 엑셀 저장
 async function pickFolderAndMerge() {
@@ -16894,8 +16758,6 @@ function saveStdRefFromForm() {
 }
 
 
-
-
 // ============================================================
 // 보고서
 // ============================================================
@@ -17285,7 +17147,6 @@ function printRpt() {
 // 이미지 캔버스 리사이즈 헬퍼
 // Word가 base64의 자연 픽셀을 우선 사용하는 문제 해결
 // 모든 base64 이미지를 지정된 폭(target_w)으로 캔버스에서 재렌더링
-// ============================================================
 // ============================================================
 // dlWordReal — docx 라이브러리로 진짜 .docx 생성
 // 1단계: 라이브러리 동작 검증 + 기본 텍스트 + 제목 + 가운데정렬
@@ -17898,7 +17759,6 @@ async function dlWordReal() {
 }
 
 
-
 // genDraw()는 버튼 클릭 시에만 실행
 
 // ============================================================
@@ -17916,7 +17776,6 @@ var RP = {
 // 박스 자동 분산 알고리즘
 // AI가 반환한 박스 위치를 받아서, 박스 크기를 추정하고
 // 겹치는 박스끼리 자동으로 떨어뜨림
-// ============================================================
 // ============================================================
 // label에서 앞에 붙은 번호 제거 (번호 원과 중복 방지)
 // ①②③④⑤⑥⑦⑧⑨⑩... 또는 1./1)/(1)/[1] 같은 패턴 제거
@@ -19379,23 +19238,6 @@ function _meShowSuccess(fname) {
   setTimeout(function(){ msg.remove(); }, 5000);
 }
 
-// ============================================================
-// ★★★★★ ver7.48: 외부 AI 답변 자동 감지 + 추출 모드 ★★★★★
-// ============================================================
-// 사용자가 외부 AI(ChatGPT, Gemini 등)에게 받은 검토 답변을
-// AI 엔지니어링 상담 박스에 통째로 붙여넣으면, 시스템이 자동으로
-// 핵심 변경사항만 추출해 피해대장(items)에 반영하는 기능.
-//
-// 흐름:
-//   1. 사용자가 textarea에 300자 이상 답변 붙여넣기
-//   2. 입력 직후 _planReqPasteCheck()가 외부AI 답변 패턴 감지
-//   3. 화면 상단 힌트(planReqHint)에 "🤖 외부 AI 답변 감지 (Ctrl+Enter로 추출)" 표시
-//   4. 사용자 Ctrl+Enter 또는 [질문·수정] 클릭
-//   5. revisePlan()에서 _detectExternalAiAnswer()로 재확인 → confirm
-//   6. _extractFromExternalAiAnswer() → AI에 추출 요청
-//   7. 변경 미리보기 모달 표시
-//   8. 사용자가 [모두 적용] 누르면 ANA.items에 반영
-// ============================================================
 
 // 외부 AI 답변 감지 - 단순 길이 + 패턴 검사
 function _detectExternalAiAnswer(text) {
@@ -19970,17 +19812,6 @@ function _applyExtractChanges() {
   setTimeout(function(){ msg.remove(); }, 4000);
 }
 
-
-// ════════════════════════════════════════════════════════════════════
-// ★ ver7.47: 구조물 표준단면도 통합 모듈
-// ════════════════════════════════════════════════════════════════════
-// 지원 형식: 중력식 옹벽, 역T형 옹벽, 석축 찰쌓기/메쌓기, 돌망태(게비온)
-// 호출: 구조물제원 표의 각 행 📐 버튼 → openSectionModal(ANA.structures index)
-// 동작: 1) 구조물.type 보고 단면도 종류 자동 매칭 (detectSectionType)
-//       2) 구조물.spec 문자열에서 치수 자동 파싱 (parseSpec)
-//       3) 입력란에 미리 채워서 모달 표시
-//       4) 사용자 수정 → SVG 재생성 → 적용/다운로드
-// ────────────────────────────────────────────────────────────────────
 
 // type → 단면도 종류 매핑
 function detectSectionType(typeStr) {
@@ -21789,23 +21620,9 @@ function secDownloadSVG() {
 // ════════════════════════════════════════════════════════════════════
 
 
-
-
-
-
-// ════════════════════════════════════════════════════════════════════
-// ★ ver7.54: 시스템 직접 그리기 — 통합 단면도 (양안 호안세트)
-// AI 의존 제거. 시스템이 정확한 SVG를 직접 코딩.
-// ────────────────────────────────────────────────────────────────────
-// 캡처 이미지 스타일을 따라 좌안+우안 + 기초콘크리트+돌망태+뒷채움+식생매트
-// 모두 정확한 위치에 한 그림으로 통합 표현.
-// ════════════════════════════════════════════════════════════════════
-
 // ────────────────────────────────────────────────────────────────────
 // 입력 데이터 추출 — ANA.structures + ANA.items에서 좌안/우안 정보 자동 분리
 // ────────────────────────────────────────────────────────────────────
-
-
 
 
 // ============================================================
