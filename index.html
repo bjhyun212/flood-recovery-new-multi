@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.44 (메뉴 순서 단일·다현장·재해대장 / 모순 의심 모달에 피해복구대장 N번 항목 + 문제점 분리 표시)</title>
+<title>복구설계시스템(BJH) ver8.46 (재해대장 단면도 잘림 수정 - 박스/SVG max-height 제거하여 자기 비율대로 표시)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.44</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.46</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -5814,10 +5814,40 @@ function _showFacilityUncertainModal(questions) {
   modal.id = 'facilityUncertainModal';
   modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10002;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);padding:20px;';
   
+  // ★ ver8.45: 질문 내용에 맞춘 placeholder 자동 생성 (기존 통일 placeholder는 부적절했음)
+  function _genFacPlaceholder(q) {
+    var s = String(q || '');
+    // "A인지 B인지" 또는 "A인지 B인지 C인지" 양자택일 패턴
+    var orMatches = s.match(/([가-힣A-Za-z·\d()\s]{2,}?)인지/g);
+    if (orMatches && orMatches.length >= 2) {
+      var opts = orMatches.slice(0, 3).map(function(m){
+        return m.replace(/인지$/, '').trim();
+      }).filter(function(o){ return o.length > 0 && o.length < 30; });
+      if (opts.length >= 2) return '예: ' + opts.join(' / ');
+    }
+    // 길이·치수 질문 (몇 m, 전폭, 노폭, 폭원)
+    if (/(몇\s*[mM]|몇\s*미터|전폭|노폭|폭원|두께|규격)/.test(s)) return '예: 4.0m, 6.0m, 10m';
+    // 직경·관경
+    if (/(관경|내경|외경|직경|[ΦφD])/.test(s)) return '예: D300, D600, φ1000';
+    // 위치·관할 (어디·관리청·행정구역)
+    if (/(어디|위치|관리청|행정구역|관할)/.test(s)) return '예: 군, 시, 충북 보은군';
+    // 개수·기수
+    if (/(몇\s*개|몇\s*기|수량|개소)/.test(s)) return '예: 1기, 3개소';
+    // 면적
+    if (/(면적|m[²2])/.test(s)) return '예: 30m², 50m²';
+    // 단가 적용 (어떤 단가/요율)
+    if (/(어떤\s*단가|단가\s*적용|요율)/.test(s)) return '예: 농어촌도로 단가, 시군도 단가';
+    // 시설 종류 (어떤 시설/구조물)
+    if (/(어떤\s*시설|어떤\s*구조|어떤\s*공법|시설\s*종류)/.test(s)) return '예: 옹벽, 석축, 호안블럭';
+    // 기본값
+    return '답변을 입력하세요';
+  }
+  
   var questionsH = questions.slice(0, 5).map(function(q, i) {
+    var ph = _genFacPlaceholder(q);
     return '<div style="background:rgba(255,193,7,0.08);border:1px solid rgba(255,193,7,0.25);border-left:3px solid #FFC107;padding:10px 12px;margin-bottom:8px;border-radius:0 6px 6px 0;">'
       + '<div style="color:#FFE082;font-weight:600;font-size:12.5px;margin-bottom:5px;">❓ ' + _esc(q) + '</div>'
-      + '<input type="text" id="facUncAns_' + i + '" placeholder="답변을 입력하세요 (예: 농어촌도로, 소하천, 지방하천 등)" style="width:100%;background:rgba(0,0,0,0.3);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:8px 10px;border-radius:5px;font-size:12px;outline:none;">'
+      + '<input type="text" id="facUncAns_' + i + '" placeholder="' + _esc(ph) + '" style="width:100%;background:rgba(0,0,0,0.3);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:8px 10px;border-radius:5px;font-size:12px;outline:none;">'
       + '</div>';
   }).join('');
   
@@ -9201,7 +9231,9 @@ function _buildDRPage3(groupItems, photoKey, pageIdx) {
   
   if (sectionable.length === 0) return '';
   
-  // 각 구조물 단면도 SVG 생성 ★ ver8.43: 박스 max-height 제한으로 페이지 잘림 방지
+  // 각 구조물 단면도 SVG 생성 ★ ver8.46: max-height 제거 - SVG가 자기 비율대로 표시 (잘림 방지)
+  //   SVG는 vector라 어차피 width:100%로 들어가면서 자기 aspect-ratio에 맞춰 자동 스케일됨
+  //   페이지 잘림은 페이지 자체의 클리핑(794px)이 처리 — 박스 단위 클리핑은 SVG만 자름
   var boxes = sectionable.map(function(st, i) {
     var svg = _generateSectionSVG(st);
     if (!svg) return '';
@@ -9209,12 +9241,12 @@ function _buildDRPage3(groupItems, photoKey, pageIdx) {
     var specShort = (st.spec || '').length > 80 
       ? (st.spec || '').substring(0, 78) + '…' 
       : (st.spec || '');
-    return '<div style="border:1.5px solid #000;padding:4px 6px 6px;background:#fff;break-inside:avoid;page-break-inside:avoid;max-height:88mm;overflow:hidden;">'
+    return '<div style="border:1.5px solid #000;padding:4px 6px 6px;background:#fff;break-inside:avoid;page-break-inside:avoid;">'
       + '<div style="text-align:center;font-weight:700;font-size:10.5px;color:#1565C0;margin-bottom:2px;border-bottom:1px solid #1565C0;padding-bottom:2px;">' 
         + (i+1) + '. ' + _escDR(label) + ' &mdash; ' + _escDR(st.name || '')
       + '</div>'
       + '<div style="font-size:9px;color:#444;margin-bottom:3px;text-align:left;line-height:1.3;"><b style="color:#666;">규격:</b> ' + _escDR(specShort) + '</div>'
-      + '<div style="text-align:center;background:#FAFAFA;border:1px solid #ddd;border-radius:3px;padding:3px;max-height:62mm;overflow:hidden;">' + svg + '</div>'
+      + '<div style="text-align:center;background:#FAFAFA;border:1px solid #ddd;border-radius:3px;padding:3px;">' + svg + '</div>'
       + '</div>';
   }).filter(Boolean).join('');
   
@@ -10950,19 +10982,23 @@ async function revisePlan() {
             setTimeout(function(){
               var confirmMsg;
               if (recoveryChanged) {
-                confirmMsg = '⚠️ 복구구분이 변경되었습니다.\n\n'
-                  + '복구공사비를 정확히 반영하려면 설계내역서를 재생성해야 합니다.\n'
-                  + '(현재 설계내역서는 변경 전 물량 기준이므로 공사비가 일치하지 않습니다)\n\n'
-                  + '지금 설계내역서를 재생성하시겠습니까?\n'
-                  + '[권장] 예: 변경된 복구물량으로 단가표 매칭 + 공사비 재산정\n'
-                  + '[비권장] 아니오: 탭2에서 수동으로 재생성 필요';
+                // ★ ver8.45: "설계내역서" → "재해대장" 용어 통일 + 다음 단계 명확화
+                confirmMsg = '⚠️ 복구구분(원형↔개선)이 변경되었습니다.\n\n'
+                  + '변경 사항이 피해·복구 대장에 반영되었습니다.\n'
+                  + '계속해서 [📋 재해대장]을 새로운 복구물량 기준으로 갱신하시겠습니까?\n\n'
+                  + '[권장] 예: 변경된 복구계획으로 재해대장 자동 갱신\n'
+                  + '[비권장] 아니오: 탭2에서 수동으로 [🔄 미리보기 갱신] 필요';
               } else {
-                confirmMsg = '복구계획이 수정되었습니다.\n\n수정된 내용으로 설계내역서를 작성하시겠습니까?';
+                // ★ ver8.45: 부적절한 "설계내역서 작성" 표현 제거 → 다음 단계 자연스러운 안내
+                confirmMsg = '✓ 복구계획이 피해·복구 대장에 반영되었습니다.\n\n'
+                  + '계속해서 [📋 재해대장]을 갱신하여 미리보기를 확인하시겠습니까?\n\n'
+                  + '[예] → [📋 재해대장] 탭으로 이동 + 미리보기 자동 갱신\n'
+                  + '[아니오] → 대장만 반영, 재해대장은 나중에 갱신';
               }
               if (confirm(confirmMsg)) {
                 toTab2();
               } else {
-                chatMessages.push({role:'system', text:'ℹ️ 설계내역서는 나중에 탭2에서 수동 생성할 수 있습니다.'});
+                chatMessages.push({role:'system', text:'ℹ️ [📋 재해대장] 탭에서 [🔄 미리보기 갱신] 클릭으로 언제든 반영할 수 있습니다.'});
                 renderChat();
               }
             }, 300);
