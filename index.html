@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.32 (재해대장 산출근거 표기 + 0원 좌측생략 + 복구내역 사진 라벨링)</title>
+<title>복구설계시스템(BJH) ver8.33 (사진 1장=페이지 1장 / 신설·개선 명시 / 우측사진 복구계획 라벨 오버레이)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.32</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.33</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -8751,32 +8751,102 @@ function _renderDR() {
     + '</table>'
     + '</div>';
   
-  // ==== 페이지 2: 피해 복구 세부내역 ====
-  // 분석 사진 (최대 4장씩 좌우 분할)
-  var photoStripHTML = (IMGS && IMGS.length > 0)
-    ? '<div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center;padding:6px;">'
-        + IMGS.slice(0, 4).map(function(img){
-            var src = (typeof img === 'string') ? img : (img.dataUrl || img.url || '');
-            return src ? '<img src="' + src + '" style="max-width:46%;max-height:70mm;object-fit:contain;border:1px solid #ccc;">' : '';
-          }).join('')
-      + '</div>'
-    : '<div style="text-align:center;color:#999;padding:30mm 0;">(피해사진 없음)</div>';
+  // ==== 페이지 2: 피해 복구 세부내역 (사진별로 분할 생성 — ver8.33) ====
+  // ★ ver8.33: 사진별 그룹화 → 사진 1장 = 페이지 1장 (다현장 분석 지원)
+  var grouped = _groupItemsByPhoto(ANA.items);
+  var totalPages2 = grouped.order.length;
+  var pages2HTML = '';
   
-  // ★ ver8.32: 산출근거 표 — 피해금액 0원 항목은 좌측 비우고 우측만 (복구계획에만 기록)
+  grouped.order.forEach(function(photoKey, gIdx) {
+    var groupItems = grouped.groups[photoKey];
+    var photoUrl = _findPhotoUrl(photoKey);
+    pages2HTML += _buildDRPage2(groupItems, photoUrl, photoKey, gIdx + 1, totalPages2);
+  });
+  
+  // 페이지2가 하나도 없으면 빈 페이지 폴백 (이론상 도달 안 함, items.length === 0 케이스는 위에서 early return)
+  if (!pages2HTML) {
+    pages2HTML = '<div class="dr-page" style="width:297mm;min-height:210mm;padding:20mm;margin:0 auto 10mm;background:#fff;text-align:center;color:#999;box-shadow:0 0 10px rgba(0,0,0,0.15);">'
+      + '<div style="font-size:48px;margin-bottom:14px;">📋</div>'
+      + '<div>피해 항목이 없어 세부내역을 생성할 수 없습니다.</div>'
+      + '</div>';
+  }
+  
+  document.getElementById('drPreview').innerHTML = 
+    '<div id="drPaperWrap" style="background:#e8e8e8;padding:14px;border-radius:8px;">'
+    + page1 + pages2HTML
+    + '</div>';
+}
+
+// ★ ver8.33: 사진별 그룹화 — 다현장 분석 시 사진 1장 = 페이지 1장
+function _groupItemsByPhoto(items) {
+  if (!items || items.length === 0) return { groups: {}, order: [] };
+  var groups = {};
+  var order = [];
+  items.forEach(function(it) {
+    // 우선순위: _srcPhoto(파일명) > _srcHint > 단일분석 키
+    var key = it._srcPhoto || it._srcHint || '__SINGLE__';
+    if (!groups[key]) {
+      groups[key] = [];
+      order.push(key);
+    }
+    groups[key].push(it);
+  });
+  return { groups: groups, order: order };
+}
+
+// 사진 URL 찾기 (다중·단일 모두 지원)
+function _findPhotoUrl(photoKey) {
+  if (!photoKey || photoKey === '__SINGLE__') {
+    // 단일분석: IMGS의 첫 사진
+    if (typeof IMGS !== 'undefined' && IMGS && IMGS.length > 0) {
+      var im = IMGS[0];
+      if (typeof im === 'string') return im;
+      if (im.data) return im.data;
+      if (im.dataUrl) return im.dataUrl;
+      if (im.base64) return 'data:' + (im.fileType || 'image/jpeg') + ';base64,' + im.base64;
+      if (im.url) return im.url;
+    }
+    return '';
+  }
+  // 다현장: _SRC_THUMBS 우선
+  if (typeof _SRC_THUMBS !== 'undefined' && _SRC_THUMBS[photoKey]) return _SRC_THUMBS[photoKey];
+  // IMGS에서 이름 매칭
+  if (typeof IMGS !== 'undefined' && IMGS) {
+    for (var i = 0; i < IMGS.length; i++) {
+      var im = IMGS[i];
+      if (im && im.name === photoKey) {
+        if (im.data) return im.data;
+        if (im.dataUrl) return im.dataUrl;
+        if (im.base64) return 'data:' + (im.fileType || 'image/jpeg') + ';base64,' + im.base64;
+      }
+    }
+  }
+  return '';
+}
+
+// 페이지 2 빌더 (사진 1장 + 해당 사진의 items만)
+function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
+  if (!groupItems || groupItems.length === 0) return '';
+  
+  // 그룹 내 합계
+  var gDmg = 0, gRec = 0;
+  groupItems.forEach(function(it) {
+    gDmg += (it.damageCost || 0);
+    gRec += (it._recoveryCostVal || it.recoveryCost || 0);
+  });
+  
+  // 행 생성 + 복구계획 라벨 수집
   var itemRows = '';
-  var recoveryStructList = []; // 복구내역 사진 옆 주요 복구구조물 목록
-  ANA.items.forEach(function(it, i) {
+  var recoveryStructList = [];
+  groupItems.forEach(function(it, i) {
     var dCost = it.damageCost || 0;
     var rCost = it._recoveryCostVal || it.recoveryCost || 0;
-    // 공종 라벨: 편람시설명 → 공종명 (피해유형에서 추출)
     var dt = (it.damageType || '').replace(/^\s*\[([^\]]+)\]\s*/, '$1→');
-    // 단위·산출근거 (피해/복구) — 산출근거는 quantity/recoveryQty 원문(요약)
     var dUnit = _extractDRUnit(it.quantity || '');
     var dBasis = _extractDRBasis(it.quantity || '');
     var rUnit = _extractDRUnit(it.recoveryQty || '');
     var rBasis = _extractDRBasis(it.recoveryQty || '');
     
-    // ★ 복구내역 사진용 주요 복구구조물 라벨 수집 (rCost > 0 항목만)
     if (rCost > 0) {
       recoveryStructList.push({
         no: it.no || (i + 1),
@@ -8788,15 +8858,24 @@ function _renderDR() {
       });
     }
     
-    // ★ 피해금액 0원 항목 처리: 좌측 4칸 빈칸 (복구계획에만 기록)
+    // 좌측 셀 — 피해금액 0원이면 [신설] 또는 [개선] 명시
     var isZeroDamage = (dCost === 0 || dCost === '0');
-    var leftCells = isZeroDamage
-      ? '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;color:#999;font-style:italic;" colspan="4">(복구계획에만 기록 — 신설/개선)</td>'
-      : ''
+    var leftCells;
+    if (isZeroDamage) {
+      var noteStr = (it.note || '') + ' ' + (it.damageCostBasis || '');
+      var rt = it.recoveryType || '';
+      var tag;
+      if (/신설/.test(noteStr)) tag = '[신설]';
+      else if (rt === '개선복구' || /개선/.test(noteStr)) tag = '[개선]';
+      else tag = '[신설/개선]';
+      leftCells = '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;color:#888;font-style:italic;font-weight:600;" colspan="4">' + tag + ' &nbsp; 복구계획에만 기록</td>';
+    } else {
+      leftCells = ''
         + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;vertical-align:top;">' + _escDR(dt) + '</td>'
         + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;">(' + dUnit + ')</td>'
         + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;">' + _escDR(dBasis) + '</td>'
         + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:right;">' + dCost.toLocaleString() + '</td>';
+    }
     
     itemRows += '<tr>'
       + leftCells
@@ -8807,17 +8886,33 @@ function _renderDR() {
     + '</tr>';
   });
   
-  // ★ 복구내역 영역 HTML — 첨부 사진 + 주요 복구구조물 위치/내용 라벨
-  var recoveryHTML = '';
-  if (IMGS && IMGS.length > 0) {
-    var firstImg = IMGS[0];
-    var firstSrc = (typeof firstImg === 'string') ? firstImg : (firstImg.dataUrl || firstImg.url || '');
-    // 사진 위에 라벨 오버레이 (좌상단에 ① ② ③ 순번 마커)
+  // 좌측 피해사진 HTML
+  var damagePhotoHTML = photoUrl
+    ? '<div style="text-align:center;"><img src="' + photoUrl + '" style="max-width:100%;max-height:75mm;object-fit:contain;border:1px solid #ccc;"></div>'
+    : '<div style="text-align:center;color:#999;padding:30mm 0;">(피해사진 없음)</div>';
+  
+  // 우측 복구내역 HTML — 같은 피해사진 + 복구계획 라벨 오버레이
+  var recoveryHTML;
+  if (photoUrl) {
     var overlayLabels = recoveryStructList.slice(0, 6).map(function(s, idx) {
-      var posTop = 8 + (idx % 3) * 22;
-      var posLeft = (idx < 3) ? 6 : 60;
-      var labelTxt = '①②③④⑤⑥'[idx] + ' ' + (s.type.length > 18 ? s.type.substring(0,18)+'…' : s.type);
-      return '<div style="position:absolute;top:' + posTop + '%;left:' + posLeft + '%;background:rgba(244,67,54,0.92);color:#fff;padding:2px 6px;border-radius:3px;font-size:9px;font-weight:700;border:1px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.4);max-width:38%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + _escDR(labelTxt) + '</div>';
+      // 사진 위 라벨 배치: 좌상단·우상단·좌중단·우중단 교차 배치
+      var positions = [
+        { top: '4%',  left: '3%'  },
+        { top: '4%',  left: '52%' },
+        { top: '32%', left: '3%'  },
+        { top: '32%', left: '52%' },
+        { top: '60%', left: '3%'  },
+        { top: '60%', left: '52%' }
+      ];
+      var pos = positions[idx] || { top: '88%', left: '3%' };
+      var num = '①②③④⑤⑥'[idx] || ('(' + (idx+1) + ')');
+      var typeShort = s.type.length > 16 ? s.type.substring(0,16)+'…' : s.type;
+      var qtyShort = String(s.qty || '').length > 14 ? String(s.qty).substring(0,14)+'…' : s.qty;
+      return '<div style="position:absolute;top:' + pos.top + ';left:' + pos.left 
+        + ';background:rgba(244,67,54,0.92);color:#fff;padding:2px 5px;border-radius:3px;font-size:8.5px;font-weight:700;border:1px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.5);max-width:43%;line-height:1.25;">'
+        + '<div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + num + ' ' + _escDR(typeShort) + '</div>'
+        + '<div style="font-weight:600;font-size:8px;color:#FFE082;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">→ ' + _escDR(qtyShort) + (s.unit||'') + '</div>'
+        + '</div>';
     }).join('');
     
     var listItems = recoveryStructList.slice(0, 8).map(function(s, idx) {
@@ -8833,29 +8928,41 @@ function _renderDR() {
     }
     
     recoveryHTML = ''
-      + '<div style="position:relative;text-align:center;margin-bottom:6px;">'
-        + '<img src="' + firstSrc + '" style="max-width:100%;max-height:55mm;object-fit:contain;border:1px solid #ccc;">'
+      + '<div style="position:relative;text-align:center;margin-bottom:5px;">'
+        + '<img src="' + photoUrl + '" style="max-width:100%;max-height:55mm;object-fit:contain;border:1px solid #ccc;display:block;margin:0 auto;">'
         + overlayLabels
       + '</div>'
-      + '<div style="background:#fafafa;border:1px solid #ddd;border-radius:3px;padding:5px 8px;">'
-        + '<div style="font-size:9.5px;font-weight:700;color:#C62828;margin-bottom:3px;border-bottom:1px solid #C62828;padding-bottom:2px;">▣ 주요 복구구조물 (위치 표시)</div>'
+      + '<div style="background:#fafafa;border:1px solid #ddd;border-radius:3px;padding:4px 7px;">'
+        + '<div style="font-size:9px;font-weight:700;color:#C62828;margin-bottom:3px;border-bottom:1px solid #C62828;padding-bottom:2px;">▣ 복구계획 (위치 라벨 ①~⑥)</div>'
         + (listItems || '<div style="color:#999;font-size:9px;">복구 항목 없음</div>')
       + '</div>';
   } else {
-    recoveryHTML = '<div style="text-align:center;color:#999;padding:30mm 0;font-size:10px;">(첨부 사진 없음 — 분석 사진 업로드 시 자동 표시)</div>';
+    recoveryHTML = '<div style="text-align:center;color:#999;padding:30mm 0;font-size:10px;">(사진 없음 — 복구계획 라벨 표시 불가)</div>';
   }
   
-  var page2 = ''
+  // 페이지 헤더 (사진 파일명 + 페이지 번호)
+  var photoTitle = (photoLabel && photoLabel !== '__SINGLE__') 
+    ? '📷 ' + photoLabel.replace(/\.[^.]+$/, '') 
+    : '📷 단일현장 종합';
+  var pageHead = (pageTotal > 1) 
+    ? ' &nbsp; <span style="font-size:10px;color:#666;font-weight:400;">[' + pageIdx + '/' + pageTotal + ']</span>'
+    : '';
+  
+  return ''
     + '<div class="dr-page" style="width:297mm;min-height:210mm;padding:10mm 12mm;margin:0 auto 10mm;background:#fff;color:#000;font-family:\'Malgun Gothic\',\'맑은 고딕\',sans-serif;font-size:11px;page-break-after:always;box-shadow:0 0 10px rgba(0,0,0,0.15);">'
-    + '<div style="font-weight:700;font-size:12px;margin:0 0 6px;">□ 피해 복구 세부내역</div>'
+    + '<div style="font-weight:700;font-size:12px;margin:0 0 6px;display:flex;align-items:center;flex-wrap:wrap;">'
+      + '<span>□ 피해 복구 세부내역</span>'
+      + '<span style="margin-left:14px;font-weight:600;color:#7B1FA2;">' + _escDR(photoTitle) + '</span>'
+      + pageHead
+    + '</div>'
     + '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:6px;">'
       + '<tr>'
-        + '<td style="width:50%;border:1px solid #000;padding:4px;vertical-align:top;height:85mm;">'
-          + '<div style="text-align:center;font-weight:700;margin-bottom:4px;">피해내역</div>'
-          + photoStripHTML
+        + '<td style="width:50%;border:1px solid #000;padding:4px;vertical-align:top;height:80mm;">'
+          + '<div style="text-align:center;font-weight:700;margin-bottom:4px;">피해내역 (원본)</div>'
+          + damagePhotoHTML
         + '</td>'
         + '<td style="width:50%;border:1px solid #000;padding:4px;vertical-align:top;">'
-          + '<div style="text-align:center;font-weight:700;margin-bottom:4px;">복구내역</div>'
+          + '<div style="text-align:center;font-weight:700;margin-bottom:4px;">복구내역 (피해사진 위 복구계획 표시)</div>'
           + recoveryHTML
         + '</td>'
       + '</tr>'
@@ -8877,17 +8984,12 @@ function _renderDR() {
       + '</tr>'
       + itemRows
       + '<tr>'
-        + '<td colspan="3" style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">합계</td>'
-        + '<td style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">' + totalDamage.toLocaleString() + '</td>'
-        + '<td colspan="3" style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">합계</td>'
-        + '<td style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">' + totalRecovery.toLocaleString() + '</td>'
+        + '<td colspan="3" style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">소계</td>'
+        + '<td style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">' + gDmg.toLocaleString() + '</td>'
+        + '<td colspan="3" style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">소계</td>'
+        + '<td style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">' + gRec.toLocaleString() + '</td>'
       + '</tr>'
     + '</table>'
-    + '</div>';
-  
-  document.getElementById('drPreview').innerHTML = 
-    '<div id="drPaperWrap" style="background:#e8e8e8;padding:14px;border-radius:8px;">'
-    + page1 + page2
     + '</div>';
 }
 
