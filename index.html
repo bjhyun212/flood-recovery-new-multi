@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.38 (Word 다운로드를 html2canvas 이미지 캡처 방식으로 변경 - 미리보기와 100% 동일 출력)</title>
+<title>복구설계시스템(BJH) ver8.39 (Word 여백 축소 + 이미지 페이지 가득 + 산출근거에 damageCostBasis/recoveryCostBasis 사용)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.38</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.39</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -8858,16 +8858,20 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
     var dCost = it.damageCost || 0;
     var rCost = it._recoveryCostVal || it.recoveryCost || 0;
     var dt = (it.damageType || '').replace(/^\s*\[([^\]]+)\]\s*/, '$1→');
+    // ★ ver8.39: 산출근거는 damageCostBasis/recoveryCostBasis 우선 (종별·공종·규격·단가·금액·페이지 포함)
+    //   - _Basis 필드가 비어 있으면 quantity/recoveryQty로 폴백
     var dUnit = _extractDRUnit(it.quantity || '');
-    var dBasis = _extractDRBasis(it.quantity || '');
+    var dBasis = _extractDRBasis(it.damageCostBasis || it.quantity || '');
     var rUnit = _extractDRUnit(it.recoveryQty || '');
-    var rBasis = _extractDRBasis(it.recoveryQty || '');
+    var rBasis = _extractDRBasis(it.recoveryCostBasis || it.recoveryQty || '');
+    // 복구내역 사진 라벨용 qty는 짧게 (recoveryQty 또는 산식만)
+    var rQtyShort = _extractDRBasis(it.recoveryQty || '');
     
     if (rCost > 0) {
       recoveryStructList.push({
         no: it.no || (i + 1),
         type: dt,
-        qty: rBasis,
+        qty: rQtyShort,
         unit: rUnit,
         cost: rCost,
         recType: it.recoveryType || '원형복구'
@@ -9344,24 +9348,21 @@ function _extractDRQty(qty) {
   return qty;
 }
 
-// ★ ver8.32: 산출근거 정제 — quantity/recoveryQty의 공종명+규격+물량+단위를 셀에 맞게 추출
+// ★ ver8.32+39: 산출근거 정제 — damageCostBasis/recoveryCostBasis 원문 보존
+//   - [종별]공종 규격 물량 × 단가 = 금액 (p.NNN) 형식이 모두 들어가도록 110자까지 허용
 function _extractDRBasis(qty) {
   if (!qty) return '';
   var s = String(qty).trim();
-  // "L=15.0m × W=2.0m × D=0.5m = 15.0m³" → "15.0m³ (L×W×D=15m³)" 같은 압축은 X
-  // 그냥 산출근거 원문 보존 (셀 폭이 20%로 늘어남 → 충분히 들어감)
-  // 단, 너무 길면 잘라서 ... 처리
-  if (s.length > 55) {
-    // 마지막 = 결과 부분이 있으면 그것 우선 표시
+  // 너무 길면 마지막 "= 결과" 보존하면서 중간 압축
+  if (s.length > 110) {
     var lastEq = s.lastIndexOf('=');
     if (lastEq > 0 && lastEq < s.length - 1) {
-      var tail = s.substring(lastEq + 1).trim();
-      var head = s.substring(0, lastEq).trim();
-      // "공종명 ... = 결과" 형식이면 "공종명 ... " 부분을 짧게
-      if (head.length > 35) head = head.substring(0, 33) + '…';
+      var tail = s.substring(lastEq + 1).trim();   // 최종 결과 부분
+      var head = s.substring(0, lastEq).trim();    // 산식 부분
+      if (head.length > 88) head = head.substring(0, 86) + '…';
       return head + ' = ' + tail;
     }
-    return s.substring(0, 52) + '…';
+    return s.substring(0, 107) + '…';
   }
   return s;
 }
@@ -9482,11 +9483,11 @@ async function _exportDRWord() {
       + '<div style="font-size:12px;color:#A5B3C8;">' + pngs.length + ' 페이지 · 다운로드 시작...</div>';
   }
   
-  // Word HTML 빌드 — 각 PNG = 1 페이지 (A4 가로)
+  // Word HTML 빌드 — 각 PNG = 1 페이지 (A4 가로) · ★ ver8.39 명시적 cm 폭으로 페이지 가득
   var pagesHtml = pngs.map(function(src, i) {
     var pageBreak = (i < pngs.length - 1) ? 'page-break-after:always;' : '';
-    return '<div style="' + pageBreak + 'text-align:center;margin:0;padding:0;">'
-      + '<img src="' + src + '" style="width:100%;max-width:27cm;height:auto;display:block;margin:0 auto;">'
+    return '<div style="' + pageBreak + 'text-align:center;margin:0;padding:0;line-height:0;mso-element:para;">'
+      + '<img src="' + src + '" width="1080" style="width:29cm;height:auto;display:block;margin:0;padding:0;border:0;">'
       + '</div>';
   }).join('');
   
@@ -9495,10 +9496,11 @@ async function _exportDRWord() {
     + '<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom>'
     + '<w:DoNotPromptForConvert/><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->'
     + '<style>'
-    + '@page Section1 { size: 29.7cm 21cm; mso-page-orientation: landscape; margin: 0.5cm; mso-header-margin: 0.3cm; mso-footer-margin: 0.3cm; }'
-    + 'div.Section1 { page: Section1; }'
+    + '@page Section1 { size: 29.7cm 21cm; mso-page-orientation: landscape; margin: 0.3cm; mso-header-margin: 0.2cm; mso-footer-margin: 0.2cm; }'
+    + 'div.Section1 { page: Section1; width: 29cm; }'
     + 'body { margin: 0; padding: 0; }'
-    + 'img { max-width: 100%; height: auto; }'
+    + 'img { display: block; }'
+    + 'div { line-height: 0; }'
     + '</style></head><body><div class="Section1">'
     + pagesHtml
     + '</div></body></html>';
