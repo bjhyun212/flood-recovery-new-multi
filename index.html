@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.40 (메뉴 정리 - 설계내역서 생성·보고서작성·엑셀내보내기 삭제 / 마커 범례 단순화 / 피해·복구 사진 85mm 확대)</title>
+<title>복구설계시스템(BJH) ver8.42 (산출근거 셀 클릭 → 자연재난조사 단가표 즉시조회 팝업 + 단가 일치/근사/차이 비교)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.40</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.42</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -263,6 +263,7 @@ select.fc option{background:var(--navy2);}
       <button class="btn btn-o" onclick="_expandAllRows(true)" style="font-size:11px;padding:5px 12px;">▼ 전체 펼치기</button>
       <button class="btn btn-o" onclick="_expandAllRows(false)" style="font-size:11px;padding:5px 12px;">▶ 전체 접기</button>
       <button class="btn btn-o" onclick="resetColumnWidths()" style="font-size:11px;padding:5px 12px;" title="드래그로 조절한 열 너비를 기본값으로 되돌립니다.">↔ 열너비 초기화</button>
+      <button class="btn btn-o" onclick="_openRefTableModal()" style="font-size:11px;padding:5px 12px;background:rgba(255,193,7,0.18);color:#FFB74D;border:1px solid rgba(255,193,7,0.45);" title="2024 자연재난조사 복구단가표를 검색·조회합니다">📖 단가표 보기</button>
       <button class="btn btn-o" onclick="toTab2()" id="toTab2Btn">📋 재해대장 생성</button>
     </div>
     <!-- ★ ver7.92: 산정근거·참고사항 컬럼 표시 옵션 (기본 숨김) -->
@@ -8044,11 +8045,11 @@ function renderAna(r) {
       + '<td style="font-size:11px;text-align:left;line-height:1.4;' + textStyle + (isNew ? 'font-weight:600;' : '') + '">' + _esc(it.damageType||'') + '</td>'
       + '<td style="font-size:11px;text-align:left;line-height:1.4;' + textStyle + '">' + _esc(_qtyClean) + '</td>'
       + '<td class="num" style="font-size:11px;' + textStyle + '">' + dmgCostCellHtml + '</td>'
-      + '<td data-col="basis" style="font-size:10px;color:' + (isNew ? '#FFE082' : 'var(--text2)') + ';text-align:left;">' + basisCell + '</td>'
+      + '<td data-col="basis" style="font-size:10px;color:' + (isNew ? '#FFE082' : 'var(--text2)') + ';text-align:left;cursor:pointer;" title="클릭하여 해당 단가표 즉시 확인 ▸">' + basisCell + '</td>'
       + '<td>' + irtBadge + '</td>'
       + '<td style="font-size:11px;text-align:left;' + textStyle + '">' + methodCell + '</td>'
       + '<td style="font-size:11px;text-align:left;' + textStyle + '">' + recQtyCell + '</td>'
-      + '<td data-col="recbasis" style="font-size:11px;text-align:left;line-height:1.4;' + textStyle + '">' + _expandableText(_commaInBasis(_stripCalcSteps(it.recoveryCostBasis || '')), 80, 'rb' + idx) + '</td>'
+      + '<td data-col="recbasis" style="font-size:11px;text-align:left;line-height:1.4;cursor:pointer;' + textStyle + '" title="클릭하여 해당 단가표 즉시 확인 ▸">' + _expandableText(_commaInBasis(_stripCalcSteps(it.recoveryCostBasis || '')), 80, 'rb' + idx) + '</td>'
       + '<td class="num" style="font-size:11px;' + textStyle + '">' + _recoveryCostCellHtml(it) + '</td>'
       + '<td data-col="srcphoto" style="font-size:10px;text-align:left;">' + _srcPhotoCellHtml(it) + '</td>'
       + '<td data-col="note" style="text-align:left;padding:5px 6px;' + textStyle + '">' + _formatNoteWithCheck(it.note||'') + '</td>'
@@ -8887,27 +8888,27 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
       if (/신설/.test(noteStr)) tag = '[신설]';
       else if (rt === '개선복구' || /개선/.test(noteStr)) tag = '[개선]';
       else tag = '[신설/개선]';
-      leftCells = '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;color:#888;font-style:italic;font-weight:600;" colspan="4">' + tag + ' &nbsp; 복구계획에만 기록</td>';
+      leftCells = '<td style="border:1px solid #000;padding:2px 4px;font-size:9.5px;text-align:center;color:#888;font-style:italic;font-weight:600;" colspan="4">' + tag + ' &nbsp; 복구계획에만 기록</td>';
     } else {
       leftCells = ''
-        + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;vertical-align:top;">' + _escDR(dt) + '</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;">(' + dUnit + ')</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;">' + _escDR(dBasis) + '</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:right;">' + dCost.toLocaleString() + '</td>';
+        + '<td style="border:1px solid #000;padding:2px 4px;font-size:9.5px;vertical-align:top;">' + _escDR(dt) + '</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;font-size:9.5px;text-align:center;">(' + dUnit + ')</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;font-size:9.5px;">' + _escDR(dBasis) + '</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;font-size:9.5px;text-align:right;">' + dCost.toLocaleString() + '</td>';
     }
     
     itemRows += '<tr>'
       + leftCells
-      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;vertical-align:top;">' + _escDR(dt) + '</td>'
-      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;">(' + rUnit + ')</td>'
-      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;">' + _escDR(rBasis) + '</td>'
-      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:right;">' + rCost.toLocaleString() + '</td>'
+      + '<td style="border:1px solid #000;padding:2px 4px;font-size:9.5px;vertical-align:top;">' + _escDR(dt) + '</td>'
+      + '<td style="border:1px solid #000;padding:2px 4px;font-size:9.5px;text-align:center;">(' + rUnit + ')</td>'
+      + '<td style="border:1px solid #000;padding:2px 4px;font-size:9.5px;">' + _escDR(rBasis) + '</td>'
+      + '<td style="border:1px solid #000;padding:2px 4px;font-size:9.5px;text-align:right;">' + rCost.toLocaleString() + '</td>'
     + '</tr>';
   });
   
   // 좌측 피해사진 HTML
   var damagePhotoHTML = photoUrl
-    ? '<div style="text-align:center;"><img src="' + photoUrl + '" style="max-width:100%;max-height:85mm;object-fit:contain;border:1px solid #ccc;"></div>'
+    ? '<div style="text-align:center;"><img src="' + photoUrl + '" style="max-width:100%;max-height:80mm;object-fit:contain;border:1px solid #ccc;"></div>'
     : '<div style="text-align:center;color:#999;padding:30mm 0;">(피해사진 없음)</div>';
   
   // 우측 복구내역 HTML — 같은 피해사진 + 복구계획 라벨 오버레이
@@ -8948,7 +8949,7 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
     
     recoveryHTML = ''
       + '<div class="dr-photo-wrap" style="position:relative;text-align:center;margin-bottom:5px;display:inline-block;width:100%;">'
-        + '<img src="' + photoUrl + '" style="max-width:100%;max-height:85mm;object-fit:contain;border:1px solid #ccc;display:block;margin:0 auto;">'
+        + '<img src="' + photoUrl + '" style="max-width:100%;max-height:80mm;object-fit:contain;border:1px solid #ccc;display:block;margin:0 auto;">'
         + overlayMarkers
       + '</div>'
       + '<div style="background:#fafafa;border:1px solid #ddd;border-radius:3px;padding:4px 7px;">'
@@ -8971,45 +8972,45 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
     : '';
   
   return ''
-    + '<div class="dr-page" style="width:297mm;padding:10mm 12mm;margin:0 auto 10mm;background:#fff;color:#000;font-family:\'Malgun Gothic\',\'맑은 고딕\',sans-serif;font-size:11px;page-break-after:always;box-shadow:0 0 10px rgba(0,0,0,0.15);">'
-    + '<div style="font-weight:700;font-size:12px;margin:0 0 6px;display:flex;align-items:center;flex-wrap:wrap;">'
+    + '<div class="dr-page" style="width:297mm;padding:6mm 10mm;margin:0 auto 10mm;background:#fff;color:#000;font-family:\'Malgun Gothic\',\'맑은 고딕\',sans-serif;font-size:10.5px;page-break-after:always;box-shadow:0 0 10px rgba(0,0,0,0.15);">'
+    + '<div style="font-weight:700;font-size:12px;margin:0 0 4px;display:flex;align-items:center;flex-wrap:wrap;">'
       + '<span>□ 피해 복구 세부내역</span>'
       + '<span style="margin-left:14px;font-weight:600;color:#7B1FA2;">' + _escDR(photoTitle) + '</span>'
       + pageHead
     + '</div>'
-    + '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:6px;">'
+    + '<table style="width:100%;border-collapse:collapse;font-size:10.5px;margin-bottom:4px;">'
       + '<tr>'
-        + '<td style="width:50%;border:1px solid #000;padding:4px;vertical-align:top;height:80mm;">'
-          + '<div style="text-align:center;font-weight:700;margin-bottom:4px;">피해내역 (원본)</div>'
+        + '<td style="width:50%;border:1px solid #000;padding:3px;vertical-align:top;">'
+          + '<div style="text-align:center;font-weight:700;margin-bottom:3px;font-size:10.5px;">피해내역 (원본)</div>'
           + damagePhotoHTML
         + '</td>'
-        + '<td style="width:50%;border:1px solid #000;padding:4px;vertical-align:top;">'
-          + '<div style="text-align:center;font-weight:700;margin-bottom:4px;">복구내역 (피해사진 위 복구계획 표시)</div>'
+        + '<td style="width:50%;border:1px solid #000;padding:3px;vertical-align:top;">'
+          + '<div style="text-align:center;font-weight:700;margin-bottom:3px;font-size:10.5px;">복구내역 (피해사진 위 복구계획 표시)</div>'
           + recoveryHTML
         + '</td>'
       + '</tr>'
     + '</table>'
-    + '<table style="width:100%;border-collapse:collapse;font-size:10px;">'
+    + '<table style="width:100%;border-collapse:collapse;font-size:9.5px;">'
       + '<tr>'
-        + '<td colspan="4" style="border:1px solid #000;padding:4px;font-weight:700;">○ 피해액 산출근거 (1공종 그룹)</td>'
-        + '<td colspan="4" style="border:1px solid #000;padding:4px;font-weight:700;">○ 복구비 산출근거 (1공종 그룹)</td>'
+        + '<td colspan="4" style="border:1px solid #000;padding:3px;font-weight:700;font-size:10px;">○ 피해액 산출근거 (1공종 그룹)</td>'
+        + '<td colspan="4" style="border:1px solid #000;padding:3px;font-weight:700;font-size:10px;">○ 복구비 산출근거 (1공종 그룹)</td>'
       + '</tr>'
       + '<tr>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:14%;">공종</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:5%;">단위</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:20%;">산출근거</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:11%;">피해금액</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:14%;">공종</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:5%;">단위</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:20%;">산출근거</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:11%;">복구금액</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;text-align:center;font-weight:700;background:#f0f0f0;width:14%;">공종</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;text-align:center;font-weight:700;background:#f0f0f0;width:5%;">단위</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;text-align:center;font-weight:700;background:#f0f0f0;width:20%;">산출근거</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;text-align:center;font-weight:700;background:#f0f0f0;width:11%;">피해금액</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;text-align:center;font-weight:700;background:#f0f0f0;width:14%;">공종</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;text-align:center;font-weight:700;background:#f0f0f0;width:5%;">단위</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;text-align:center;font-weight:700;background:#f0f0f0;width:20%;">산출근거</td>'
+        + '<td style="border:1px solid #000;padding:2px 4px;text-align:center;font-weight:700;background:#f0f0f0;width:11%;">복구금액</td>'
       + '</tr>'
       + itemRows
       + '<tr>'
-        + '<td colspan="3" style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">소계</td>'
-        + '<td style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">' + gDmg.toLocaleString() + '</td>'
-        + '<td colspan="3" style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">소계</td>'
-        + '<td style="border:1px solid #000;padding:4px;text-align:right;font-weight:700;background:#f0f0f0;">' + gRec.toLocaleString() + '</td>'
+        + '<td colspan="3" style="border:1px solid #000;padding:3px;text-align:right;font-weight:700;background:#f0f0f0;">소계</td>'
+        + '<td style="border:1px solid #000;padding:3px;text-align:right;font-weight:700;background:#f0f0f0;">' + gDmg.toLocaleString() + '</td>'
+        + '<td colspan="3" style="border:1px solid #000;padding:3px;text-align:right;font-weight:700;background:#f0f0f0;">소계</td>'
+        + '<td style="border:1px solid #000;padding:3px;text-align:right;font-weight:700;background:#f0f0f0;">' + gRec.toLocaleString() + '</td>'
       + '</tr>'
     + '</table>'
     + '</div>';
@@ -9418,8 +9419,19 @@ async function _exportDRWord() {
   try {
     for (var i = 0; i < pages.length; i++) {
       var pg = pages[i];
-      // 그림자 잠시 제거 (캡처 깔끔하게)
+      // ★ ver8.41: 캡처 직전 페이지 사이즈를 A4 가로 비율(297mm × 210mm)로 강제
+      //   → 콘텐츠가 페이지보다 길면 하단이 잘리지만, Word 출력에서 다음 페이지로 어색하게 밀려나는 현상 방지
+      //   → 콘텐츠가 페이지보다 짧으면 하단 흰 여백 (양식 그대로)
+      var origMinHeight = pg.style.minHeight;
+      var origMaxHeight = pg.style.maxHeight;
+      var origHeight = pg.style.height;
+      var origOverflow = pg.style.overflow;
       var origShadow = pg.style.boxShadow;
+      
+      pg.style.height = '210mm';
+      pg.style.maxHeight = '210mm';
+      pg.style.minHeight = '210mm';
+      pg.style.overflow = 'hidden';
       pg.style.boxShadow = 'none';
       
       // html2canvas로 PNG 캡처 (해상도 1.5배 → 인쇄 품질)
@@ -9431,19 +9443,38 @@ async function _exportDRWord() {
           logging: false,
           backgroundColor: '#ffffff',
           imageTimeout: 8000,
+          width: pg.offsetWidth,
+          height: pg.offsetHeight,
           onclone: function(clonedDoc) {
-            // 클론된 페이지의 그림자도 제거
+            // 클론된 페이지도 동일하게 강제
             var clonedPages = clonedDoc.querySelectorAll('.dr-page');
-            clonedPages.forEach(function(p){ p.style.boxShadow = 'none'; });
+            clonedPages.forEach(function(p){
+              p.style.boxShadow = 'none';
+              p.style.height = '210mm';
+              p.style.maxHeight = '210mm';
+              p.style.minHeight = '210mm';
+              p.style.overflow = 'hidden';
+            });
           }
         });
       } catch(capErr) {
         console.warn('페이지 ' + (i+1) + ' 캡처 실패:', capErr);
+        // 복원
+        pg.style.height = origHeight;
+        pg.style.maxHeight = origMaxHeight;
+        pg.style.minHeight = origMinHeight;
+        pg.style.overflow = origOverflow;
         pg.style.boxShadow = origShadow;
         continue;
       }
       
+      // 캡처 후 원본 스타일 복원
+      pg.style.height = origHeight;
+      pg.style.maxHeight = origMaxHeight;
+      pg.style.minHeight = origMinHeight;
+      pg.style.overflow = origOverflow;
       pg.style.boxShadow = origShadow;
+      
       pngs.push(canvas.toDataURL('image/png'));
       
       // 진행 표시 업데이트
@@ -21401,6 +21432,470 @@ function closeSectionModal() {
   var m = document.getElementById('secModal');
   if (m) m.remove();
 }
+
+// ════════════════════════════════════════════════════════════════════
+// ★★★ ver8.41: 2024 자연재난조사 복구단가표 (REF) 조회 모달 ★★★
+// ════════════════════════════════════════════════════════════════════
+//   - 종별 필터 (공통/소하천/도로/하천/교량 등)
+//   - 검색 (공종명·규격에서 부분 매칭)
+//   - 스크롤 가능한 표 (높이 고정)
+//   - 클릭 시 단가 정보 클립보드 복사
+function _openRefTableModal() {
+  if (typeof REF === 'undefined' || !REF || REF.length === 0) {
+    alert('단가표(REF) 데이터를 로드 중입니다. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  
+  // 기존 모달 있으면 제거
+  var existing = document.getElementById('refTableModal');
+  if (existing) existing.remove();
+  
+  // 종별 추출 (중복 제거)
+  var categories = {};
+  REF.forEach(function(r) { if (r && r[0]) categories[r[0]] = true; });
+  var catList = Object.keys(categories).sort();
+  
+  var modal = document.createElement('div');
+  modal.id = 'refTableModal';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:10000;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);padding:20px;';
+  
+  modal.innerHTML =
+    '<div style="background:var(--navy2);border:1px solid var(--border);border-radius:14px;padding:18px 22px;width:min(1100px,98vw);max-height:92vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.5);">'
+      // 헤더
+      + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;border-bottom:1px solid var(--border);padding-bottom:10px;">'
+        + '<div>'
+          + '<div style="font-size:16px;font-weight:800;color:var(--accent);">📖 2024 자연재난조사 복구단가표 조회</div>'
+          + '<div style="font-size:11px;color:var(--text2);margin-top:3px;">중앙재난안전대책본부 「자연재난조사 및 복구계획수립 편람」 공공시설 복구단가표 (' + REF.length + '개 항목)</div>'
+        + '</div>'
+        + '<button onclick="document.getElementById(\'refTableModal\').remove()" style="background:rgba(255,107,53,0.2);color:#FF6B35;border:1px solid #FF6B35;padding:6px 14px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">✕ 닫기</button>'
+      + '</div>'
+      
+      // 필터·검색 영역
+      + '<div style="display:flex;gap:10px;margin-bottom:10px;align-items:center;flex-wrap:wrap;">'
+        + '<div style="display:flex;align-items:center;gap:6px;">'
+          + '<label style="font-size:11px;color:var(--text2);font-weight:600;">종별:</label>'
+          + '<select id="refFilterCat" onchange="_refTableRender()" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:5px;font-size:12px;min-width:100px;">'
+            + '<option value="">전체 (' + REF.length + ')</option>'
+            + catList.map(function(c){ 
+                var cnt = REF.filter(function(r){ return r[0] === c; }).length;
+                return '<option value="' + _esc(c) + '">' + _esc(c) + ' (' + cnt + ')</option>';
+              }).join('')
+          + '</select>'
+        + '</div>'
+        + '<div style="flex:1;min-width:200px;display:flex;align-items:center;gap:6px;">'
+          + '<label style="font-size:11px;color:var(--text2);font-weight:600;">검색:</label>'
+          + '<input type="text" id="refFilterKeyword" oninput="_refTableRender()" placeholder="공종명·규격으로 검색 (예: 석축, 흄관 600, 옹벽)" style="flex:1;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:5px;font-size:12px;outline:none;">'
+          + '<button onclick="document.getElementById(\'refFilterKeyword\').value=\'\';_refTableRender();" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:5px;font-size:11px;cursor:pointer;" title="검색 초기화">✕</button>'
+        + '</div>'
+        + '<div id="refResultCount" style="font-size:11px;color:var(--accent);font-weight:700;white-space:nowrap;"></div>'
+      + '</div>'
+      
+      // 표 스크롤 영역
+      + '<div id="refTableScroll" style="flex:1;overflow-y:auto;overflow-x:auto;border:1px solid var(--border);border-radius:6px;background:rgba(0,0,0,0.15);">'
+        + '<table id="refTableEl" style="width:100%;border-collapse:collapse;font-size:12px;">'
+          + '<thead style="position:sticky;top:0;background:linear-gradient(135deg,#1565C0,#0d47a1);color:#fff;z-index:1;">'
+            + '<tr>'
+              + '<th style="padding:8px 6px;text-align:center;font-weight:700;width:50px;">No</th>'
+              + '<th style="padding:8px 8px;text-align:left;font-weight:700;width:70px;">종별</th>'
+              + '<th style="padding:8px 8px;text-align:left;font-weight:700;">공종명</th>'
+              + '<th style="padding:8px 8px;text-align:left;font-weight:700;">규격</th>'
+              + '<th style="padding:8px 8px;text-align:center;font-weight:700;width:55px;">단위</th>'
+              + '<th style="padding:8px 8px;text-align:right;font-weight:700;width:120px;">단가 (원)</th>'
+              + '<th style="padding:8px 8px;text-align:center;font-weight:700;width:65px;">참조</th>'
+              + '<th style="padding:8px 8px;text-align:center;font-weight:700;width:60px;">복사</th>'
+            + '</tr>'
+          + '</thead>'
+          + '<tbody id="refTableBody"></tbody>'
+        + '</table>'
+      + '</div>'
+      + '<div style="margin-top:8px;font-size:10px;color:var(--text2);line-height:1.5;">'
+        + '★ 행 클릭 또는 [📋] 버튼 → 단가 정보가 클립보드에 복사됩니다 (붙여넣기로 활용).<br>'
+        + '★ 단가는 2024년 기준이며, 시점 보정·할증·물가변동 적용 시 별도 산정해야 합니다.'
+      + '</div>'
+    + '</div>';
+  
+  document.body.appendChild(modal);
+  
+  // ESC 키로 닫기
+  modal.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') modal.remove();
+  });
+  
+  // 바깥 클릭으로 닫기
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) modal.remove();
+  });
+  
+  // 첫 렌더링
+  _refTableRender();
+  
+  // 검색 입력창에 포커스
+  setTimeout(function(){ 
+    var inp = document.getElementById('refFilterKeyword');
+    if (inp) inp.focus(); 
+  }, 100);
+}
+
+// 단가표 행 렌더링 (필터 + 검색 반영)
+function _refTableRender() {
+  var catEl = document.getElementById('refFilterCat');
+  var kwEl = document.getElementById('refFilterKeyword');
+  var bodyEl = document.getElementById('refTableBody');
+  var cntEl = document.getElementById('refResultCount');
+  if (!bodyEl) return;
+  
+  var cat = catEl ? catEl.value : '';
+  var kw = (kwEl ? kwEl.value : '').toLowerCase().trim();
+  var kwTokens = kw.split(/\s+/).filter(Boolean);
+  
+  var filtered = REF.filter(function(r) {
+    if (!r || r.length < 6) return false;
+    if (cat && r[0] !== cat) return false;
+    if (kwTokens.length > 0) {
+      var hay = ((r[1]||'') + ' ' + (r[2]||'') + ' ' + (r[3]||'') + ' ' + (r[5]||'')).toLowerCase();
+      return kwTokens.every(function(t) { return hay.indexOf(t) >= 0; });
+    }
+    return true;
+  });
+  
+  if (cntEl) cntEl.textContent = filtered.length + ' / ' + REF.length + '개';
+  
+  if (filtered.length === 0) {
+    bodyEl.innerHTML = '<tr><td colspan="8" style="padding:30px;text-align:center;color:var(--text2);font-size:13px;">'
+      + '🔍 검색 조건과 일치하는 단가가 없습니다. 다른 키워드로 시도해보세요.</td></tr>';
+    return;
+  }
+  
+  // 검색어 하이라이트 함수
+  function hl(text) {
+    if (!kw || !text) return _esc(String(text || ''));
+    var esc = _esc(String(text));
+    kwTokens.forEach(function(t) {
+      if (!t) return;
+      var re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+      esc = esc.replace(re, '<mark style="background:rgba(255,193,7,0.45);color:#FFE082;font-weight:700;padding:0 2px;border-radius:2px;">$1</mark>');
+    });
+    return esc;
+  }
+  
+  var rows = filtered.map(function(r, i) {
+    var idxOriginal = REF.indexOf(r) + 1;
+    var price = (typeof r[4] === 'number') ? r[4].toLocaleString() : (r[4] || '-');
+    var copyText = '[' + r[0] + ']' + r[1] + ' ' + r[2] + ' (' + r[3] + ') ' + price + '원/' + r[3] + ' ' + r[5];
+    var catColor = ({
+      '공통': '#43A047', '소하천': '#1976D2', '도로': '#F57C00',
+      '하천': '#0097A7', '교량': '#7B1FA2', '농업': '#558B2F',
+      '항만': '#5D4037', '수도': '#0288D1', '어항': '#00838F'
+    })[r[0]] || '#666';
+    
+    return '<tr onclick="_refCopyRow(' + idxOriginal + ')" '
+      + 'style="cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.15s;background:' + (i % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent') + ';" '
+      + 'onmouseover="this.style.background=\'rgba(0,180,216,0.08)\'" '
+      + 'onmouseout="this.style.background=\'' + (i % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent') + '\'">'
+      + '<td style="padding:6px;text-align:center;color:var(--text2);font-size:10px;">' + idxOriginal + '</td>'
+      + '<td style="padding:6px 8px;"><span style="display:inline-block;background:' + catColor + ';color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;">' + _esc(r[0]||'') + '</span></td>'
+      + '<td style="padding:6px 8px;font-weight:600;">' + hl(r[1]) + '</td>'
+      + '<td style="padding:6px 8px;color:var(--text2);font-size:11px;">' + hl(r[2]) + '</td>'
+      + '<td style="padding:6px 8px;text-align:center;color:#A5D6A7;font-weight:600;">' + _esc(r[3]||'') + '</td>'
+      + '<td style="padding:6px 8px;text-align:right;color:var(--gold);font-weight:700;font-family:JetBrains Mono, monospace;">' + price + '</td>'
+      + '<td style="padding:6px 8px;text-align:center;color:var(--accent);font-size:10px;font-weight:700;">' + _esc(r[5]||'') + '</td>'
+      + '<td style="padding:6px 8px;text-align:center;"><span style="display:inline-block;padding:3px 8px;background:rgba(0,180,216,0.18);color:var(--accent);border-radius:4px;font-size:10px;font-weight:700;">📋</span></td>'
+      + '</tr>';
+  }).join('');
+  
+  bodyEl.innerHTML = rows;
+}
+
+// 단가표 행 클릭 시 클립보드 복사
+function _refCopyRow(refIdx) {
+  var r = REF[refIdx - 1];
+  if (!r) return;
+  var price = (typeof r[4] === 'number') ? r[4].toLocaleString() : (r[4] || '-');
+  var text = '[' + r[0] + ']' + r[1] + ' ' + r[2] + ' (' + r[3] + ') ' + price + '원/' + r[3] + ' (' + r[5] + ')';
+  
+  // 클립보드 복사
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      _refShowToast('📋 복사됨: ' + text.substring(0, 50) + (text.length > 50 ? '…' : ''));
+    }).catch(function(err) {
+      console.warn('클립보드 복사 실패:', err);
+      _refFallbackCopy(text);
+    });
+  } else {
+    _refFallbackCopy(text);
+  }
+}
+
+function _refFallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    _refShowToast('📋 복사됨: ' + text.substring(0, 50) + (text.length > 50 ? '…' : ''));
+  } catch(e) {
+    alert('복사: ' + text);
+  } finally {
+    document.body.removeChild(ta);
+  }
+}
+
+function _refShowToast(msg) {
+  var existing = document.getElementById('refToast');
+  if (existing) existing.remove();
+  var toast = document.createElement('div');
+  toast.id = 'refToast';
+  toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1565C0,#0d47a1);color:#fff;padding:12px 24px;border-radius:8px;font-size:13px;font-weight:600;z-index:10001;box-shadow:0 8px 24px rgba(0,0,0,0.4);max-width:600px;text-align:center;';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  setTimeout(function() {
+    toast.style.transition = 'opacity 0.4s';
+    toast.style.opacity = '0';
+    setTimeout(function(){ toast.remove(); }, 400);
+  }, 2200);
+}
+
+// ════════════════════════════════════════════════════════════════════
+// ★★★ ver8.42: 산출근거 셀 클릭 → REF 단가 자동 매칭 팝업 ★★★
+// ════════════════════════════════════════════════════════════════════
+//   대장의 산정근거(damageCostBasis) 또는 복구산출근거(recoveryCostBasis) 셀 클릭 시,
+//   해당 텍스트에서 [종별]·공종명·규격 토큰을 추출하여 REF에서 매칭되는 단가를
+//   즉시 팝업으로 보여줌. 산출근거에 기재된 단가와 ✓일치/≈근사/×차이 비교 표시.
+
+// 산출근거 텍스트에서 검색 토큰 추출 (가중치 포함)
+function _extractRefTokens(text) {
+  var tokens = [];
+  var seen = {};
+  function add(t, w, type) {
+    var k = t.toLowerCase();
+    if (!t || seen[k]) return;
+    seen[k] = 1;
+    tokens.push({ t: t, w: w, type: type });
+  }
+  // 1. [종별] 추출 (가중치 3)
+  var catM = text.match(/\[([^\]]+)\]/);
+  if (catM) add(catM[1].trim(), 3, 'cat');
+  // 2. 한글 명사 (2글자 이상, 가중치 2)
+  var hangulMatches = text.match(/[가-힣]{2,}/g) || [];
+  var stopwords = /^(소계|합계|기준|적용|함량|복구|피해|미만|이상|일반|특수|이내|기존|신설|개선|현장|확인|필요|반출|반입|처리|일식|일괄|단가|금액|물량|규격|단위|공통|페이지|항목|이외|이상|이하|동일|동등|동급|기타|등급|시공|구간|연장|일부|전체)$/;
+  hangulMatches.forEach(function(t) {
+    if (catM && t === catM[1].trim()) return;
+    if (stopwords.test(t)) return;
+    add(t, 2, 'name');
+  });
+  // 3. 규격 (H=3m, φ300, D600 등, 가중치 2.5)
+  var specMatches = text.match(/[HΦφ]\s*[=]?\s*[\d.]+\s*[mM]+(?:미만|이상)?|[HΦφD]=[\d.]+m\s*[~-]\s*[\d.]+m|φ\d+|D\d+|\d+kg/g) || [];
+  specMatches.forEach(function(t) { add(t.replace(/\s+/g, ''), 2.5, 'spec'); });
+  return tokens;
+}
+
+// REF에서 토큰 기반 매칭 (스코어 정렬)
+function _findRefMatches(tokens) {
+  if (typeof REF === 'undefined' || !REF || !tokens || tokens.length === 0) return [];
+  var matches = [];
+  REF.forEach(function(r, idx) {
+    if (!r || r.length < 4) return;
+    var hay = ((r[0]||'') + ' ' + (r[1]||'') + ' ' + (r[2]||'') + ' ' + (r[3]||'')).toLowerCase();
+    var score = 0;
+    var hits = [];
+    tokens.forEach(function(tok) {
+      var needle = tok.t.toLowerCase();
+      if (hay.indexOf(needle) >= 0) {
+        score += tok.w;
+        hits.push(tok.t);
+      }
+    });
+    if (score >= 2.5) {
+      matches.push({ ref: r, refIdx: idx + 1, score: score, hits: hits });
+    }
+  });
+  matches.sort(function(a, b) { return b.score - a.score; });
+  return matches.slice(0, 8);
+}
+
+// 산출근거 텍스트에서 단가 추출 (REF 단가와 비교용)
+function _extractBasisPrice(text) {
+  if (!text) return null;
+  // "× 301,906원/m²" 패턴 우선
+  var m = text.match(/[×x]\s*([\d,]+)\s*원/);
+  if (m) return parseInt(m[1].replace(/,/g, ''));
+  // "301,906원/m²" 패턴
+  m = text.match(/([\d,]+)\s*원\s*\/\s*[a-zA-Z²³㎡㎥]+/);
+  if (m) return parseInt(m[1].replace(/,/g, ''));
+  return null;
+}
+
+// 메인: 산출근거 클릭 시 호출
+function _showRefForBasis(basisText) {
+  if (!basisText || basisText.length < 5) return;
+  if (typeof REF === 'undefined' || !REF || REF.length === 0) {
+    alert('단가표(REF) 데이터를 로드 중입니다. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  var tokens = _extractRefTokens(basisText);
+  var matches = _findRefMatches(tokens);
+  _showRefMatchPopup(basisText, matches, tokens);
+}
+
+// 매칭 결과 팝업 렌더링
+function _showRefMatchPopup(basisText, matches, tokens) {
+  var existing = document.getElementById('refMatchPopup');
+  if (existing) existing.remove();
+  
+  var basisPrice = _extractBasisPrice(basisText);
+  var hasMatches = matches.length > 0;
+  
+  // 토큰 요약 (디버그용)
+  var tokenSummary = (tokens || []).map(function(t){
+    var color = t.type === 'cat' ? '#43A047' : (t.type === 'spec' ? '#FFB74D' : '#90CAF9');
+    return '<span style="display:inline-block;background:rgba(255,255,255,0.06);color:' + color + ';font-size:10px;padding:1px 6px;border-radius:8px;margin-right:3px;">' + _esc(t.t) + '</span>';
+  }).join('');
+  
+  var modal = document.createElement('div');
+  modal.id = 'refMatchPopup';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);';
+  
+  modal.innerHTML = '<div onclick="event.stopPropagation();" style="background:var(--navy2);border:1px solid var(--border);border-radius:12px;padding:18px 22px;width:min(860px,96vw);max-height:84vh;display:flex;flex-direction:column;box-shadow:0 16px 50px rgba(0,0,0,0.6);">'
+    // 헤더
+    + '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;border-bottom:1px solid var(--border);padding-bottom:10px;">'
+      + '<div style="flex:1;min-width:0;">'
+        + '<div style="font-size:14px;font-weight:800;color:var(--accent);margin-bottom:6px;">📖 자연재난조사 단가표 즉시조회</div>'
+        + '<div style="font-size:10.5px;color:var(--text2);background:rgba(255,255,255,0.04);padding:7px 10px;border-radius:5px;line-height:1.5;border-left:3px solid var(--accent);word-break:break-all;margin-bottom:5px;">'
+          + '<b style="color:var(--text);">기준 산출근거:</b><br>' + _esc(basisText.substring(0, 260)) + (basisText.length > 260 ? '…' : '')
+        + '</div>'
+        + (tokenSummary ? '<div style="font-size:10px;color:var(--text2);margin-top:4px;"><b>검색 토큰:</b> ' + tokenSummary + '</div>' : '')
+      + '</div>'
+      + '<button onclick="document.getElementById(\'refMatchPopup\').remove()" style="margin-left:12px;background:rgba(255,107,53,0.2);color:#FF6B35;border:1px solid #FF6B35;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">✕</button>'
+    + '</div>'
+    
+    // 결과 영역
+    + (hasMatches
+      ? '<div style="overflow-y:auto;flex:1;">'
+        + '<div style="font-size:11px;color:var(--text2);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;">'
+          + '<span>매칭된 단가표 항목 <b style="color:var(--accent);">' + matches.length + '</b>건 (스코어순)</span>'
+          + (basisPrice ? '<span>산출근거 단가: <b style="color:var(--gold);">' + basisPrice.toLocaleString() + '원</b></span>' : '')
+        + '</div>'
+        + '<table style="width:100%;border-collapse:collapse;font-size:12px;">'
+        + '<thead><tr style="background:linear-gradient(135deg,#1565C0,#0d47a1);color:#fff;position:sticky;top:0;">'
+          + '<th style="padding:7px;text-align:center;width:40px;">No</th>'
+          + '<th style="padding:7px 6px;text-align:left;width:62px;">종별</th>'
+          + '<th style="padding:7px 6px;text-align:left;">공종명</th>'
+          + '<th style="padding:7px 6px;text-align:left;">규격</th>'
+          + '<th style="padding:7px 6px;text-align:center;width:50px;">단위</th>'
+          + '<th style="padding:7px 6px;text-align:right;width:160px;">단가 (vs 기준)</th>'
+          + '<th style="padding:7px 6px;text-align:center;width:60px;">참조</th>'
+        + '</tr></thead><tbody>'
+        + matches.map(function(m, i) {
+            var r = m.ref;
+            var price = (typeof r[4] === 'number') ? r[4] : 0;
+            var priceStr = price.toLocaleString();
+            // 산출근거 단가와 비교
+            var cmpStr = '';
+            if (basisPrice !== null && price > 0) {
+              if (price === basisPrice) {
+                cmpStr = '<span style="color:#43A047;font-weight:800;font-size:11px;margin-left:6px;">✓일치</span>';
+              } else {
+                var ratio = Math.abs(price - basisPrice) / Math.max(price, basisPrice);
+                if (ratio < 0.05) {
+                  cmpStr = '<span style="color:#FFB74D;font-weight:700;font-size:10px;margin-left:6px;">≈근사</span>';
+                } else {
+                  var diff = price - basisPrice;
+                  cmpStr = '<span style="color:#EF5350;font-weight:700;font-size:10px;margin-left:6px;">' + (diff > 0 ? '+' : '') + diff.toLocaleString() + '</span>';
+                }
+              }
+            }
+            var catColor = ({
+              '공통': '#43A047', '소하천': '#1976D2', '도로': '#F57C00',
+              '하천': '#0097A7', '교량': '#7B1FA2', '농업': '#558B2F',
+              '항만': '#5D4037', '수도': '#0288D1', '어항': '#00838F'
+            })[r[0]] || '#666';
+            var rowBg = (i === 0) ? 'rgba(67,160,71,0.06)' : (i%2===1 ? 'rgba(255,255,255,0.01)' : 'transparent');
+            var rankBadge = (i === 0) ? '<span style="display:inline-block;background:#43A047;color:#fff;font-size:9px;font-weight:800;padding:1px 5px;border-radius:7px;margin-left:3px;">1위</span>' : '';
+            return '<tr onclick="_refCopyRow(' + m.refIdx + ')" style="cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.05);background:' + rowBg + ';transition:background 0.15s;" '
+              + 'onmouseover="this.style.background=\'rgba(0,180,216,0.1)\'" onmouseout="this.style.background=\'' + rowBg + '\'" '
+              + 'title="클릭하여 단가 정보 클립보드 복사">'
+              + '<td style="padding:6px;text-align:center;color:var(--text2);font-size:10px;">' + m.refIdx + rankBadge + '</td>'
+              + '<td style="padding:6px;"><span style="display:inline-block;background:' + catColor + ';color:#fff;font-size:9px;font-weight:700;padding:1px 6px;border-radius:7px;">' + _esc(r[0]||'') + '</span></td>'
+              + '<td style="padding:6px;font-weight:600;">' + _esc(r[1]||'') + '</td>'
+              + '<td style="padding:6px;color:var(--text2);font-size:11px;">' + _esc(r[2]||'') + '</td>'
+              + '<td style="padding:6px;text-align:center;color:#A5D6A7;font-weight:600;">' + _esc(r[3]||'') + '</td>'
+              + '<td style="padding:6px;text-align:right;color:var(--gold);font-weight:700;font-family:JetBrains Mono, monospace;white-space:nowrap;">' + priceStr + cmpStr + '</td>'
+              + '<td style="padding:6px;text-align:center;color:var(--accent);font-size:10px;font-weight:700;">' + _esc(r[5]||'') + '</td>'
+            + '</tr>';
+          }).join('')
+        + '</tbody></table>'
+      + '</div>'
+      : '<div style="text-align:center;color:var(--text2);padding:40px 20px;flex:1;">'
+        + '<div style="font-size:36px;margin-bottom:10px;">🔍</div>'
+        + '<div style="font-size:13px;margin-bottom:6px;">매칭되는 단가표 항목을 찾지 못했습니다.</div>'
+        + '<div style="font-size:11px;color:var(--text3);margin-bottom:14px;">키워드가 너무 일반적이거나 산출근거 형식이 비표준일 수 있습니다.</div>'
+        + '<button onclick="document.getElementById(\'refMatchPopup\').remove();_openRefTableModal();" style="background:rgba(255,193,7,0.2);color:#FFB74D;border:1px solid #FFB74D;padding:7px 16px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">📖 단가표 전체 검색</button>'
+      + '</div>')
+    
+    + '<div style="margin-top:10px;font-size:10px;color:var(--text2);text-align:center;line-height:1.5;border-top:1px solid var(--border);padding-top:8px;">'
+      + '★ 첫 번째 행(녹색 1위): 매칭 점수 최고 · <b style="color:#43A047;">✓일치</b>/<b style="color:#FFB74D;">≈근사(±5%)</b>/<b style="color:#EF5350;">±차이</b>: 산출근거 기재 단가 비교<br>'
+      + '★ 행 클릭 → 단가 정보 클립보드 복사 · 바깥 클릭 또는 ESC로 닫기'
+    + '</div>'
+  + '</div>';
+  
+  document.body.appendChild(modal);
+  
+  // 외부 클릭으로 닫기
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) modal.remove();
+  });
+  // ESC로 닫기
+  var escHandler = function(e) {
+    if (e.key === 'Escape') {
+      var p = document.getElementById('refMatchPopup');
+      if (p) p.remove();
+      document.removeEventListener('keydown', escHandler);
+    }
+  };
+  document.addEventListener('keydown', escHandler);
+}
+
+// 이벤트 위임 - 대장 카드에 한 번만 바인딩 (dmgBody 재렌더링되어도 살아있음)
+function _bindBasisClickHandler() {
+  var card = document.getElementById('dmgCard');
+  if (!card || card.__refClickBound) return;
+  card.__refClickBound = true;
+  
+  card.addEventListener('click', function(e) {
+    // basis 또는 recbasis 컬럼의 셀이면
+    var td = e.target.closest('td[data-col="basis"], td[data-col="recbasis"]');
+    if (!td) return;
+    // [상세] 펼치기 버튼 등 내부 버튼 클릭은 무시
+    if (e.target.closest('button, a, input, .more-btn, .less-btn, [onclick]')) {
+      // [onclick]은 자체 핸들러가 있는 자식 요소
+      var ownClick = e.target.closest('[onclick]');
+      if (ownClick && ownClick !== td) return;
+    }
+    var text = (td.textContent || td.innerText || '').replace(/\s+/g, ' ').trim();
+    if (text.length > 5) {
+      _showRefForBasis(text);
+    }
+  });
+}
+
+// 페이지 로드 후 이벤트 바인딩 시도 (대장이 나타날 때까지)
+(function() {
+  function tryBind() {
+    if (document.getElementById('dmgCard')) {
+      _bindBasisClickHandler();
+    } else {
+      setTimeout(tryBind, 500);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryBind);
+  } else {
+    tryBind();
+  }
+})();
 
 // ════════════════════════════════════════════════════════════════════
 // 모달 렌더 (공통 레이아웃)
