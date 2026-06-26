@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.48 (옛 버전 변경이력 주석 정리 - 18개 블록 약 180줄 추가 감량)</title>
+<title>복구설계시스템(BJH) ver8.49 (이미지 자동 5MB 압축 + 위치도 마커 드래그 + 일괄분석 결과를 다현장 탭 내 표시)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -126,7 +126,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.48</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.49</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -489,7 +489,7 @@ select.fc option{background:var(--navy2);}
         ① 피해사진 여러 장을 한꺼번에 선택합니다 (파일명에 피해유형이 있으면 정확도↑, 예: <b style="color:#B388FF;">a001_축대붕괴.jpg</b>).<br>
         ② 공통 시설물·위치를 입력하고 <b style="color:#B388FF;">[일괄분석 시작]</b>을 누릅니다.<br>
         ③ 사진을 <b>1장씩 순차로</b> 분석합니다 (API 부하·Rate Limit 방지를 위해 사진 간 대기).<br>
-        ④ 모든 분석이 끝나면 <b style="color:#43A047;">전체 결과가 1번 탭의 피해·복구 대장에 누적</b>됩니다. 이후 설계내역서 생성·AI 상담 등 기존 기능을 그대로 사용하세요.<br>
+        ④ 모든 분석이 끝나면 <b style="color:#43A047;">결과 항목과 합계가 이 탭에 즉시 표시</b>됩니다. 수정·AI 상담·재해대장 생성은 1번 탭/재해대장 탭에서 진행하세요.<br>
         <span style="color:#FFB74D;">⚠️ 사진 1장당 약 1,000~1,500원의 API 비용이 발생합니다. 20장이면 약 2~3만원.</span><br>
         <span style="color:#81D4FA;">⏸ 중간에 [중지]를 누르면 그때까지 분석된 결과는 보존됩니다.</span>
       </div>
@@ -8058,7 +8058,8 @@ var _DR_DATA = {
   damageDate: '', damageCause: '',
   emgBags: 0, emgOfficials: 0, emgCivil: 0, emgEtc: 0, emgTrucks: 0, emgExcav: 0,
   recoveryEffect: '', pastDamage: '',
-  locationMap: null, damageScenery: null  // DataURL
+  locationMap: null, damageScenery: null,  // DataURL
+  locationMapMarker: null  // 위치도 마커 좌표 {x, y} - 0~1 비율 (이미지 폭/높이 대비)
 };
 
 // 편람 분류표 (공공시설피해관리 — 48개 시설명 → [소관부처, 대분류, 등급])
@@ -8244,16 +8245,50 @@ function _resetDRInput() {
 function _uploadDRImage(field, inputEl) {
   if (!inputEl.files || !inputEl.files[0]) return;
   var file = inputEl.files[0];
-  if (file.size > 5 * 1024 * 1024) {
-    alert('이미지는 5MB 이하로 첨부해주세요.');
-    inputEl.value = '';
-    return;
-  }
   var reader = new FileReader();
   reader.onload = function(e) {
-    _DR_DATA[field] = e.target.result;
-    _setDRImagePreview(field, e.target.result);
-    _saveDRInput();
+    var rawData = e.target.result;
+    var MAX_BYTES = 5 * 1024 * 1024;  // 5MB 한계
+    // base64 길이 × 0.75 ≈ 실제 바이트
+    if (rawData.length * 0.75 > MAX_BYTES) {
+      // ★ 자동 압축: Canvas 리사이즈 + JPEG 품질 조정
+      var img = new Image();
+      img.onload = function() {
+        var canvas = document.createElement('canvas');
+        var maxDim = 1920;
+        var scale = Math.min(maxDim / img.width, maxDim / img.height, 1);
+        canvas.width  = Math.round(img.width  * scale);
+        canvas.height = Math.round(img.height * scale);
+        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+        // 5MB 이하가 될 때까지 품질 단계적으로 낮추기
+        var q = 0.92;
+        var compressed = canvas.toDataURL('image/jpeg', q);
+        while (compressed.length * 0.75 > MAX_BYTES && q > 0.4) {
+          q -= 0.1;
+          compressed = canvas.toDataURL('image/jpeg', q);
+        }
+        // 그래도 크면 추가로 폭 축소
+        while (compressed.length * 0.75 > MAX_BYTES && maxDim > 800) {
+          maxDim = Math.round(maxDim * 0.85);
+          var s2 = Math.min(maxDim / img.width, maxDim / img.height, 1);
+          canvas.width  = Math.round(img.width  * s2);
+          canvas.height = Math.round(img.height * s2);
+          canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+          compressed = canvas.toDataURL('image/jpeg', 0.82);
+        }
+        _DR_DATA[field] = compressed;
+        // 위치도 새로 첨부 시 마커 좌표 초기화
+        if (field === 'locationMap') _DR_DATA.locationMapMarker = null;
+        _setDRImagePreview(field, compressed);
+        _saveDRInput();
+      };
+      img.src = rawData;
+    } else {
+      _DR_DATA[field] = rawData;
+      if (field === 'locationMap') _DR_DATA.locationMapMarker = null;
+      _setDRImagePreview(field, rawData);
+      _saveDRInput();
+    }
   };
   reader.readAsDataURL(file);
 }
@@ -8262,8 +8297,112 @@ function _setDRImagePreview(field, dataUrl) {
   var prevId = field === 'locationMap' ? 'dr_locationMapPreview' : 'dr_damageSceneryPreview';
   var prevEl = document.getElementById(prevId);
   if (!prevEl) return;
-  prevEl.innerHTML = '<img src="' + dataUrl + '" style="max-width:100%;max-height:80px;border:1px solid var(--border);border-radius:4px;">'
-    + '<div style="font-size:9px;color:#A5D6A7;margin-top:2px;">✓ 첨부됨</div>';
+
+  // ★ 위치도면일 때만 인터랙티브 마커 표시
+  if (field === 'locationMap') {
+    var marker = _DR_DATA.locationMapMarker || { x: 0.5, y: 0.5 };
+    var markerLeft = (marker.x * 100).toFixed(1);
+    var markerTop = (marker.y * 100).toFixed(1);
+    prevEl.innerHTML =
+      '<div id="dr_locMapWrap" style="position:relative;display:inline-block;max-width:100%;border:1px solid var(--border);border-radius:4px;overflow:hidden;cursor:crosshair;user-select:none;">' +
+        '<img id="dr_locMapImg" src="' + dataUrl + '" style="display:block;max-width:100%;max-height:180px;pointer-events:none;">' +
+        '<div id="dr_locMapMarker" style="position:absolute;left:' + markerLeft + '%;top:' + markerTop + '%;transform:translate(-50%,-50%);width:26px;height:26px;border:3px solid #E53935;border-radius:50%;background:rgba(229,57,53,0.25);box-shadow:0 0 0 2px rgba(255,255,255,0.9),0 2px 6px rgba(0,0,0,0.4);cursor:move;pointer-events:auto;"></div>' +
+      '</div>' +
+      '<div style="font-size:10px;color:#A5D6A7;margin-top:3px;">✓ 첨부됨 — <span style="color:#FFB74D;">🔴 빨간 동그라미를 드래그하거나 지도를 클릭해 피해 위치 표시</span></div>';
+    // 인터랙션 부착
+    setTimeout(_attachLocMapMarkerEvents, 0);
+  } else {
+    prevEl.innerHTML = '<img src="' + dataUrl + '" style="max-width:100%;max-height:80px;border:1px solid var(--border);border-radius:4px;">'
+      + '<div style="font-size:9px;color:#A5D6A7;margin-top:2px;">✓ 첨부됨</div>';
+  }
+}
+
+// ★ 위치도면 마커 드래그/클릭 이벤트 부착
+function _attachLocMapMarkerEvents() {
+  var wrap = document.getElementById('dr_locMapWrap');
+  var marker = document.getElementById('dr_locMapMarker');
+  if (!wrap || !marker) return;
+
+  function updateMarkerByEvent(ev) {
+    var rect = wrap.getBoundingClientRect();
+    var cx = (ev.touches ? ev.touches[0].clientX : ev.clientX);
+    var cy = (ev.touches ? ev.touches[0].clientY : ev.clientY);
+    var x = (cx - rect.left) / rect.width;
+    var y = (cy - rect.top) / rect.height;
+    x = Math.max(0.02, Math.min(0.98, x));
+    y = Math.max(0.02, Math.min(0.98, y));
+    marker.style.left = (x * 100).toFixed(1) + '%';
+    marker.style.top  = (y * 100).toFixed(1) + '%';
+    _DR_DATA.locationMapMarker = { x: x, y: y };
+  }
+
+  var dragging = false;
+
+  // 마커 드래그 시작
+  marker.onmousedown = function(ev) { ev.preventDefault(); ev.stopPropagation(); dragging = true; };
+  marker.ontouchstart = function(ev) { ev.preventDefault(); ev.stopPropagation(); dragging = true; };
+
+  // 지도 영역 클릭 시 마커 이동 (드래그 중이 아닐 때)
+  wrap.onclick = function(ev) {
+    if (ev.target === marker) return;
+    updateMarkerByEvent(ev);
+    _saveDRInput();
+  };
+
+  // 전역 mousemove/touchmove (드래그 추적)
+  document.addEventListener('mousemove', function(ev) {
+    if (!dragging) return;
+    updateMarkerByEvent(ev);
+  });
+  document.addEventListener('touchmove', function(ev) {
+    if (!dragging) return;
+    ev.preventDefault();
+    updateMarkerByEvent(ev);
+  }, { passive: false });
+
+  // 드래그 종료 시 저장
+  document.addEventListener('mouseup', function() {
+    if (dragging) { dragging = false; _saveDRInput(); }
+  });
+  document.addEventListener('touchend', function() {
+    if (dragging) { dragging = false; _saveDRInput(); }
+  });
+}
+
+// ★ 위치도면 + 마커를 합성한 데이터URL 생성 (재해대장 출력용)
+function _composeLocationMapWithMarker(callback) {
+  if (!_DR_DATA.locationMap) { callback(null); return; }
+  if (!_DR_DATA.locationMapMarker) { callback(_DR_DATA.locationMap); return; }
+  var img = new Image();
+  img.onload = function() {
+    var canvas = document.createElement('canvas');
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    // 마커 그리기 - 이미지 크기 대비 비율 좌표
+    var m = _DR_DATA.locationMapMarker;
+    var cx = m.x * img.width;
+    var cy = m.y * img.height;
+    var r = Math.max(12, Math.min(img.width, img.height) * 0.035);
+    // 외곽 흰 테두리 (가시성)
+    ctx.beginPath();
+    ctx.arc(cx, cy, r + 3, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(255,255,255,0.95)';
+    ctx.lineWidth = Math.max(3, r * 0.18);
+    ctx.stroke();
+    // 빨간 원
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.strokeStyle = '#E53935';
+    ctx.lineWidth = Math.max(2, r * 0.25);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(229,57,53,0.22)';
+    ctx.fill();
+    callback(canvas.toDataURL('image/jpeg', 0.9));
+  };
+  img.onerror = function() { callback(_DR_DATA.locationMap); };
+  img.src = _DR_DATA.locationMap;
 }
 
 // 편람 시설명 자동 매핑 (ANA.items의 damageType에서 [편람시설명] 추출)
@@ -8320,7 +8459,17 @@ function _renderDR() {
     return;
   }
   _loadDRDataFromInputs();
+  // ★ 위치도 마커 합성 후 본 렌더링 호출 (비동기)
+  _composeLocationMapWithMarker(function(composedUrl) {
+    _renderDR_impl(composedUrl);
+  });
+}
+
+function _renderDR_impl(composedLocationMap) {
   var d = _DR_DATA;
+  // 임시로 마커 합성본 사용 (원본은 _DR_DATA.locationMap에 유지)
+  var origLocMap = d.locationMap;
+  if (composedLocationMap) d = Object.assign({}, d, { locationMap: composedLocationMap });
   // 피해/복구 합계
   var totalDamage = 0, totalRecovery = 0;
   ANA.items.forEach(function(it){
@@ -21971,6 +22120,48 @@ function _renderBatchSummary(okCount, failCount, merged) {
   el.style.display = 'block';
   var totalItems = merged ? merged.items.length : 0;
   var totalCost = merged ? (merged.totalDamage || 0) : 0;
+  var totalRecovery = merged ? (merged.totalRecovery || 0) : 0;
+
+  // ★ 항목 리스트 HTML 생성 (일괄 탭 안에서 보기)
+  var itemsHtml = '';
+  if (merged && merged.items && merged.items.length > 0) {
+    itemsHtml += '<div style="margin-top:14px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:10px;">';
+    itemsHtml +=   '<div style="font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px;">📋 피해·복구 항목 (' + merged.items.length + '건)</div>';
+    itemsHtml +=   '<div style="overflow-x:auto;">';
+    itemsHtml +=     '<table style="width:100%;border-collapse:collapse;font-size:11px;min-width:760px;">';
+    itemsHtml +=       '<thead style="background:rgba(0,180,216,0.12);">';
+    itemsHtml +=         '<tr>';
+    itemsHtml +=           '<th style="padding:5px 6px;border:1px solid var(--border);text-align:center;width:38px;">번호</th>';
+    itemsHtml +=           '<th style="padding:5px 6px;border:1px solid var(--border);text-align:left;">피해유형</th>';
+    itemsHtml +=           '<th style="padding:5px 6px;border:1px solid var(--border);text-align:left;width:130px;">규격/수량</th>';
+    itemsHtml +=           '<th style="padding:5px 6px;border:1px solid var(--border);text-align:right;width:110px;">피해금액(원)</th>';
+    itemsHtml +=           '<th style="padding:5px 6px;border:1px solid var(--border);text-align:center;width:80px;">복구유형</th>';
+    itemsHtml +=           '<th style="padding:5px 6px;border:1px solid var(--border);text-align:left;width:120px;">사진명</th>';
+    itemsHtml +=         '</tr>';
+    itemsHtml +=       '</thead>';
+    itemsHtml +=       '<tbody>';
+    merged.items.forEach(function(it, i){
+      var src = it.note ? (it.note.match(/📷([^\s|<]+)/) || [])[1] : '';
+      itemsHtml += '<tr>';
+      itemsHtml +=   '<td style="padding:4px 6px;border:1px solid var(--border);text-align:center;color:var(--text2);">' + (it.no || (i+1)) + '</td>';
+      itemsHtml +=   '<td style="padding:4px 6px;border:1px solid var(--border);">' + _escHtmlBatch(it.damageType || '') + '</td>';
+      itemsHtml +=   '<td style="padding:4px 6px;border:1px solid var(--border);font-size:10px;color:var(--text2);">' + _escHtmlBatch(it.quantity || '') + '</td>';
+      itemsHtml +=   '<td style="padding:4px 6px;border:1px solid var(--border);text-align:right;color:var(--gold);font-weight:700;">' + (it.damageCost || 0).toLocaleString() + '</td>';
+      itemsHtml +=   '<td style="padding:4px 6px;border:1px solid var(--border);text-align:center;font-size:10px;">' + _escHtmlBatch(it.recoveryType || '원형복구') + '</td>';
+      itemsHtml +=   '<td style="padding:4px 6px;border:1px solid var(--border);font-size:10px;color:#B388FF;">' + (src ? '📷' + _escHtmlBatch(src) : '-') + '</td>';
+      itemsHtml += '</tr>';
+    });
+    itemsHtml +=       '</tbody>';
+    itemsHtml +=     '</table>';
+    itemsHtml +=   '</div>';
+    // 구조물 제원 (있으면)
+    if (merged.structures && merged.structures.length > 0) {
+      itemsHtml += '<div style="margin-top:10px;font-size:11px;color:var(--text2);">';
+      itemsHtml +=   '<b style="color:#FFB74D;">🏗 구조물 제원: </b>' + merged.structures.length + '건 등록됨';
+      itemsHtml += '</div>';
+    }
+    itemsHtml += '</div>';
+  }
 
   el.innerHTML =
     '<div style="background:linear-gradient(135deg,rgba(67,160,71,0.15),rgba(0,180,216,0.1));border:1px solid rgba(67,160,71,0.4);border-radius:10px;padding:16px 18px;">'
@@ -21980,18 +22171,25 @@ function _renderBatchSummary(okCount, failCount, merged) {
     +   (failCount > 0 ? '<div>실패 <b style="color:#EF5350;font-size:16px;">' + failCount + '</b>장</div>' : '')
     +   '<div>대장 누적 <b style="color:var(--accent);font-size:16px;">' + totalItems + '</b>개 항목</div>'
     +   '<div>피해금액 합계 <b style="color:var(--gold);font-size:16px;">' + totalCost.toLocaleString() + '</b>원</div>'
+    +   (totalRecovery > 0 ? '<div>복구비 합계 <b style="color:#81D4FA;font-size:16px;">' + totalRecovery.toLocaleString() + '</b>원</div>' : '')
     + '</div>'
-    + '<div style="display:flex;gap:10px;flex-wrap:wrap;">'
-    +   '<button class="btn btn-p" onclick="go(0)" style="background:linear-gradient(135deg,#43A047,#2E7D32);">📋 1번 탭에서 대장 확인 →</button>'
+    + itemsHtml
+    + '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">'
+    +   '<button class="btn btn-o" onclick="go(0)" style="font-size:12px;padding:8px 14px;background:rgba(124,77,255,0.15);color:#B388FF;border:1px solid rgba(124,77,255,0.4);">📝 1번 탭에서 항목 수정·AI 상담</button>'
+    +   '<button class="btn btn-o" onclick="go(1)" style="font-size:12px;padding:8px 14px;background:rgba(255,193,7,0.15);color:#FFB74D;border:1px solid rgba(255,193,7,0.4);">📋 재해대장 생성</button>'
     + '</div>'
     + '<div style="margin-top:10px;font-size:11px;color:var(--text2);line-height:1.6;">'
-    +   '★ 각 항목의 비고에 <b style="color:#B388FF;">📷사진명</b>이 표시되어 어느 사진에서 나왔는지 확인할 수 있습니다.<br>'
-    +   '★ 1번 탭에서 항목 수정·삭제·AI 상담 등 모든 기존 기능을 그대로 사용하세요.'
+    +   '★ 위 표는 결과 미리보기입니다. 항목 수정·삭제·AI 상담·단가 검증 등은 <b style="color:#B388FF;">1번 탭</b>에서 진행하세요.'
     + '</div>'
     + '</div>';
 
-  // 완료 후 자동으로 1번 탭 대장으로 살짝 안내 스크롤
+  // 결과 영역으로 스크롤
   try { el.scrollIntoView({ behavior:'smooth', block:'nearest' }); } catch(e){}
+}
+
+// HTML 이스케이프 헬퍼 (일괄 결과표 전용)
+function _escHtmlBatch(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 // 진행률 갱신
