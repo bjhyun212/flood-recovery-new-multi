@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.39 (Word 여백 축소 + 이미지 페이지 가득 + 산출근거에 damageCostBasis/recoveryCostBasis 사용)</title>
+<title>복구설계시스템(BJH) ver8.40 (메뉴 정리 - 설계내역서 생성·보고서작성·엑셀내보내기 삭제 / 마커 범례 단순화 / 피해·복구 사진 85mm 확대)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.39</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.40</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -181,7 +181,7 @@ select.fc option{background:var(--navy2);}
   <button class="tab on" onclick="go(0)" id="t0">📸 단일현장 피해분석 <span class="tnum">1</span></button>
   <button class="tab" onclick="go(1)" id="t1">📋 재해대장 <span class="tnum">2</span></button>
   <button class="tab" onclick="go(2)" id="t2" style="display:none;">📐 복구단면도 <span class="tnum">3</span></button>
-  <button class="tab" onclick="go(3)" id="t3">📄 보고서 작성 <span class="tnum">4</span></button>
+  <button class="tab" onclick="go(3)" id="t3" style="display:none;">📄 보고서 작성 <span class="tnum">4</span></button>
   <button class="tab" onclick="go(4)" id="t4" style="display:none;">📊 검증·이력 <span class="tnum">5</span></button>
   <!-- ★ ver7.10: 관리자 잠금 아이콘 (탭 우측 끝) - 일반 사용자에게는 작은 자물쇠로만 보임 -->
   <button class="tab" onclick="goBatch()" id="tb" style="background:rgba(124,77,255,0.12);border:1px solid rgba(124,77,255,0.35);color:#B388FF;font-weight:700;" title="여러 현장 사진을 한꺼번에 자동 분석 (사진 1장 = 1현장)">📦 다현장 일괄분석</button>
@@ -263,7 +263,6 @@ select.fc option{background:var(--navy2);}
       <button class="btn btn-o" onclick="_expandAllRows(true)" style="font-size:11px;padding:5px 12px;">▼ 전체 펼치기</button>
       <button class="btn btn-o" onclick="_expandAllRows(false)" style="font-size:11px;padding:5px 12px;">▶ 전체 접기</button>
       <button class="btn btn-o" onclick="resetColumnWidths()" style="font-size:11px;padding:5px 12px;" title="드래그로 조절한 열 너비를 기본값으로 되돌립니다.">↔ 열너비 초기화</button>
-      <button class="btn btn-o" onclick="_exportDamageReportExcel()" style="font-size:11px;padding:5px 12px;background:rgba(33,150,243,0.18);color:#64B5F6;border:1px solid rgba(33,150,243,0.45);" title="피해복구대장을 A4 가로 양식 엑셀 파일로 내보냅니다">📊 엑셀 내보내기</button>
       <button class="btn btn-o" onclick="toTab2()" id="toTab2Btn">📋 재해대장 생성</button>
     </div>
     <!-- ★ ver7.92: 산정근거·참고사항 컬럼 표시 옵션 (기본 숨김) -->
@@ -8908,7 +8907,7 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
   
   // 좌측 피해사진 HTML
   var damagePhotoHTML = photoUrl
-    ? '<div style="text-align:center;"><img src="' + photoUrl + '" style="max-width:100%;max-height:75mm;object-fit:contain;border:1px solid #ccc;"></div>'
+    ? '<div style="text-align:center;"><img src="' + photoUrl + '" style="max-width:100%;max-height:85mm;object-fit:contain;border:1px solid #ccc;"></div>'
     : '<div style="text-align:center;color:#999;padding:30mm 0;">(피해사진 없음)</div>';
   
   // 우측 복구내역 HTML — 같은 피해사진 + 복구계획 라벨 오버레이
@@ -8935,16 +8934,12 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
         + num + '</div>';
     }).join('');
     
-    // 사진 아래 범례 — 공종 + 산출근거 + 복구금액
+    // 사진 아래 범례 — 번호 + 공종명만 (산출근거·금액은 하단의 "복구비 산출근거" 표와 중복이라 생략) ★ ver8.40
     var listItems = recoveryStructList.slice(0, 10).map(function(s, idx) {
       var icon = '①②③④⑤⑥⑦⑧⑨⑩'[idx] || ('(' + (idx+1) + ')');
-      var amtTxt = '<span style="color:#C62828;font-weight:700;">' + s.cost.toLocaleString() + '원</span>';
-      return '<div style="font-size:9.5px;line-height:1.5;margin-bottom:2px;border-left:2px solid #C62828;padding-left:5px;display:flex;align-items:center;gap:4px;flex-wrap:wrap;">'
-        + '<b style="color:#C62828;flex-shrink:0;">' + icon + '</b> '
-        + '<span style="flex:1;min-width:140px;">' + _escDR(s.type) + '</span>'
-        + '<span style="color:#1565C0;font-weight:600;">' + _escDR(s.qty) + (s.unit ? s.unit : '') + '</span>'
-        + '<span style="color:#666;">·</span>'
-        + amtTxt
+      return '<div style="font-size:10px;line-height:1.5;margin-bottom:2px;border-left:2px solid #C62828;padding-left:6px;">'
+        + '<b style="color:#C62828;">' + icon + '</b> '
+        + _escDR(s.type)
         + '</div>';
     }).join('');
     if (recoveryStructList.length > 10) {
@@ -8953,7 +8948,7 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
     
     recoveryHTML = ''
       + '<div class="dr-photo-wrap" style="position:relative;text-align:center;margin-bottom:5px;display:inline-block;width:100%;">'
-        + '<img src="' + photoUrl + '" style="max-width:100%;max-height:55mm;object-fit:contain;border:1px solid #ccc;display:block;margin:0 auto;">'
+        + '<img src="' + photoUrl + '" style="max-width:100%;max-height:85mm;object-fit:contain;border:1px solid #ccc;display:block;margin:0 auto;">'
         + overlayMarkers
       + '</div>'
       + '<div style="background:#fafafa;border:1px solid #ddd;border-radius:3px;padding:4px 7px;">'
@@ -9521,222 +9516,6 @@ async function _exportDRWord() {
   }, 400);
 }
 
-// ============================================================
-// ★★★ ver8.37: 피해·복구 대장 → 엑셀 내보내기 (A4 가로 양식) ★★★
-// ============================================================
-async function _exportDamageReportExcel() {
-  if (typeof XLSX === 'undefined') {
-    alert('엑셀 라이브러리 로딩 중입니다. 잠시 후 다시 시도해주세요.\n(2~3초 뒤 [📊 엑셀 내보내기] 다시 클릭)');
-    return;
-  }
-  if (!ANA || !ANA.items || ANA.items.length === 0) {
-    alert('피해분석 데이터가 없습니다. 먼저 피해분석을 진행하세요.');
-    return;
-  }
-  
-  // 파일명: 피해복구대장_위치_YYYYMMDD
-  var loc = (document.getElementById('loc') && document.getElementById('loc').value) || '현장';
-  var safeLoc = String(loc).replace(/[\s\\/:*?"<>|]+/g, '').substring(0, 25);
-  var d = new Date();
-  var dateStr = d.getFullYear() + ('0'+(d.getMonth()+1)).slice(-2) + ('0'+d.getDate()).slice(-2);
-  var fname = '피해복구대장_' + safeLoc + '_' + dateStr;
-  
-  // 합계
-  var totalDmg = 0, totalRec = 0;
-  ANA.items.forEach(function(it){
-    totalDmg += (it.damageCost || 0);
-    totalRec += (it._recoveryCostVal || it.recoveryCost || 0);
-  });
-  
-  // aoa 빌드 (배열의 배열) — 11컬럼
-  var aoa = [];
-  
-  // Row 0: 제목 (11개 컬럼 병합)
-  aoa.push(['피 해 · 복 구 대 장', '', '', '', '', '', '', '', '', '', '']);
-  // Row 1: 부제
-  var subtitle = '피해위치: ' + loc + '   |   분석 항목: ' + ANA.items.length + '건   |   작성일: ' + d.toLocaleDateString('ko-KR');
-  aoa.push([subtitle, '', '', '', '', '', '', '', '', '', '']);
-  // Row 2: 헤더
-  aoa.push(['순번', '사진출처', '피해유형', '피해물량 (산출근거)', '피해금액(원)', '복구구분', '복구공법', '복구물량 (산출근거)', '복구산출근거', '복구금액(원)', '참고사항']);
-  // Row 3~: 데이터
-  ANA.items.forEach(function(it, idx) {
-    var src = (it._srcPhoto || '').replace(/\.[^.]+$/, '') || (it._srcHint || '-');
-    function clean(s) { return String(s || '').replace(/[\r\n]+/g, ' ').replace(/\s{2,}/g, ' ').trim(); }
-    aoa.push([
-      it.no || (idx + 1),
-      src,
-      clean(it.damageType),
-      clean(it.quantity),
-      it.damageCost || 0,
-      it.recoveryType || (ANA.overallRecoveryType || '원형복구'),
-      clean(it.method),
-      clean(it.recoveryQty),
-      clean(it.recoveryCostBasis),
-      it._recoveryCostVal || it.recoveryCost || 0,
-      clean(it.note)
-    ]);
-  });
-  // 합계 행
-  aoa.push(['', '', '', '합 계', totalDmg, '', '', '', '합 계', totalRec, '']);
-  
-  var ws = XLSX.utils.aoa_to_sheet(aoa);
-  
-  // 컬럼 너비 (A4 가로 297mm 기준 — 단위: 문자수)
-  ws['!cols'] = [
-    {wch:5},   // 순번
-    {wch:14},  // 사진출처
-    {wch:24},  // 피해유형
-    {wch:24},  // 피해물량
-    {wch:13},  // 피해금액
-    {wch:8},   // 복구구분
-    {wch:22},  // 복구공법
-    {wch:24},  // 복구물량
-    {wch:28},  // 복구산출근거
-    {wch:13},  // 복구금액
-    {wch:18}   // 참고사항
-  ];
-  
-  // 행 높이
-  ws['!rows'] = [
-    {hpt:30},  // 제목
-    {hpt:18},  // 부제
-    {hpt:36}   // 헤더 (줄바꿈 고려)
-  ];
-  // 데이터 행 높이도 자동으로 살짝 키움
-  for (var r = 3; r < aoa.length; r++) {
-    ws['!rows'].push({ hpt: r === aoa.length - 1 ? 24 : 32 });
-  }
-  
-  // 병합: 제목·부제 행 전체 폭
-  ws['!merges'] = [
-    { s: {r:0, c:0}, e: {r:0, c:10} },
-    { s: {r:1, c:0}, e: {r:1, c:10} }
-  ];
-  
-  // 셀 스타일 (xlsx-js-style)
-  var rng = XLSX.utils.decode_range(ws['!ref']);
-  for (var R = rng.s.r; R <= rng.e.r; R++) {
-    for (var C = rng.s.c; C <= rng.e.c; C++) {
-      var addr = XLSX.utils.encode_cell({r:R, c:C});
-      if (!ws[addr]) ws[addr] = { v: '', t: 's' };
-      
-      // 기본 셀 스타일
-      var s = {
-        border: {
-          top:    {style:'thin', color:{rgb:'404040'}},
-          bottom: {style:'thin', color:{rgb:'404040'}},
-          left:   {style:'thin', color:{rgb:'404040'}},
-          right:  {style:'thin', color:{rgb:'404040'}}
-        },
-        alignment: { vertical:'center', horizontal:'center', wrapText:true },
-        font: { name:'맑은 고딕', sz:9 }
-      };
-      
-      if (R === 0) {
-        // 제목 행
-        s.font = { name:'맑은 고딕', sz:18, bold:true };
-        s.alignment = { vertical:'center', horizontal:'center' };
-        s.border = {};
-      } else if (R === 1) {
-        // 부제 행
-        s.font = { name:'맑은 고딕', sz:10, color:{rgb:'555555'} };
-        s.alignment = { vertical:'center', horizontal:'left', indent:1 };
-        s.border = {};
-      } else if (R === 2) {
-        // 헤더 행
-        s.font = { name:'맑은 고딕', sz:10, bold:true, color:{rgb:'FFFFFF'} };
-        s.fill = { fgColor:{rgb:'1565C0'} };
-        s.alignment = { vertical:'center', horizontal:'center', wrapText:true };
-      } else if (R === rng.e.r) {
-        // 합계 행
-        s.font = { name:'맑은 고딕', sz:10, bold:true };
-        s.fill = { fgColor:{rgb:'F0F0F0'} };
-        if (C === 3 || C === 8) {
-          s.alignment = { vertical:'center', horizontal:'center', wrapText:false };
-        } else if (C === 4 || C === 9) {
-          s.alignment = { vertical:'center', horizontal:'right', wrapText:false };
-          ws[addr].z = '#,##0';
-        } else {
-          s.alignment = { vertical:'center', horizontal:'center', wrapText:false };
-        }
-      } else {
-        // 데이터 행 — 컬럼별 정렬
-        if (C === 0 || C === 1 || C === 5) {
-          // 순번·사진출처·복구구분 가운데
-          s.alignment.horizontal = 'center';
-        } else if (C === 4 || C === 9) {
-          // 금액 우측 정렬 + 천단위 콤마
-          s.alignment.horizontal = 'right';
-          ws[addr].z = '#,##0';
-        } else {
-          // 텍스트 좌측 정렬
-          s.alignment.horizontal = 'left';
-          s.alignment.indent = 1;
-        }
-        
-        // 짝수 행 배경 (가독성)
-        if ((R - 3) % 2 === 1) {
-          s.fill = { fgColor:{rgb:'F9FAFB'} };
-        }
-        
-        // 복구구분 색상 강조
-        if (C === 5) {
-          var rt = ws[addr].v;
-          if (rt === '개선복구') {
-            s.font.color = {rgb:'C62828'};
-            s.font.bold = true;
-          } else {
-            s.font.color = {rgb:'2E7D32'};
-          }
-        }
-      }
-      
-      ws[addr].s = s;
-    }
-  }
-  
-  // 인쇄 영역 설정
-  ws['!printHeader'] = [3, 3];
-  
-  var wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, '피해복구대장');
-  
-  // 인쇄 설정 (A4 가로 · 가로 1페이지 맞춤)
-  var printSettings = {
-    orientation: 'landscape',  // 가로
-    paperSize: 9,              // A4
-    fitToWidth: 1,             // 가로 1페이지 강제
-    fitToHeight: 0,            // 세로는 자유 (행수가 많으면 여러 페이지)
-    scale: 100,
-    marginsTopBottom: 0.5,
-    marginsLR: 0.4,
-    marginsHF: 0.3,
-    titleRows: '1:3'           // 1~3행(제목·부제·헤더) 인쇄 시 모든 페이지에 반복
-  };
-  
-  // 저장
-  try {
-    if (typeof saveAsXlsx === 'function') {
-      await saveAsXlsx(wb, fname, null, printSettings);
-    } else {
-      var wbout = XLSX.write(wb, { bookType:'xlsx', type:'array' });
-      if (typeof injectPrintSettings === 'function') {
-        wbout = await injectPrintSettings(wbout, printSettings);
-      }
-      var blob = new Blob([wbout], { type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = fname + '.xlsx';
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
-    }
-  } catch(e) {
-    console.error('피해복구대장 엑셀 다운로드 실패:', e);
-    alert('엑셀 다운로드 실패: ' + e.message);
-  }
-}
 
 // 페이지 로드 시 자동 복원
 if (typeof window !== 'undefined') {
@@ -23192,7 +22971,6 @@ function _renderBatchSummary(okCount, failCount, merged) {
     + '</div>'
     + '<div style="display:flex;gap:10px;flex-wrap:wrap;">'
     +   '<button class="btn btn-p" onclick="go(0)" style="background:linear-gradient(135deg,#43A047,#2E7D32);">📋 1번 탭에서 대장 확인 →</button>'
-    +   '<button class="btn btn-o" onclick="go(0);setTimeout(function(){if(typeof toTab2===\'function\')toTab2();},300);">💰 바로 설계내역서 생성 →</button>'
     + '</div>'
     + '<div style="margin-top:10px;font-size:11px;color:var(--text2);line-height:1.6;">'
     +   '★ 각 항목의 비고에 <b style="color:#B388FF;">📷사진명</b>이 표시되어 어느 사진에서 나왔는지 확인할 수 있습니다.<br>'
