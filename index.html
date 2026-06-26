@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.42 (산출근거 셀 클릭 → 자연재난조사 단가표 즉시조회 팝업 + 단가 일치/근사/차이 비교)</title>
+<title>복구설계시스템(BJH) ver8.43 (Word 하단 잘림 완전수정 - px 단위 강제 + 콘텐츠 압축 / 메뉴 순서 변경 / 단가검증 메뉴 삭제)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.42</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.43</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -150,10 +150,9 @@ select.fc option{background:var(--navy2);}
     <label style="background:rgba(0,180,216,0.2);color:var(--accent);border:1px solid rgba(0,180,216,0.4);padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;margin-left:4px;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;flex-shrink:0;display:inline-block;">
       📂 불러오기<input type="file" accept=".json" style="display:none;" onchange="importProject(this.files);this.value='';">
     </label>
-    <!-- ★ ver7.95: 단가 검증 수동 트리거 - 형님이 의심스러울 때 언제든 검증 -->
-    <button onclick="manualUnitMismatchCheck()" style="background:rgba(255,138,101,0.18);color:#FFAB91;border:1px solid rgba(255,138,101,0.5);padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;margin-left:4px;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;flex-shrink:0;" title="설계내역서의 모든 항목을 단가표(REF)와 대조하여 단가 오인·단위 오류를 자동 검출합니다.">
-      🔍 단가 검증
-    </button>
+    <!-- ★ ver8.42: [단가 검증] 메뉴 삭제 - 산출근거 셀 클릭으로 즉시 단가 조회 가능해져서 중복
+    <button onclick="manualUnitMismatchCheck()" ...>🔍 단가 검증</button>
+    -->
     <!-- ★ ver8.09: 최근 경고 다시보기 - 이전에 뜬 검증 경고 모달을 다시 띄움 -->
     <button id="recentAlertBtn" onclick="showRecentAlertsList()" style="background:rgba(255,193,7,0.18);color:#FFD54F;border:1px solid rgba(255,193,7,0.5);padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;margin-left:4px;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;flex-shrink:0;display:none;" title="이전에 뜬 검증·경고 모달을 다시 볼 수 있습니다.">
       🔔 최근 경고 <span id="recentAlertBadge" style="background:#FF5252;color:#fff;border-radius:10px;padding:1px 6px;font-size:9.5px;font-weight:800;margin-left:3px;">0</span>
@@ -178,13 +177,13 @@ select.fc option{background:var(--navy2);}
 
 <!-- 탭 -->
 <nav class="nav">
-  <button class="tab on" onclick="go(0)" id="t0">📸 단일현장 피해분석 <span class="tnum">1</span></button>
+  <button class="tab" onclick="goBatch()" id="tb" style="background:rgba(124,77,255,0.12);border:1px solid rgba(124,77,255,0.35);color:#B388FF;font-weight:700;" title="여러 현장 사진을 한꺼번에 자동 분석 (사진 1장 = 1현장)">📦 다현장 일괄분석</button>
   <button class="tab" onclick="go(1)" id="t1">📋 재해대장 <span class="tnum">2</span></button>
+  <button class="tab on" onclick="go(0)" id="t0">📸 단일현장 피해분석 <span class="tnum">1</span></button>
   <button class="tab" onclick="go(2)" id="t2" style="display:none;">📐 복구단면도 <span class="tnum">3</span></button>
   <button class="tab" onclick="go(3)" id="t3" style="display:none;">📄 보고서 작성 <span class="tnum">4</span></button>
   <button class="tab" onclick="go(4)" id="t4" style="display:none;">📊 검증·이력 <span class="tnum">5</span></button>
   <!-- ★ ver7.10: 관리자 잠금 아이콘 (탭 우측 끝) - 일반 사용자에게는 작은 자물쇠로만 보임 -->
-  <button class="tab" onclick="goBatch()" id="tb" style="background:rgba(124,77,255,0.12);border:1px solid rgba(124,77,255,0.35);color:#B388FF;font-weight:700;" title="여러 현장 사진을 한꺼번에 자동 분석 (사진 1장 = 1현장)">📦 다현장 일괄분석</button>
   <button id="adminLockBtn" onclick="_showAdminLoginModal()" style="margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,0.10);color:rgba(255,255,255,0.35);padding:5px 10px;border-radius:6px;font-size:11px;cursor:pointer;transition:all 0.15s;" title="관리자 모드">🔒</button>
 </nav>
 
@@ -8689,7 +8688,7 @@ function _renderDR() {
   
   // ==== 페이지 1: 총괄현황 ====
   var page1 = ''
-    + '<div class="dr-page" style="width:297mm;padding:10mm 12mm;margin:0 auto 10mm;background:#fff;color:#000;font-family:\'Malgun Gothic\',\'맑은 고딕\',sans-serif;font-size:11px;page-break-after:always;box-shadow:0 0 10px rgba(0,0,0,0.15);position:relative;">'
+    + '<div class="dr-page" style="width:297mm;padding:6mm 10mm;margin:0 auto 10mm;background:#fff;color:#000;font-family:\'Malgun Gothic\',\'맑은 고딕\',sans-serif;font-size:11px;page-break-after:always;box-shadow:0 0 10px rgba(0,0,0,0.15);position:relative;">'
     + '<table style="width:100%;border-collapse:collapse;margin-bottom:6px;">'
       + '<tr>'
         + '<td style="width:30%;text-align:left;font-size:11px;border:none;"></td>'
@@ -8908,7 +8907,7 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
   
   // 좌측 피해사진 HTML
   var damagePhotoHTML = photoUrl
-    ? '<div style="text-align:center;"><img src="' + photoUrl + '" style="max-width:100%;max-height:80mm;object-fit:contain;border:1px solid #ccc;"></div>'
+    ? '<div style="text-align:center;"><img src="' + photoUrl + '" style="max-width:100%;max-height:75mm;object-fit:contain;border:1px solid #ccc;"></div>'
     : '<div style="text-align:center;color:#999;padding:30mm 0;">(피해사진 없음)</div>';
   
   // 우측 복구내역 HTML — 같은 피해사진 + 복구계획 라벨 오버레이
@@ -8949,7 +8948,7 @@ function _buildDRPage2(groupItems, photoUrl, photoLabel, pageIdx, pageTotal) {
     
     recoveryHTML = ''
       + '<div class="dr-photo-wrap" style="position:relative;text-align:center;margin-bottom:5px;display:inline-block;width:100%;">'
-        + '<img src="' + photoUrl + '" style="max-width:100%;max-height:80mm;object-fit:contain;border:1px solid #ccc;display:block;margin:0 auto;">'
+        + '<img src="' + photoUrl + '" style="max-width:100%;max-height:75mm;object-fit:contain;border:1px solid #ccc;display:block;margin:0 auto;">'
         + overlayMarkers
       + '</div>'
       + '<div style="background:#fafafa;border:1px solid #ddd;border-radius:3px;padding:4px 7px;">'
@@ -9190,7 +9189,7 @@ function _buildDRPage3(groupItems, photoKey, pageIdx) {
   
   if (sectionable.length === 0) return '';
   
-  // 각 구조물 단면도 SVG 생성
+  // 각 구조물 단면도 SVG 생성 ★ ver8.43: 박스 max-height 제한으로 페이지 잘림 방지
   var boxes = sectionable.map(function(st, i) {
     var svg = _generateSectionSVG(st);
     if (!svg) return '';
@@ -9198,12 +9197,12 @@ function _buildDRPage3(groupItems, photoKey, pageIdx) {
     var specShort = (st.spec || '').length > 80 
       ? (st.spec || '').substring(0, 78) + '…' 
       : (st.spec || '');
-    return '<div style="border:1.5px solid #000;padding:6px 8px 8px;background:#fff;break-inside:avoid;page-break-inside:avoid;">'
-      + '<div style="text-align:center;font-weight:700;font-size:11px;color:#1565C0;margin-bottom:3px;border-bottom:1px solid #1565C0;padding-bottom:3px;">' 
+    return '<div style="border:1.5px solid #000;padding:4px 6px 6px;background:#fff;break-inside:avoid;page-break-inside:avoid;max-height:88mm;overflow:hidden;">'
+      + '<div style="text-align:center;font-weight:700;font-size:10.5px;color:#1565C0;margin-bottom:2px;border-bottom:1px solid #1565C0;padding-bottom:2px;">' 
         + (i+1) + '. ' + _escDR(label) + ' &mdash; ' + _escDR(st.name || '')
       + '</div>'
-      + '<div style="font-size:9.5px;color:#444;margin-bottom:4px;text-align:left;line-height:1.4;"><b style="color:#666;">규격:</b> ' + _escDR(specShort) + '</div>'
-      + '<div style="text-align:center;background:#FAFAFA;border:1px solid #ddd;border-radius:3px;padding:4px;">' + svg + '</div>'
+      + '<div style="font-size:9px;color:#444;margin-bottom:3px;text-align:left;line-height:1.3;"><b style="color:#666;">규격:</b> ' + _escDR(specShort) + '</div>'
+      + '<div style="text-align:center;background:#FAFAFA;border:1px solid #ddd;border-radius:3px;padding:3px;max-height:62mm;overflow:hidden;">' + svg + '</div>'
       + '</div>';
   }).filter(Boolean).join('');
   
@@ -9218,13 +9217,13 @@ function _buildDRPage3(groupItems, photoKey, pageIdx) {
     : '📷 단일현장 종합';
   
   return ''
-    + '<div class="dr-page" style="width:297mm;padding:10mm 12mm;margin:0 auto 10mm;background:#fff;color:#000;font-family:\'Malgun Gothic\',\'맑은 고딕\',sans-serif;font-size:11px;page-break-after:always;box-shadow:0 0 10px rgba(0,0,0,0.15);">'
-    + '<div style="font-weight:700;font-size:12px;margin:0 0 6px;display:flex;align-items:center;flex-wrap:wrap;">'
+    + '<div class="dr-page" style="width:297mm;padding:6mm 10mm;margin:0 auto 10mm;background:#fff;color:#000;font-family:\'Malgun Gothic\',\'맑은 고딕\',sans-serif;font-size:11px;page-break-after:always;box-shadow:0 0 10px rgba(0,0,0,0.15);">'
+    + '<div style="font-weight:700;font-size:12px;margin:0 0 5px;display:flex;align-items:center;flex-wrap:wrap;">'
       + '<span>□ 복구계획 단면도</span>'
       + '<span style="margin-left:14px;font-weight:600;color:#7B1FA2;">' + _escDR(photoTitle) + '</span>'
       + '<span style="margin-left:auto;font-size:10px;color:#666;font-weight:400;">' + cnt + '개 구조물 표준단면도</span>'
     + '</div>'
-    + '<div style="display:grid;grid-template-columns:repeat(' + cols + ',1fr);gap:6px;">'
+    + '<div style="display:grid;grid-template-columns:repeat(' + cols + ',1fr);gap:5px;">'
     + boxes
     + '</div>'
     + '</div>';
@@ -9419,18 +9418,26 @@ async function _exportDRWord() {
   try {
     for (var i = 0; i < pages.length; i++) {
       var pg = pages[i];
-      // ★ ver8.41: 캡처 직전 페이지 사이즈를 A4 가로 비율(297mm × 210mm)로 강제
-      //   → 콘텐츠가 페이지보다 길면 하단이 잘리지만, Word 출력에서 다음 페이지로 어색하게 밀려나는 현상 방지
-      //   → 콘텐츠가 페이지보다 짧으면 하단 흰 여백 (양식 그대로)
-      var origMinHeight = pg.style.minHeight;
-      var origMaxHeight = pg.style.maxHeight;
-      var origHeight = pg.style.height;
-      var origOverflow = pg.style.overflow;
-      var origShadow = pg.style.boxShadow;
+      // ★ ver8.43: A4 가로 (297mm × 210mm) → 픽셀 단위로 명시 (mm 변환 의존성 제거)
+      //   1mm = 3.7795275591 px @ 96dpi
+      //   297mm = 1122.52 px, 210mm = 793.7 px
+      var TARGET_W = 1123;  // 297mm
+      var TARGET_H = 794;   // 210mm
       
-      pg.style.height = '210mm';
-      pg.style.maxHeight = '210mm';
-      pg.style.minHeight = '210mm';
+      var origStyles = {
+        width: pg.style.width, minWidth: pg.style.minWidth, maxWidth: pg.style.maxWidth,
+        height: pg.style.height, minHeight: pg.style.minHeight, maxHeight: pg.style.maxHeight,
+        overflow: pg.style.overflow, boxShadow: pg.style.boxShadow,
+        transform: pg.style.transform
+      };
+      
+      // 픽셀 단위로 강제 (브라우저 mm → px 변환 오차 제거)
+      pg.style.width = TARGET_W + 'px';
+      pg.style.minWidth = TARGET_W + 'px';
+      pg.style.maxWidth = TARGET_W + 'px';
+      pg.style.height = TARGET_H + 'px';
+      pg.style.minHeight = TARGET_H + 'px';
+      pg.style.maxHeight = TARGET_H + 'px';
       pg.style.overflow = 'hidden';
       pg.style.boxShadow = 'none';
       
@@ -9443,16 +9450,21 @@ async function _exportDRWord() {
           logging: false,
           backgroundColor: '#ffffff',
           imageTimeout: 8000,
-          width: pg.offsetWidth,
-          height: pg.offsetHeight,
+          width: TARGET_W,
+          height: TARGET_H,
+          windowWidth: TARGET_W,
+          windowHeight: TARGET_H,
           onclone: function(clonedDoc) {
             // 클론된 페이지도 동일하게 강제
             var clonedPages = clonedDoc.querySelectorAll('.dr-page');
             clonedPages.forEach(function(p){
               p.style.boxShadow = 'none';
-              p.style.height = '210mm';
-              p.style.maxHeight = '210mm';
-              p.style.minHeight = '210mm';
+              p.style.width = TARGET_W + 'px';
+              p.style.minWidth = TARGET_W + 'px';
+              p.style.maxWidth = TARGET_W + 'px';
+              p.style.height = TARGET_H + 'px';
+              p.style.minHeight = TARGET_H + 'px';
+              p.style.maxHeight = TARGET_H + 'px';
               p.style.overflow = 'hidden';
             });
           }
@@ -9460,20 +9472,12 @@ async function _exportDRWord() {
       } catch(capErr) {
         console.warn('페이지 ' + (i+1) + ' 캡처 실패:', capErr);
         // 복원
-        pg.style.height = origHeight;
-        pg.style.maxHeight = origMaxHeight;
-        pg.style.minHeight = origMinHeight;
-        pg.style.overflow = origOverflow;
-        pg.style.boxShadow = origShadow;
+        Object.keys(origStyles).forEach(function(k) { pg.style[k] = origStyles[k]; });
         continue;
       }
       
       // 캡처 후 원본 스타일 복원
-      pg.style.height = origHeight;
-      pg.style.maxHeight = origMaxHeight;
-      pg.style.minHeight = origMinHeight;
-      pg.style.overflow = origOverflow;
-      pg.style.boxShadow = origShadow;
+      Object.keys(origStyles).forEach(function(k) { pg.style[k] = origStyles[k]; });
       
       pngs.push(canvas.toDataURL('image/png'));
       
