@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.31 (탭2 설계내역서→재해대장 전환 + 편람양식 A4가로 출력 + Word 다운로드)</title>
+<title>복구설계시스템(BJH) ver8.32 (재해대장 산출근거 표기 + 0원 좌측생략 + 복구내역 사진 라벨링)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.31</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.32</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -8762,43 +8762,101 @@ function _renderDR() {
       + '</div>'
     : '<div style="text-align:center;color:#999;padding:30mm 0;">(피해사진 없음)</div>';
   
-  // 산출근거 표 — ANA.items 기반으로 1공종 그룹 행 생성
+  // ★ ver8.32: 산출근거 표 — 피해금액 0원 항목은 좌측 비우고 우측만 (복구계획에만 기록)
   var itemRows = '';
+  var recoveryStructList = []; // 복구내역 사진 옆 주요 복구구조물 목록
   ANA.items.forEach(function(it, i) {
     var dCost = it.damageCost || 0;
     var rCost = it._recoveryCostVal || it.recoveryCost || 0;
     // 공종 라벨: 편람시설명 → 공종명 (피해유형에서 추출)
     var dt = (it.damageType || '').replace(/^\s*\[([^\]]+)\]\s*/, '$1→');
-    // 단위·물량 (피해/복구)
+    // 단위·산출근거 (피해/복구) — 산출근거는 quantity/recoveryQty 원문(요약)
     var dUnit = _extractDRUnit(it.quantity || '');
-    var dQty = _extractDRQty(it.quantity || '');
+    var dBasis = _extractDRBasis(it.quantity || '');
     var rUnit = _extractDRUnit(it.recoveryQty || '');
-    var rQty = _extractDRQty(it.recoveryQty || '');
+    var rBasis = _extractDRBasis(it.recoveryQty || '');
+    
+    // ★ 복구내역 사진용 주요 복구구조물 라벨 수집 (rCost > 0 항목만)
+    if (rCost > 0) {
+      recoveryStructList.push({
+        no: it.no || (i + 1),
+        type: dt,
+        qty: rBasis,
+        unit: rUnit,
+        cost: rCost,
+        recType: it.recoveryType || '원형복구'
+      });
+    }
+    
+    // ★ 피해금액 0원 항목 처리: 좌측 4칸 빈칸 (복구계획에만 기록)
+    var isZeroDamage = (dCost === 0 || dCost === '0');
+    var leftCells = isZeroDamage
+      ? '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;color:#999;font-style:italic;" colspan="4">(복구계획에만 기록 — 신설/개선)</td>'
+      : ''
+        + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;vertical-align:top;">' + _escDR(dt) + '</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;">(' + dUnit + ')</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;">' + _escDR(dBasis) + '</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:right;">' + dCost.toLocaleString() + '</td>';
     
     itemRows += '<tr>'
-      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;vertical-align:top;">' + _escDR(dt) + '</td>'
-      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;">(' + dUnit + ')</td>'
-      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;">' + _escDR(dQty) + '</td>'
-      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:right;">' + dCost.toLocaleString() + '</td>'
+      + leftCells
       + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;vertical-align:top;">' + _escDR(dt) + '</td>'
       + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;">(' + rUnit + ')</td>'
-      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:center;">' + _escDR(rQty) + '</td>'
+      + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;">' + _escDR(rBasis) + '</td>'
       + '<td style="border:1px solid #000;padding:3px 5px;font-size:10px;text-align:right;">' + rCost.toLocaleString() + '</td>'
     + '</tr>';
   });
+  
+  // ★ 복구내역 영역 HTML — 첨부 사진 + 주요 복구구조물 위치/내용 라벨
+  var recoveryHTML = '';
+  if (IMGS && IMGS.length > 0) {
+    var firstImg = IMGS[0];
+    var firstSrc = (typeof firstImg === 'string') ? firstImg : (firstImg.dataUrl || firstImg.url || '');
+    // 사진 위에 라벨 오버레이 (좌상단에 ① ② ③ 순번 마커)
+    var overlayLabels = recoveryStructList.slice(0, 6).map(function(s, idx) {
+      var posTop = 8 + (idx % 3) * 22;
+      var posLeft = (idx < 3) ? 6 : 60;
+      var labelTxt = '①②③④⑤⑥'[idx] + ' ' + (s.type.length > 18 ? s.type.substring(0,18)+'…' : s.type);
+      return '<div style="position:absolute;top:' + posTop + '%;left:' + posLeft + '%;background:rgba(244,67,54,0.92);color:#fff;padding:2px 6px;border-radius:3px;font-size:9px;font-weight:700;border:1px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.4);max-width:38%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + _escDR(labelTxt) + '</div>';
+    }).join('');
+    
+    var listItems = recoveryStructList.slice(0, 8).map(function(s, idx) {
+      var icon = '①②③④⑤⑥⑦⑧'[idx] || ('(' + (idx+1) + ')');
+      return '<div style="font-size:9.5px;line-height:1.5;margin-bottom:2px;border-left:2px solid #C62828;padding-left:5px;">'
+        + '<b style="color:#C62828;">' + icon + '</b> '
+        + _escDR(s.type) + ' — '
+        + '<span style="color:#1565C0;font-weight:600;">' + _escDR(s.qty) + (s.unit ? s.unit : '') + '</span>'
+        + '</div>';
+    }).join('');
+    if (recoveryStructList.length > 8) {
+      listItems += '<div style="font-size:9px;color:#666;margin-top:3px;">외 ' + (recoveryStructList.length - 8) + '건</div>';
+    }
+    
+    recoveryHTML = ''
+      + '<div style="position:relative;text-align:center;margin-bottom:6px;">'
+        + '<img src="' + firstSrc + '" style="max-width:100%;max-height:55mm;object-fit:contain;border:1px solid #ccc;">'
+        + overlayLabels
+      + '</div>'
+      + '<div style="background:#fafafa;border:1px solid #ddd;border-radius:3px;padding:5px 8px;">'
+        + '<div style="font-size:9.5px;font-weight:700;color:#C62828;margin-bottom:3px;border-bottom:1px solid #C62828;padding-bottom:2px;">▣ 주요 복구구조물 (위치 표시)</div>'
+        + (listItems || '<div style="color:#999;font-size:9px;">복구 항목 없음</div>')
+      + '</div>';
+  } else {
+    recoveryHTML = '<div style="text-align:center;color:#999;padding:30mm 0;font-size:10px;">(첨부 사진 없음 — 분석 사진 업로드 시 자동 표시)</div>';
+  }
   
   var page2 = ''
     + '<div class="dr-page" style="width:297mm;min-height:210mm;padding:10mm 12mm;margin:0 auto 10mm;background:#fff;color:#000;font-family:\'Malgun Gothic\',\'맑은 고딕\',sans-serif;font-size:11px;page-break-after:always;box-shadow:0 0 10px rgba(0,0,0,0.15);">'
     + '<div style="font-weight:700;font-size:12px;margin:0 0 6px;">□ 피해 복구 세부내역</div>'
     + '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:6px;">'
       + '<tr>'
-        + '<td style="width:50%;border:1px solid #000;padding:4px;vertical-align:top;height:90mm;">'
+        + '<td style="width:50%;border:1px solid #000;padding:4px;vertical-align:top;height:85mm;">'
           + '<div style="text-align:center;font-weight:700;margin-bottom:4px;">피해내역</div>'
           + photoStripHTML
         + '</td>'
         + '<td style="width:50%;border:1px solid #000;padding:4px;vertical-align:top;">'
           + '<div style="text-align:center;font-weight:700;margin-bottom:4px;">복구내역</div>'
-          + '<div style="text-align:center;color:#999;padding:30mm 0;font-size:10px;">(복구 후 사진/도면 — 별도 첨부)</div>'
+          + recoveryHTML
         + '</td>'
       + '</tr>'
     + '</table>'
@@ -8808,14 +8866,14 @@ function _renderDR() {
         + '<td colspan="4" style="border:1px solid #000;padding:4px;font-weight:700;">○ 복구비 산출근거 (1공종 그룹)</td>'
       + '</tr>'
       + '<tr>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:18%;">공종</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:6%;">단위</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:13%;">물량</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:13%;">피해금액</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:18%;">공종</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:6%;">단위</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:13%;">물량</td>'
-        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:13%;">복구금액</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:14%;">공종</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:5%;">단위</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:20%;">산출근거</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:11%;">피해금액</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:14%;">공종</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:5%;">단위</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:20%;">산출근거</td>'
+        + '<td style="border:1px solid #000;padding:3px 5px;text-align:center;font-weight:700;background:#f0f0f0;width:11%;">복구금액</td>'
       + '</tr>'
       + itemRows
       + '<tr>'
@@ -8863,6 +8921,28 @@ function _extractDRQty(qty) {
   // 산식 패턴 보존: "L=15m × H=2m" 같은 형태는 그대로
   if (/[×x*]/.test(qty)) return qty.length > 30 ? qty.substring(0, 28) + '…' : qty;
   return qty;
+}
+
+// ★ ver8.32: 산출근거 정제 — quantity/recoveryQty의 공종명+규격+물량+단위를 셀에 맞게 추출
+function _extractDRBasis(qty) {
+  if (!qty) return '';
+  var s = String(qty).trim();
+  // "L=15.0m × W=2.0m × D=0.5m = 15.0m³" → "15.0m³ (L×W×D=15m³)" 같은 압축은 X
+  // 그냥 산출근거 원문 보존 (셀 폭이 20%로 늘어남 → 충분히 들어감)
+  // 단, 너무 길면 잘라서 ... 처리
+  if (s.length > 55) {
+    // 마지막 = 결과 부분이 있으면 그것 우선 표시
+    var lastEq = s.lastIndexOf('=');
+    if (lastEq > 0 && lastEq < s.length - 1) {
+      var tail = s.substring(lastEq + 1).trim();
+      var head = s.substring(0, lastEq).trim();
+      // "공종명 ... = 결과" 형식이면 "공종명 ... " 부분을 짧게
+      if (head.length > 35) head = head.substring(0, 33) + '…';
+      return head + ' = ' + tail;
+    }
+    return s.substring(0, 52) + '…';
+  }
+  return s;
 }
 
 // 인쇄 (A4 가로)
