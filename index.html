@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.49 (이미지 자동 5MB 압축 + 위치도 마커 드래그 + 일괄분석 결과를 다현장 탭 내 표시)</title>
+<title>복구설계시스템(BJH) ver8.50 (위치도 마커 축소+재해대장 안 드래그 + 구조물 단면도 항상 2x2 그리드)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -126,7 +126,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.49</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.50</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -8306,15 +8306,66 @@ function _setDRImagePreview(field, dataUrl) {
     prevEl.innerHTML =
       '<div id="dr_locMapWrap" style="position:relative;display:inline-block;max-width:100%;border:1px solid var(--border);border-radius:4px;overflow:hidden;cursor:crosshair;user-select:none;">' +
         '<img id="dr_locMapImg" src="' + dataUrl + '" style="display:block;max-width:100%;max-height:180px;pointer-events:none;">' +
-        '<div id="dr_locMapMarker" style="position:absolute;left:' + markerLeft + '%;top:' + markerTop + '%;transform:translate(-50%,-50%);width:26px;height:26px;border:3px solid #E53935;border-radius:50%;background:rgba(229,57,53,0.25);box-shadow:0 0 0 2px rgba(255,255,255,0.9),0 2px 6px rgba(0,0,0,0.4);cursor:move;pointer-events:auto;"></div>' +
+        '<div id="dr_locMapMarker" style="position:absolute;left:' + markerLeft + '%;top:' + markerTop + '%;transform:translate(-50%,-50%);width:14px;height:14px;border:2px solid #E53935;border-radius:50%;background:rgba(229,57,53,0.35);box-shadow:0 0 0 1.5px rgba(255,255,255,0.95),0 1px 3px rgba(0,0,0,0.4);cursor:move;pointer-events:auto;"></div>' +
       '</div>' +
-      '<div style="font-size:10px;color:#A5D6A7;margin-top:3px;">✓ 첨부됨 — <span style="color:#FFB74D;">🔴 빨간 동그라미를 드래그하거나 지도를 클릭해 피해 위치 표시</span></div>';
+      '<div style="font-size:10px;color:#A5D6A7;margin-top:3px;">✓ 첨부됨 — <span style="color:#FFB74D;">🔴 빨간 점을 드래그하거나 지도를 클릭해 피해 위치 표시</span></div>';
     // 인터랙션 부착
     setTimeout(_attachLocMapMarkerEvents, 0);
   } else {
     prevEl.innerHTML = '<img src="' + dataUrl + '" style="max-width:100%;max-height:80px;border:1px solid var(--border);border-radius:4px;">'
       + '<div style="font-size:9px;color:#A5D6A7;margin-top:2px;">✓ 첨부됨</div>';
   }
+}
+
+// ★ ver8.50: 재해대장 미리보기 안의 위치도 마커 드래그 이벤트
+function _attachDrPageMarkerEvents() {
+  var wrap = document.getElementById('dr_drPageLocMapWrap');
+  var marker = document.getElementById('dr_drPageLocMapMarker');
+  if (!wrap || !marker) return;
+  if (wrap._markerEventsAttached) return;  // 중복 부착 방지
+  wrap._markerEventsAttached = true;
+
+  function updateByEvent(ev) {
+    var rect = wrap.getBoundingClientRect();
+    var cx = (ev.touches ? ev.touches[0].clientX : ev.clientX);
+    var cy = (ev.touches ? ev.touches[0].clientY : ev.clientY);
+    var x = (cx - rect.left) / rect.width;
+    var y = (cy - rect.top) / rect.height;
+    x = Math.max(0.02, Math.min(0.98, x));
+    y = Math.max(0.02, Math.min(0.98, y));
+    marker.style.left = (x * 100).toFixed(1) + '%';
+    marker.style.top  = (y * 100).toFixed(1) + '%';
+    _DR_DATA.locationMapMarker = { x: x, y: y };
+    // 첨부 영역 미리보기에도 동기 반영
+    var prevMarker = document.getElementById('dr_locMapMarker');
+    if (prevMarker) {
+      prevMarker.style.left = (x * 100).toFixed(1) + '%';
+      prevMarker.style.top  = (y * 100).toFixed(1) + '%';
+    }
+  }
+
+  var dragging = false;
+  marker.onmousedown = function(ev) { ev.preventDefault(); ev.stopPropagation(); dragging = true; };
+  marker.ontouchstart = function(ev) { ev.preventDefault(); ev.stopPropagation(); dragging = true; };
+
+  wrap.onclick = function(ev) {
+    if (ev.target === marker) return;
+    updateByEvent(ev);
+    _saveDRInput();
+  };
+
+  document.addEventListener('mousemove', function(ev) { if (dragging) updateByEvent(ev); });
+  document.addEventListener('touchmove', function(ev) {
+    if (!dragging) return;
+    ev.preventDefault();
+    updateByEvent(ev);
+  }, { passive: false });
+  document.addEventListener('mouseup', function() {
+    if (dragging) { dragging = false; _saveDRInput(); }
+  });
+  document.addEventListener('touchend', function() {
+    if (dragging) { dragging = false; _saveDRInput(); }
+  });
 }
 
 // ★ 위치도면 마커 드래그/클릭 이벤트 부착
@@ -8459,16 +8510,16 @@ function _renderDR() {
     return;
   }
   _loadDRDataFromInputs();
-  // ★ 위치도 마커 합성 후 본 렌더링 호출 (비동기)
-  _composeLocationMapWithMarker(function(composedUrl) {
-    _renderDR_impl(composedUrl);
-  });
+  // ★ ver8.50: 미리보기는 원본 이미지 + overlay 마커 (드래그 가능)
+  //   합성된 이미지는 워드/HWPX 등 외부 출력 시점에만 사용
+  _renderDR_impl(null);
+  // 렌더 후 위치도 마커 드래그 이벤트 부착
+  setTimeout(_attachDrPageMarkerEvents, 0);
 }
 
 function _renderDR_impl(composedLocationMap) {
   var d = _DR_DATA;
   // 임시로 마커 합성본 사용 (원본은 _DR_DATA.locationMap에 유지)
-  var origLocMap = d.locationMap;
   if (composedLocationMap) d = Object.assign({}, d, { locationMap: composedLocationMap });
   // 피해/복구 합계
   var totalDamage = 0, totalRecovery = 0;
@@ -8530,7 +8581,17 @@ function _renderDR_impl(composedLocationMap) {
         + '<td style="width:45%;border:1px solid #000;padding:6px;vertical-align:top;height:75mm;">'
           + '<div style="font-weight:700;text-align:center;margin-bottom:6px;color:#C62828;">위 치 도</div>'
           + (d.locationMap 
-              ? '<div style="text-align:center;"><img src="' + d.locationMap + '" style="max-width:100%;max-height:70mm;object-fit:contain;"></div>'
+              ? (function(){
+                  // ★ ver8.50: 원본 이미지 + overlay 마커 (드래그 가능)
+                  //   재해대장 미리보기 안에서도 마커 위치 조절 가능
+                  var m = _DR_DATA.locationMapMarker || { x: 0.5, y: 0.5 };
+                  var ml = (m.x * 100).toFixed(1);
+                  var mt = (m.y * 100).toFixed(1);
+                  return '<div id="dr_drPageLocMapWrap" style="position:relative;display:inline-block;max-width:100%;cursor:crosshair;user-select:none;">'
+                    + '<img id="dr_drPageLocMapImg" src="' + _DR_DATA.locationMap + '" style="display:block;max-width:100%;max-height:70mm;object-fit:contain;pointer-events:none;">'
+                    + '<div id="dr_drPageLocMapMarker" style="position:absolute;left:' + ml + '%;top:' + mt + '%;transform:translate(-50%,-50%);width:14px;height:14px;border:2px solid #E53935;border-radius:50%;background:rgba(229,57,53,0.4);box-shadow:0 0 0 1.5px rgba(255,255,255,0.95),0 1px 3px rgba(0,0,0,0.4);cursor:move;pointer-events:auto;"></div>'
+                  + '</div>';
+                })()
               : '<div style="text-align:center;color:#999;padding:30mm 0;">(위치도 미첨부)</div>')
         + '</td>'
         + '<td style="width:55%;border:1px solid #000;padding:0;vertical-align:top;">'
@@ -9018,9 +9079,16 @@ function _buildDRPage3(groupItems, photoKey, pageIdx) {
   
   if (!boxes) return '';
   
-  // 그리드 레이아웃: 구조물 수에 따라 1·2·3열 선택
+  // ★ ver8.50: 1~4개는 항상 2×2 그리드(4박스 고정), 5개 이상은 3열
+  //   구조물이 적어도 빈 박스로 채워 시각적 균형 유지
   var cnt = sectionable.length;
-  var cols = (cnt === 1) ? 1 : (cnt <= 4 ? 2 : 3);
+  var cols = (cnt <= 4) ? 2 : 3;
+  var totalCells = (cnt <= 4) ? 4 : (cnt <= 9 ? 9 : cnt);  // 빈 박스 포함 총 셀 수
+  // 부족한 만큼 빈 박스 추가
+  var emptyBoxes = '';
+  for (var __e = cnt; __e < totalCells; __e++) {
+    emptyBoxes += '<div style="border:1.5px dashed #ccc;background:#FAFAFA;min-height:80mm;"></div>';
+  }
   
   var photoTitle = (photoKey && photoKey !== '__SINGLE__') 
     ? '📷 ' + String(photoKey).replace(/\.[^.]+$/, '')
@@ -9035,6 +9103,7 @@ function _buildDRPage3(groupItems, photoKey, pageIdx) {
     + '</div>'
     + '<div style="display:grid;grid-template-columns:repeat(' + cols + ',1fr);gap:5px;">'
     + boxes
+    + emptyBoxes
     + '</div>'
     + '</div>';
 }
