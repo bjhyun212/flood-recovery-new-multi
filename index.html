@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.43 (Word 하단 잘림 완전수정 - px 단위 강제 + 콘텐츠 압축 / 메뉴 순서 변경 / 단가검증 메뉴 삭제)</title>
+<title>복구설계시스템(BJH) ver8.44 (메뉴 순서 단일·다현장·재해대장 / 모순 의심 모달에 피해복구대장 N번 항목 + 문제점 분리 표시)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -133,7 +133,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.43</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.44</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -177,9 +177,9 @@ select.fc option{background:var(--navy2);}
 
 <!-- 탭 -->
 <nav class="nav">
+  <button class="tab on" onclick="go(0)" id="t0">📸 단일현장 피해분석 <span class="tnum">1</span></button>
   <button class="tab" onclick="goBatch()" id="tb" style="background:rgba(124,77,255,0.12);border:1px solid rgba(124,77,255,0.35);color:#B388FF;font-weight:700;" title="여러 현장 사진을 한꺼번에 자동 분석 (사진 1장 = 1현장)">📦 다현장 일괄분석</button>
   <button class="tab" onclick="go(1)" id="t1">📋 재해대장 <span class="tnum">2</span></button>
-  <button class="tab on" onclick="go(0)" id="t0">📸 단일현장 피해분석 <span class="tnum">1</span></button>
   <button class="tab" onclick="go(2)" id="t2" style="display:none;">📐 복구단면도 <span class="tnum">3</span></button>
   <button class="tab" onclick="go(3)" id="t3" style="display:none;">📄 보고서 작성 <span class="tnum">4</span></button>
   <button class="tab" onclick="go(4)" id="t4" style="display:none;">📊 검증·이력 <span class="tnum">5</span></button>
@@ -3878,16 +3878,28 @@ function _showSuspiciousNewItemsAlert(suspiciousItems) {
     var isFalseReason = /거짓 사유 의심/.test(hint);
     var borderColor = isFalseReason ? '#FF7043' : '#FFC107';
     var iconLabel = isFalseReason ? '🚫 거짓 사유 의심' : '⚠️ 신설 모순';
+    var problemBg = isFalseReason ? 'rgba(255,112,67,0.10)' : 'rgba(255,193,7,0.10)';
     
-    itemsHtml += '<div style="background:rgba(255,255,255,0.04);border-left:3px solid ' + borderColor + ';border-radius:6px;padding:9px 12px;margin-bottom:6px;">'
-      + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">'
-        + '<div style="font-weight:700;color:#FFE082;font-size:12.5px;">No.' + (it.no || '?') + ' — ' + _esc(it.damageType || '') + '</div>'
-        + '<span style="font-size:10px;background:rgba(' + (isFalseReason ? '255,112,67' : '255,193,7') + ',0.25);color:' + borderColor + ';padding:2px 7px;border-radius:3px;font-weight:700;white-space:nowrap;">' + iconLabel + '</span>'
+    // ★ ver8.44: 어디 항목인지 명확히 - "피해복구대장 N번 항목" 헤더 + 문제점 카드 분리
+    var problemBody = isFalseReason 
+      ? _esc(String(hint).replace(/^거짓 사유 의심:\s*/, ''))
+      : '피해금액 <span style="color:#A5D6A7;font-weight:700;">' + (it.damageCost||0).toLocaleString() + '원</span>이 잡혀있는데, note에 <span style="color:#FFA726;">"' + _esc(hint) + '"</span> 표시가 있습니다.';
+    
+    itemsHtml += '<div style="background:rgba(255,255,255,0.04);border-left:3px solid ' + borderColor + ';border-radius:6px;padding:10px 14px;margin-bottom:7px;">'
+      // 헤더: 대장 순번 + 피해유형 + 의심 라벨
+      + '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px;gap:8px;flex-wrap:wrap;">'
+        + '<div style="flex:1;min-width:200px;">'
+          + '<div style="font-size:10.5px;color:var(--accent);font-weight:700;margin-bottom:3px;display:flex;align-items:center;gap:6px;">'
+            + '<span style="background:rgba(0,180,216,0.18);padding:2px 8px;border-radius:10px;">📋 피해복구대장 ' + (it.no || '?') + '번 항목</span>'
+          + '</div>'
+          + '<div style="font-weight:700;color:#FFE082;font-size:13px;line-height:1.45;">' + _esc(it.damageType || '(피해유형 미입력)') + '</div>'
+        + '</div>'
+        + '<span style="font-size:10px;background:rgba(' + (isFalseReason ? '255,112,67' : '255,193,7') + ',0.25);color:' + borderColor + ';padding:3px 8px;border-radius:4px;font-weight:700;white-space:nowrap;flex-shrink:0;">' + iconLabel + '</span>'
       + '</div>'
-      + '<div style="font-size:11px;color:var(--text2);line-height:1.5;">'
-        + (isFalseReason 
-          ? _esc(hint)
-          : '피해금액: <span style="color:#A5D6A7;font-weight:700;">' + (it.damageCost||0).toLocaleString() + '원</span> 잡혀있음<br>note에 <span style="color:#FFA726;">"' + _esc(hint) + '"</span> 표시 있음')
+      // 문제점 카드
+      + '<div style="background:' + problemBg + ';border:1px solid rgba(255,255,255,0.06);border-radius:5px;padding:8px 11px;font-size:11.5px;color:var(--text);line-height:1.65;">'
+        + '<span style="display:inline-block;background:' + borderColor + ';color:#1a1a1a;font-weight:800;font-size:10px;padding:2px 8px;border-radius:3px;margin-right:7px;vertical-align:middle;">⚠ 문제점</span>'
+        + problemBody
       + '</div>'
     + '</div>';
   });
@@ -3919,7 +3931,7 @@ function _showSuspiciousNewItemsAlert(suspiciousItems) {
       + '<div style="background:rgba(0,180,216,0.08);border:1px solid rgba(0,180,216,0.3);border-radius:8px;padding:12px 14px;margin-bottom:18px;font-size:12px;color:var(--text2);line-height:1.7;">'
         + '<b style="color:var(--accent);">💡 판단 기준</b><br>'
         + (hasFalseReason
-          ? '• <b style="color:#FFAB91;">거짓 사유 의심 항목</b>: AI 상담에 "N번 항목 원형복구로 변경. 사진상 공법/규격 변경 근거 없음" 입력하여 정정<br>'
+          ? '• <b style="color:#FFAB91;">거짓 사유 의심 항목</b>: AI 상담에 "<b style="color:var(--accent);">피해복구대장 N번 항목</b>을 원형복구로 변경. 사진상 공법/규격 변경 근거 없음" 입력하여 정정<br>'
           : '')
         + '• <b style="color:#A5D6A7;">재난 직전 있었다</b> → 피해금액 유지 + note 신설 표시 제거 요청<br>'
         + '• <b style="color:#FFA726;">재난 직전 없었다</b> → 피해금액 직접 0원 수정 (개선복구)<br><br>'
