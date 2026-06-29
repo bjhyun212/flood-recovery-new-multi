@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.50 (위치도 마커 축소+재해대장 안 드래그 + 구조물 단면도 항상 2x2 그리드)</title>
+<title>복구설계시스템(BJH) ver8.51 (공법-단가 불일치 자동검증 - 석축↔콘크리트옹벽 등 부분반영 차단)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -126,7 +126,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.50</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.51</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -3270,6 +3270,16 @@ async function analyze() {
         }
       } catch(e) { console.warn('편람·산출근거 검증 오류', e); }
     }, 2400);
+
+    // ★★★ ver8.51: 복구공법 ↔ 적용단가 공종 불일치 검증 ★★★
+    setTimeout(function() {
+      try {
+        var methodCostMismatch = _detectMethodCostMismatch(ANA.items);
+        if (methodCostMismatch.mismatches && methodCostMismatch.mismatches.length > 0) {
+          _showMethodCostMismatchAlert(methodCostMismatch);
+        }
+      } catch(e) { console.warn('공법-단가 검증 오류', e); }
+    }, 3000);
     
     // ★★★ ver8.30: AI가 시설 식별 불가(facilityUncertain) 시 사용자 확인 요청 ★★★
     if (ANA.facilityUncertain === true && Array.isArray(ANA.facilityQuestions) && ANA.facilityQuestions.length > 0) {
@@ -5539,6 +5549,147 @@ function _detectMissingSpecInBasis(anaItems) {
   });
   
   return { missings: missings };
+}
+
+// ★★★ ver8.51: 복구공법(method)/복구물량(recoveryQty) ↔ 적용단가(damageCostBasis) 일관성 검증 ★★★
+//   AI 비용수정 후 단가만 바뀌고 method/recoveryQty 텍스트가 그대로 남는 케이스 감지
+//   예: method="석축 찰쌓기 재시공" + damageCostBasis="[공통]옹벽 중력식..." → 불일치
+function _detectMethodCostMismatch(anaItems) {
+  if (!anaItems || anaItems.length === 0) return { mismatches: [] };
+
+  // 공법 키워드 그룹 — 같은 그룹 안의 키워드는 동등하게 취급
+  //   method/recoveryQty/damageCostBasis 중 한 곳에 그룹 A 키워드가 있고
+  //   다른 곳에 그룹 B 키워드가 있으면 불일치로 판정
+  var groups = [
+    { id: '석축',       keys: ['석축', '찰쌓기', '메쌓기'] },
+    { id: '콘크리트옹벽', keys: ['콘크리트옹벽', '옹벽 중력식', '중력식 옹벽', 'RC옹벽', 'L형옹벽', '역T형옹벽', '캔틸레버옹벽'] },
+    { id: '돌망태',     keys: ['돌망태', '게비온', '개비온'] },
+    { id: '호안블럭',   keys: ['호안블럭', '호안 블럭', '블럭쌓기', '블록쌓기'] },
+    { id: '필터매트',   keys: ['필터매트', '부직포 매트'] },
+    { id: '식생매트',   keys: ['식생매트', '식생블럭', '잔디블럭'] },
+    { id: '농어촌도로', keys: ['농어촌도로', '농어촌 도로'] },
+    { id: '소교량',     keys: ['소교량', 'RC슬래브교', 'PSC빔교', '슬래브교'] },
+    { id: '흄관',       keys: ['흄관', 'PVC관', '관거 재설치', '관 매설'] },
+    { id: '암거',       keys: ['암거', '박스암거', 'BOX'] },
+    { id: '아스콘',     keys: ['아스콘', '아스팔트포장', '아스팔트 포장'] },
+  ];
+
+  // 키워드 → 그룹 id 매핑
+  function findGroup(text) {
+    if (!text) return null;
+    var t = String(text);
+    for (var i = 0; i < groups.length; i++) {
+      var g = groups[i];
+      for (var j = 0; j < g.keys.length; j++) {
+        if (t.indexOf(g.keys[j]) >= 0) return g.id;
+      }
+    }
+    return null;
+  }
+
+  var mismatches = [];
+  anaItems.forEach(function(it) {
+    var dCost = it.damageCost || 0;
+    if (dCost <= 0) return;  // 금액 0이면 검사 제외 (신설/철거 등)
+
+    var method = it.method || '';
+    var recoveryQty = it.recoveryQty || '';
+    var basis = it.damageCostBasis || '';
+
+    // method + recoveryQty 합쳐서 "복구공법쪽 그룹" 추출
+    var methodGroup = findGroup(method) || findGroup(recoveryQty);
+    var basisGroup = findGroup(basis);
+
+    if (methodGroup && basisGroup && methodGroup !== basisGroup) {
+      mismatches.push({
+        no: it.no,
+        damageType: it.damageType || '',
+        methodGroup: methodGroup,
+        basisGroup: basisGroup,
+        method: method,
+        recoveryQty: recoveryQty,
+        basis: basis,
+        damageCost: dCost
+      });
+    }
+  });
+
+  return { mismatches: mismatches };
+}
+
+// ★★★ ver8.51: 공법-단가 불일치 경고 모달 ★★★
+function _showMethodCostMismatchAlert(detection) {
+  if (!detection || !detection.mismatches || detection.mismatches.length === 0) return;
+
+  var html = ''
+    + '<div style="background:rgba(229,57,53,0.1);border:1px solid #E53935;border-radius:10px;padding:14px 16px;margin-top:14px;">'
+    + '<div style="font-size:14px;font-weight:800;color:#EF5350;margin-bottom:10px;">⚠️ 복구공법 ↔ 적용단가 불일치 ' + detection.mismatches.length + '건 감지</div>'
+    + '<div style="font-size:11px;color:var(--text2);margin-bottom:10px;line-height:1.6;">'
+    +   '복구공법(또는 복구물량) 텍스트와 실제 적용된 단가의 공종이 서로 다릅니다.<br>'
+    +   '단가만 바뀌고 공법 설명이 그대로 남았거나, 반대로 공법은 바꿨는데 단가가 안 따라간 경우입니다.'
+    + '</div>'
+    + '<div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px;font-size:11px;line-height:1.7;">';
+
+  detection.mismatches.forEach(function(m, i) {
+    html += '<div style="margin-bottom:' + (i < detection.mismatches.length - 1 ? '12px' : '0') + ';padding-bottom:' + (i < detection.mismatches.length - 1 ? '10px' : '0') + ';' + (i < detection.mismatches.length - 1 ? 'border-bottom:1px dashed rgba(255,255,255,0.1);' : '') + '">';
+    html +=   '<div style="font-weight:700;color:#FFB74D;margin-bottom:4px;">#' + m.no + ' ' + _escHtmlBatch(m.damageType.substring(0, 50)) + '</div>';
+    html +=   '<div><span style="color:#81D4FA;">▸ 복구공법(method):</span> <b style="color:#A5D6A7;">[' + m.methodGroup + ']</b> ' + _escHtmlBatch((m.method || m.recoveryQty).substring(0, 80)) + '</div>';
+    html +=   '<div><span style="color:#81D4FA;">▸ 적용단가(basis):</span> <b style="color:#EF5350;">[' + m.basisGroup + ']</b> ' + _escHtmlBatch(m.basis.substring(0, 80)) + '</div>';
+    html += '</div>';
+  });
+
+  html += '</div>'
+    + '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">'
+    +   '<button class="btn btn-p" onclick="_routeMethodCostMismatchToAI()" style="background:linear-gradient(135deg,#7C4DFF,#5E35B1);font-size:12px;padding:8px 14px;">🤖 AI 상담으로 정리하기</button>'
+    +   '<button class="btn btn-o" onclick="document.getElementById(\'methodCostMismatchAlert\').style.display=\'none\'" style="font-size:12px;padding:8px 14px;">닫기</button>'
+    + '</div>'
+    + '</div>';
+
+  // 모달 영역 찾아서 표시
+  var el = document.getElementById('methodCostMismatchAlert');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'methodCostMismatchAlert';
+    // 비용 카드 아래 또는 대장 카드 아래에 삽입
+    var anchor = document.getElementById('dmgCard') || document.getElementById('anaResult');
+    if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(el, anchor.nextSibling);
+    else document.body.appendChild(el);
+  }
+  el.innerHTML = html;
+  el.style.display = 'block';
+  try { el.scrollIntoView({ behavior:'smooth', block:'nearest' }); } catch(e){}
+
+  // 감지 결과를 전역에 저장 (AI 상담 라우팅용)
+  window._lastMethodCostMismatch = detection;
+}
+
+// AI 상담 입력란으로 자동 메시지 전송
+function _routeMethodCostMismatchToAI() {
+  var det = window._lastMethodCostMismatch;
+  if (!det || !det.mismatches || det.mismatches.length === 0) return;
+  // 활성 탭 (1번/단일현장) 입력란 우선, 없으면 비용 채팅
+  var msg = '⚠️ 시스템 자동감지: 복구공법과 적용단가 공종이 불일치합니다 ('
+    + det.mismatches.length + '건). 다음 항목들의 method·recoveryQty·damageCostBasis·damageCost를 일관성 있게 정리해주세요. '
+    + '사용자가 어느 쪽(공법 vs 단가)으로 통일하길 원하는지 먼저 물어봐주세요.\n\n';
+  det.mismatches.forEach(function(m) {
+    msg += '#' + m.no + ' [' + m.damageType.substring(0, 40) + ']\n';
+    msg += '  - 복구공법쪽: [' + m.methodGroup + '] ' + (m.method || m.recoveryQty).substring(0, 80) + '\n';
+    msg += '  - 적용단가쪽: [' + m.basisGroup + '] ' + m.basis.substring(0, 80) + '\n\n';
+  });
+  // 비용수정 입력란이 있으면 그쪽으로, 없으면 planReq
+  var costInput = document.getElementById('costChatInput');
+  var planInput = document.getElementById('planReq');
+  if (costInput && costInput.offsetParent !== null) {
+    costInput.value = msg;
+    costInput.focus();
+  } else if (planInput) {
+    planInput.value = msg;
+    planInput.focus();
+    try { planInput.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(e){}
+  }
+  // 알림 모달 닫기
+  var el = document.getElementById('methodCostMismatchAlert');
+  if (el) el.style.display = 'none';
 }
 
 // ★★★ ver8.30: 편람 시설명 + 종별·규격 누락 통합 경고 모달 ★★★
@@ -10476,6 +10627,26 @@ async function revisePlan() {
     + '  "overallRecoveryType":"원형복구|개선복구","overallRecoveryReason":"판정사유(법령호번)",\n'
     + '  "replaceText":{"from":"우안","to":"좌안"}\n'
     + '}-->\n\n'
+    + '★★★★★ 공법 변경 시 일관성 동반 갱신 (★ 절대 규칙 ★) ★★★★★\n'
+    + '◆ 사용자가 "석축을 콘크리트옹벽으로 바꿔줘" "돌망태를 호안블럭으로 변경" 같이 공종을 바꿔달라고 하면:\n'
+    + '  → modifyItems 한 항목 안에 다음 5개 필드를 모두 새 공법으로 동반 갱신해야 함:\n'
+    + '    ① method: 옛 공법 단어 흔적 모두 제거 + 새 공법으로 전면 재작성\n'
+    + '       예) 옛: "기존 석축 잔재 철거 후 석축 찰쌓기 재시공"\n'
+    + '       새: "기존 석축 잔재 철거 후 콘크리트 중력식 옹벽 H=4.0m 신설"\n'
+    + '    ② recoveryQty: 새 공종 명칭 + 규격 (옛 공종명 절대 남기지 말 것)\n'
+    + '       예) 옛: "석축 찰쌓기 H=3~6m 40.0m²"  → 새: "콘크리트옹벽 중력식 H=4.0m × L=10.0m"\n'
+    + '    ③ damageCostBasis: 새 단가 명시 "[공통]옹벽 중력식 H=NN = NN원 (p.NNN)"\n'
+    + '    ④ damageCost: 새 단가 × 새 수량 (천원단위 절사)\n'
+    + '    ⑤ recoveryType: 석축→옹벽, 메→찰, 흙→콘크리트 등 공법 강화는 [개선복구], note에 "[개선] 사유" 추가\n'
+    + '◆ 자기검증 — 자신이 만든 modifyItems가 다음 중 하나라도 위반하면 즉시 수정:\n'
+    + '  ✗ method/recoveryQty에 옛 공법 단어("석축" 등)가 남아있는데 damageCostBasis는 새 공법("옹벽")\n'
+    + '  ✗ method는 새 공법으로 바꿨는데 damageCost는 옛 단가 기준\n'
+    + '  ✓ method·recoveryQty·damageCostBasis·damageCost 모두 새 공법 기준으로 일관\n'
+    + '◆ 공법 그룹 (이 그룹 사이에 method ↔ basis가 달라지면 시스템이 [공법-단가 불일치]로 자동 감지함):\n'
+    + '  - 석축 그룹: 석축/찰쌓기/메쌓기\n'
+    + '  - 콘크리트옹벽 그룹: 옹벽 중력식/RC옹벽/L형옹벽\n'
+    + '  - 돌망태 그룹: 돌망태/게비온\n'
+    + '  - 호안블럭 그룹: 호안블럭/블럭쌓기\n\n'
     + '★★★ 피해금액 재산정 요청 시 ★★★\n'
     + '"피해금액이 너무 적다", "복구금액과 차이가 크다", "균형이 안 맞는다" 등 요청 시:\n'
     + '1) 현재 피해대장의 부대공 누락 항목 점검 (기초콘크리트, 뒷채움, 노상정리 등)\n'
@@ -10765,6 +10936,19 @@ async function revisePlan() {
               chatMessages.push({
                 role:'system',
                 text:'🌉 재가설 복구물량 확인 필요: ' + _rebuildChk.warnings.length + '건 - 전면철거/재가설인데 복구물량이 피해물량과 동일합니다. 재가설 전체 경간장(L)을 명시해 주세요.'
+              });
+              renderChat();
+            }
+          } catch(_e) {}
+
+          // ★★★ ver8.51: 복구공법 ↔ 적용단가 공종 불일치 검증 (AI가 단가만 바꾸고 method 텍스트 안 바꾼 경우 등) ★★★
+          try {
+            var _mcChk = _detectMethodCostMismatch(ANA.items);
+            if (_mcChk.mismatches.length > 0) {
+              setTimeout(function(){ _showMethodCostMismatchAlert(_mcChk); }, 1200);
+              chatMessages.push({
+                role:'system',
+                text:'⚠️ 공법-단가 불일치 감지: ' + _mcChk.mismatches.length + '건 - 복구공법(method)과 적용단가(damageCostBasis)의 공종이 다릅니다 (예: 석축 vs 콘크리트옹벽). 모달에서 [🤖 AI 상담으로 정리하기] 클릭해 일관성 정리하세요.'
               });
               renderChat();
             }
@@ -11685,6 +11869,23 @@ async function costChatSend() {
     +'  damageType·method·note는 본래 형식 유지 (수치만 갱신)\n'
     +'◆ 잘못된 예: damageType="도로 노반 및 포장 편측 유실: 농어촌도로 표준단면 복구: 노상정리(t=300mm)+..." ← 복구공법 침범\n'
     +'  올바른 예: damageType="도로 노반·포장 편측 유실 (하천 인접)" / method="노상정리 t=300mm + 보조기층..."\n'
+    +'\n★★★★★ 공법(method) ↔ 적용단가(damageCostBasis) 일관성 (★ 절대 규칙 ★) ★★★★★\n'
+    +'◆ 사용자가 "석축을 콘크리트옹벽으로 바꿔줘" 같이 공종 변경을 요청하면:\n'
+    +'  → costChanges로 단가만 바꾸면 안 됨. 반드시 anaChanges.modifyItems로 다음 모두 동반 갱신:\n'
+    +'    ① method: "기존 석축 잔재 철거 후 콘크리트 중력식 옹벽 H=NNm 신설…" 같이 새 공법으로 전면 재작성\n'
+    +'    ② recoveryQty: "콘크리트옹벽 중력식 H=NNm L=NNm" 같이 새 공법 명칭+규격으로 재작성\n'
+    +'    ③ damageCostBasis: "[공통]옹벽 중력식 H=NN = NN원 (p.NNN)" — 적용 단가\n'
+    +'    ④ damageCost: 새 단가 × 수량 (천원단위 절사)\n'
+    +'    ⑤ recoveryType: 석축→콘크리트옹벽 같은 공법 교체는 "개선복구" 가능성 높음 (사용자가 명시 안 했으면 확인 요청)\n'
+    +'◆ 자기검증: method 안에 옛 공법 키워드("석축" 등)가 남아있는 채로 단가만 신공법으로 바꾸면 시스템이 [공법-단가 불일치]로 자동감지함\n'
+    +'  → costChanges에 새 단가 넣었으면 anaChanges에 method·recoveryQty도 같이 바꿔야 함\n'
+    +'◆ 공법 그룹 매칭 키워드 (이 그룹들 사이에 method ↔ basis가 달라지면 불일치):\n'
+    +'  - 석축 = 석축/찰쌓기/메쌓기\n'
+    +'  - 콘크리트옹벽 = 콘크리트옹벽/옹벽 중력식/중력식 옹벽/RC옹벽/L형옹벽\n'
+    +'  - 돌망태 = 돌망태/게비온\n'
+    +'  - 호안블럭 = 호안블럭/블럭쌓기\n'
+    +'  - 농어촌도로 = 농어촌도로 합성단가\n'
+    +'  - 소교량 = RC슬래브교/PSC빔교 등\n'
     +'\n★★★★★ 복합단가 vs 개별공종 중복계상 검증 (★ 매우 중요 ★) ★★★★★\n'
     +'◆ 현재 설계내역에서 복합단가 항목과 동일범위 개별공종이 동시 존재하면 무조건 경고:\n'
     +'   - 복합단가 = 농어촌도로(1,216,868원/m), 소교량 상부(Slab), 세천 표준단면 등\n'
