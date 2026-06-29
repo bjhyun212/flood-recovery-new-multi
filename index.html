@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.54 (그룹매핑 우선순위 보정 + 모달에 [어느 공종으로 통일?] 직접 선택 버튼)</title>
+<title>복구설계시스템(BJH) ver8.55 (시스템 직접 자동정정 - AI 없이 단가표에서 단가 찾아 미리보기 → 즉시 적용)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -126,7 +126,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAA2ADYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7LoopGIVSx6AZoAo67rOk6Fp76hrOpWmn2ifemuJQi/TJ6n2rz+6+PvwpgnjiHiiObecboreQhfr8tfK3inVPFvxn8f3moEvHYQymO1jkb91axA4UDtuI5J6kn0xXU2vwI002PmXep3X2nGd4IwD9P/r1nOrCDszop4apUV1sfZGnXtpqNjBfWNxHc2s6CSKWNtyupGQQe4qevhTwN4y8U/B34lWem3WpXFzoTypFPbu5MTwM2NyqeFZck8ehB6191qQQCDkHvVppq6MJRcXZhRRRTEFMnaNYXaUgRhSWJ6Y70+kdVZSrAFSMEEdRQB8iWehR6dYyW2nTWrWLSmWzactGjoXbL5AyWI28HoO3WrupLrcunWMF20YheEvCJ5DErASsMsVHXZswOOpPsOx11BpeqXumQ2TyJbXBRYI8Z2dV6kcbSKwbGSOCcyR6fqik/KfOuhMqc5zjccdfy+leY23c+hp0k4XWxxms+DG8Sa34Zs9RYQW0upLGZpH+7bb1+VjxknkKcDORX2cihUCqAABgAdq8O8FaJ/wkni21a4heS0sZBPOwI27gcoD9WUfka9yrrw7bjqeVjYxjPTcKKKK6DjCvL/il8cfBXgO8/suaabVdX6fYrEBjGT0EjE7Uz6cn2rxT41/GXxD4mvtX8O+FdWGnaXEzxLPakpJcoOC28jIBOeFxxjrmvmdLh0uI5lI8yOTdzz8wP+NbKl1ZLetj6G1T4ka5rXjG41i4iitJLr/V2yruEca8Krepxznr19hW1HresXUWxbW2t1bneqZ3V8wfatS/tT+0RfSC4T7rZxj2A6Yr0/TviLbQ+E5yzJDqagRhWJ4OP9YPb29eK4cXh3z3gtGephMXaHLJ2sfTf7O/j/wje2E3hr7ZaWevJfTRNFLN+8vdp4kXPXjjaOm017RX5Uvf3bXBkaTaud67OCr5zuz1zyea9v8Agf8AtE+K/C08Oja67+INH4VRcS/6Rbgf3JD94Y/hb8CK6o0mopI86c+aTZ9z0VS0LVbHW9HtNX0y4S4s7uJZYZFPDKR/P1HY0VIj839YNkJJ4U+0LIp2lsgjOP5VyEzEX06YAAbOB0FFFdkpNrUi1thwc7mxVxomn0h5WfISVU2kdjRRSiDKDdaLdSbqIKeS4A5xRRUrcGffX7Ht1JL8GbezkA/0C+uIFI7gsJP/AGciiiisJ/Eylsf/2Q==" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.54</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.55</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -5752,13 +5752,13 @@ function _showMethodCostMismatchAlert(detection) {
     html +=   '<div style="margin-bottom:3px;"><span style="color:#81D4FA;">▸ ' + leftLabel + ':</span> <b style="color:#A5D6A7;">[' + leftGroup + ']</b> ' + _escHtmlBatch(leftText.substring(0, 80)) + '</div>';
     html +=   '<div><span style="color:#81D4FA;">▸ ' + rightLabel + ':</span> <b style="color:#EF5350;">[' + rightGroup + ']</b> ' + _escHtmlBatch(rightText.substring(0, 80)) + '</div>';
 
-    // ★★★ ver8.54: 어느 공종으로 통일할지 직접 선택 버튼 ★★★
-    //   사용자가 명시적으로 선택 → AI에게 모호하지 않은 명확한 지시 전송
+    // ★★★ ver8.55: 시스템 직접 자동정정 — AI 거치지 않고 단가표에서 찾아 정정 ★★★
+    //   미리보기 모달에서 사용자 확인 후 즉시 적용
     html += '<div style="margin-top:8px;padding:7px 9px;background:rgba(124,77,255,0.08);border:1px solid rgba(124,77,255,0.25);border-radius:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px;">';
     html +=   '<span style="color:#B388FF;font-weight:600;">→ 어느 쪽으로 통일?</span>';
-    html +=   '<button onclick="_unifyMethodCostByGroup(' + m.no + ', \'' + leftGroup + '\')" style="background:linear-gradient(135deg,#43A047,#2E7D32);color:#fff;border:none;padding:5px 11px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;">✓ [' + leftGroup + ']으로 통일</button>';
-    html +=   '<button onclick="_unifyMethodCostByGroup(' + m.no + ', \'' + rightGroup + '\')" style="background:linear-gradient(135deg,#EF6C00,#E65100);color:#fff;border:none;padding:5px 11px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;">✓ [' + rightGroup + ']으로 통일</button>';
-    html +=   '<span style="color:var(--text2);font-size:10px;margin-left:auto;">클릭 시 AI 상담에 명확한 지시 전송</span>';
+    html +=   '<button onclick="_showAutoFixConfirmModal(' + m.no + ', \'' + leftGroup + '\')" style="background:linear-gradient(135deg,#43A047,#2E7D32);color:#fff;border:none;padding:5px 11px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;">✓ [' + leftGroup + ']으로 통일</button>';
+    html +=   '<button onclick="_showAutoFixConfirmModal(' + m.no + ', \'' + rightGroup + '\')" style="background:linear-gradient(135deg,#EF6C00,#E65100);color:#fff;border:none;padding:5px 11px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;">✓ [' + rightGroup + ']으로 통일</button>';
+    html +=   '<span style="color:var(--text2);font-size:10px;margin-left:auto;">클릭 → 단가표 매칭 미리보기</span>';
     html += '</div>';
     html += '</div>';
   });
@@ -5786,6 +5786,264 @@ function _showMethodCostMismatchAlert(detection) {
 
   // 감지 결과를 전역에 저장 (AI 상담 라우팅용)
   window._lastMethodCostMismatch = detection;
+}
+
+// ★★★ ver8.55: 시스템 직접 자동정정 — AI 없이 단가표에서 직접 찾아 정정 ★★★
+//   기존 흐름: AI에 부탁 → AI가 또 부분반영 → 답답함 반복
+//   새 흐름: 시스템이 REF 단가표에서 직접 찾기 → 사용자 확인 모달 → ANA 직접 갱신
+
+// 그룹 → REF 단가표 매칭 키 (그룹에 해당하는 단가표 공종명 키워드)
+var _GROUP_TO_REF_MAP = {
+  '콘크리트옹벽': { nameKey: '옹벽 중력식', unit: 'm', dim: 'H', basisFormat: '[도로시설물]옹벽 중력식 H={H} {qty}{unit} × {up}원/{unit} = {amount}원 (NDMS 합성단가 p.170)' },
+  '석축':       { nameKey: '석축 찰쌓기', unit: 'm2', dim: 'H', basisFormat: '[공통]석축 찰쌓기 H={H} {qty}{unit} × {up}원/{unit} = {amount}원 (NDMS 합성단가 p.168 - 기초·뒷채움 일체 포함)' },
+  '돌망태':     { nameKey: '돌망태옹벽', unit: 'm3', dim: 'box', basisFormat: '[공통]돌망태옹벽 게비온 {qty}{unit} × {up}원/{unit} = {amount}원 (NDMS 합성단가 p.168)' },
+  '농어촌도로': { nameKey: '농어촌도로', unit: 'm', dim: 'L', basisFormat: '[도로]농어촌도로 표준단면 {qty}{unit} × {up}원/{unit} = {amount}원 (NDMS 합성단가 p.169)' },
+};
+
+// recoveryQty 또는 method 텍스트에서 규격(H, L, 수량) 추출
+function _extractDimensionsFromText(text) {
+  if (!text) return {};
+  var t = String(text);
+  var result = {};
+  var m;
+  // H=NN.Nm
+  m = t.match(/H\s*=\s*(\d+(?:\.\d+)?)\s*m/i);
+  if (m) result.H = parseFloat(m[1]);
+  // L=NN.Nm
+  m = t.match(/L\s*=\s*(\d+(?:\.\d+)?)\s*m/i);
+  if (m) result.L = parseFloat(m[1]);
+  // W=NN.Nm
+  m = t.match(/W\s*=\s*(\d+(?:\.\d+)?)\s*m/i);
+  if (m) result.W = parseFloat(m[1]);
+  // 수량 = "NN.Nm²", "NN.Nm³", "NN.Nm"
+  m = t.match(/(\d+(?:\.\d+)?)\s*(m[²³2³]|m3|m2|m)\b/);
+  if (m) {
+    result.qtyValue = parseFloat(m[1]);
+    result.qtyUnit = m[2].replace('²', '2').replace('³', '3');
+  }
+  return result;
+}
+
+// 그룹별로 REF 단가표 매칭 — 가장 적합한 단가 행 반환
+function _findRefRowByGroup(targetGroup, dims) {
+  var map = _GROUP_TO_REF_MAP[targetGroup];
+  if (!map) return null;
+  if (typeof REF === 'undefined' || !REF || REF.length === 0) return null;
+
+  // 1) 이름 키워드로 후보 행 필터
+  var candidates = REF.filter(function(row) {
+    // row = [분류, 공종, 규격, 단위, 단가, 페이지]
+    return row[1] && row[1].indexOf(map.nameKey) >= 0;
+  });
+  if (candidates.length === 0) return null;
+
+  // 2) H가 있으면 가장 가까운 H 매칭
+  if (map.dim === 'H' && dims.H) {
+    var H = dims.H;
+    var best = null;
+    var bestDiff = Infinity;
+    candidates.forEach(function(row) {
+      var spec = row[2] || '';
+      // 패턴 1: "H=Nm미만" / "H<Nm" — H가 N 미만일 때 매칭
+      if (spec.indexOf('미만') >= 0 || /H\s*<\s*\d/.test(spec)) {
+        var lessThan = parseFloat((spec.match(/(\d+(?:\.\d+)?)/) || [])[1] || 0);
+        if (lessThan > 0 && H < lessThan) {
+          var df = lessThan - H;
+          if (df < bestDiff) { bestDiff = df; best = row; }
+        }
+        return;  // 미만 패턴 처리 끝
+      }
+      // 패턴 2: "H=Nm~Mm" — 범위 매칭 (예: "H=3m~6m")
+      if (spec.indexOf('~') >= 0) {
+        var range = spec.match(/(\d+(?:\.\d+)?)\s*m?\s*[~]\s*(\d+(?:\.\d+)?)/);
+        if (range) {
+          var lo = parseFloat(range[1]), hi = parseFloat(range[2]);
+          if (H >= lo && H <= hi) {
+            bestDiff = 0; best = row;
+          } else {
+            var df2 = Math.min(Math.abs(lo - H), Math.abs(hi - H));
+            if (df2 < bestDiff) { bestDiff = df2; best = row; }
+          }
+        }
+        return;
+      }
+      // 패턴 3: 일반 "H=Nm" 단일 값
+      var hm = spec.match(/H\s*=?\s*(\d+(?:\.\d+)?)/i);
+      if (hm) {
+        var hVal = parseFloat(hm[1]);
+        var diff = Math.abs(hVal - H);
+        if (diff < bestDiff) { bestDiff = diff; best = row; }
+      }
+    });
+    return best;
+  }
+
+  // 3) 그 외 - 첫 번째 후보 반환 (예: 농어촌도로는 단일 행)
+  return candidates[0];
+}
+
+// 자동정정 미리보기 데이터 생성
+function _buildAutoFixPreview(no, targetGroup) {
+  var anaItem = ANA && ANA.items ? ANA.items.find(function(it){ return it.no === no; }) : null;
+  if (!anaItem) return { ok: false, reason: '항목을 찾을 수 없음' };
+
+  var map = _GROUP_TO_REF_MAP[targetGroup];
+  if (!map) return { ok: false, reason: '지원하지 않는 공종 그룹: ' + targetGroup };
+
+  // recoveryQty / quantity / method에서 차원 추출 (가장 정확한 것부터)
+  var dimsRq = _extractDimensionsFromText(anaItem.recoveryQty || '');
+  var dimsQt = _extractDimensionsFromText(anaItem.quantity || '');
+  var dimsMt = _extractDimensionsFromText(anaItem.method || '');
+  var dims = Object.assign({}, dimsMt, dimsQt, dimsRq);
+
+  // REF에서 단가 찾기
+  var refRow = _findRefRowByGroup(targetGroup, dims);
+  if (!refRow) return { ok: false, reason: '단가표에서 ' + targetGroup + '의 H=' + (dims.H || '?') + ' 규격을 찾지 못함' };
+
+  var unitPrice = refRow[4];
+  var refSpec = refRow[2];
+  var refPage = refRow[5];
+  var refUnit = refRow[3];
+
+  // ★ 수량 결정 — refUnit에 따라 차원(H/L/W)으로 직접 계산을 최우선
+  //   recoveryQty의 첫 숫자가 H값일 수 있어서 qtyValue를 그대로 쓰면 위험
+  var qty;
+  if (refUnit === 'm' && dims.L) {
+    qty = dims.L;  // 원/m 단가 → L (연장)
+  } else if (refUnit === 'm2' && dims.H && dims.L) {
+    qty = dims.H * dims.L;  // 원/m² 단가 → H × L (수직투영면적)
+  } else if (refUnit === 'm3' && dims.H && dims.L) {
+    qty = dims.H * dims.L * (dims.W || 1);  // 원/m³ 단가 → H × L × W (W 없으면 1)
+  } else if (dims.qtyValue) {
+    // 차원으로 못 구하면 명시적 수량값 사용
+    qty = dims.qtyValue;
+  }
+  if (!qty || qty <= 0) {
+    return { ok: false, reason: '수량을 추출하지 못함 (recoveryQty/quantity에 H/L/수치 명시 필요)' };
+  }
+
+  var newAmount = Math.floor((unitPrice * qty) / 1000) * 1000;  // 천원단위 절사
+
+  // 새 damageCostBasis 텍스트
+  var newBasis = map.basisFormat
+    .replace('{H}', dims.H ? (dims.H + 'm') : (refSpec || ''))
+    .replace('{qty}', qty.toFixed(qty === Math.floor(qty) ? 0 : 1))
+    .replace(/\{unit\}/g, refUnit.replace('m2', 'm²').replace('m3', 'm³'))
+    .replace('{up}', unitPrice.toLocaleString())
+    .replace('{amount}', newAmount.toLocaleString());
+
+  return {
+    ok: true,
+    anaItem: anaItem,
+    targetGroup: targetGroup,
+    refRow: refRow,
+    unitPrice: unitPrice,
+    qty: qty,
+    refUnit: refUnit,
+    newAmount: newAmount,
+    newBasis: newBasis,
+    oldBasis: anaItem.damageCostBasis || '',
+    oldCost: anaItem.damageCost || 0,
+    dims: dims
+  };
+}
+
+// 자동정정 적용 (사용자 확인 후)
+function _applyAutoFix(no, preview) {
+  if (!preview || !preview.ok) return;
+  var anaItem = ANA.items.find(function(it){ return it.no === no; });
+  if (!anaItem) return;
+
+  // 변경 전 백업
+  var backup = {
+    damageCostBasis: anaItem.damageCostBasis,
+    damageCost: anaItem.damageCost
+  };
+  if (!ANA._autoFixBackup) ANA._autoFixBackup = {};
+  ANA._autoFixBackup[no] = backup;
+
+  // 핵심 두 필드 직접 갱신
+  anaItem.damageCostBasis = preview.newBasis;
+  anaItem.damageCost = preview.newAmount;
+
+  // ANA 합계 재계산
+  ANA.totalDamage = ANA.items.reduce(function(s, it){ return s + (it.damageCost || 0); }, 0);
+  ANA._anaUpdatedAt = Date.now();
+
+  // 화면 갱신
+  if (typeof renderAna === 'function') renderAna(ANA);
+  if (typeof generatePlan === 'function') generatePlan(ANA);
+
+  // 토스트
+  var toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:20px;right:20px;z-index:10001;background:linear-gradient(135deg,rgba(67,160,71,0.95),rgba(46,125,50,0.95));color:#fff;padding:14px 22px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.4);font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.2);max-width:380px;line-height:1.5;';
+  toast.innerHTML = '✅ #' + no + ' 자동정정 완료<br><span style="font-size:11px;color:#C8E6C9;">' + preview.targetGroup + ' 단가 적용 → ' + preview.newAmount.toLocaleString() + '원</span>';
+  document.body.appendChild(toast);
+  setTimeout(function(){ toast.style.transition='opacity 0.5s'; toast.style.opacity='0'; }, 3500);
+  setTimeout(function(){ toast.remove(); }, 4100);
+}
+
+// 자동정정 확인 모달 표시
+function _showAutoFixConfirmModal(no, targetGroup) {
+  var preview = _buildAutoFixPreview(no, targetGroup);
+  if (!preview.ok) {
+    // 매칭 실패 → AI 상담 fallback
+    var ok = confirm(
+      '⚠️ 시스템 자동정정 실패\n\n' +
+      '사유: ' + preview.reason + '\n\n' +
+      'AI 상담으로 처리할까요?\n(취소 시 아무 동작 안 함)'
+    );
+    if (ok) _unifyMethodCostByGroup(no, targetGroup);
+    return;
+  }
+
+  // 미리보기 모달
+  var modal = document.createElement('div');
+  modal.id = 'autoFixConfirmModal';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;';
+  modal.innerHTML =
+    '<div style="background:var(--bg2,#1a1d2e);border:1px solid rgba(67,160,71,0.5);border-radius:14px;padding:22px 26px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,0.5);">'
+    + '<div style="font-size:16px;font-weight:800;color:#A5D6A7;margin-bottom:14px;">🛠 시스템 자동정정 — 사전 검토</div>'
+    + '<div style="font-size:12px;color:var(--text2);margin-bottom:14px;line-height:1.6;">'
+    +   '단가표(REF) 매칭으로 다음과 같이 자동 정정합니다. AI 상담을 거치지 않고 즉시 적용됩니다.<br>'
+    +   '⚠️ <b style="color:#FFB74D;">검토 후 동의하시면 [✅ 적용]을 누르세요.</b>'
+    + '</div>'
+    // 변경 전/후 비교 카드
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">'
+    +   '<div style="background:rgba(239,83,80,0.08);border:1px solid rgba(239,83,80,0.3);border-radius:8px;padding:10px 12px;">'
+    +     '<div style="font-size:11px;font-weight:700;color:#EF9A9A;margin-bottom:6px;">변경 전</div>'
+    +     '<div style="font-size:11px;color:var(--text);line-height:1.6;"><b style="color:var(--text2);">산출근거:</b><br>' + _escHtmlBatch((preview.oldBasis || '(없음)').substring(0, 200)) + '</div>'
+    +     '<div style="font-size:14px;color:#EF5350;font-weight:700;margin-top:8px;">금액: ' + (preview.oldCost || 0).toLocaleString() + '원</div>'
+    +   '</div>'
+    +   '<div style="background:rgba(67,160,71,0.1);border:1px solid rgba(67,160,71,0.4);border-radius:8px;padding:10px 12px;">'
+    +     '<div style="font-size:11px;font-weight:700;color:#A5D6A7;margin-bottom:6px;">변경 후 (' + preview.targetGroup + ')</div>'
+    +     '<div style="font-size:11px;color:var(--text);line-height:1.6;"><b style="color:var(--text2);">산출근거:</b><br>' + _escHtmlBatch(preview.newBasis) + '</div>'
+    +     '<div style="font-size:14px;color:#43A047;font-weight:700;margin-top:8px;">금액: ' + preview.newAmount.toLocaleString() + '원</div>'
+    +   '</div>'
+    + '</div>'
+    // 산출 근거 상세
+    + '<div style="background:rgba(0,0,0,0.25);border-radius:8px;padding:10px 12px;margin-bottom:14px;font-size:11px;line-height:1.7;">'
+    +   '<div style="color:#FFB74D;font-weight:700;margin-bottom:4px;">📐 산출 상세</div>'
+    +   '<div><b>적용 단가표 행:</b> [' + preview.refRow[0] + '] ' + preview.refRow[1] + ' ' + preview.refRow[2] + ' — ' + preview.unitPrice.toLocaleString() + '원/' + preview.refUnit + ' (' + preview.refRow[5] + ')</div>'
+    +   '<div><b>적용 수량:</b> ' + preview.qty + ' ' + preview.refUnit + ' (recoveryQty/quantity에서 추출)</div>'
+    +   '<div><b>계산:</b> ' + preview.unitPrice.toLocaleString() + ' × ' + preview.qty + ' = ' + Math.round(preview.unitPrice * preview.qty).toLocaleString() + '원 → 천원단위 절사 = ' + preview.newAmount.toLocaleString() + '원</div>'
+    + '</div>'
+    + '<div style="font-size:11px;color:var(--text2);margin-bottom:14px;line-height:1.6;background:rgba(255,193,7,0.08);border:1px solid rgba(255,193,7,0.25);border-radius:6px;padding:8px 12px;">'
+    +   '⚠️ <b style="color:#FFB74D;">참고:</b> 이 정정은 damageCostBasis와 damageCost만 변경합니다. method·recoveryQty는 이미 ' + preview.targetGroup + '으로 정리되어 있으므로 그대로 유지됩니다. 변경 후 [↩ 자동정정 되돌리기] 버튼으로 원복 가능.'
+    + '</div>'
+    + '<div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;">'
+    +   '<button onclick="_closeAutoFixModal()" style="background:rgba(255,255,255,0.1);color:var(--text);border:1px solid rgba(255,255,255,0.2);padding:9px 18px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">취소</button>'
+    +   '<button onclick="_unifyMethodCostByGroup(' + no + ', \'' + targetGroup + '\');_closeAutoFixModal();" style="background:rgba(124,77,255,0.2);color:#B388FF;border:1px solid rgba(124,77,255,0.4);padding:9px 18px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">🤖 AI 상담으로 처리</button>'
+    +   '<button onclick="_applyAutoFix(' + no + ', window._pendingAutoFix);_closeAutoFixModal();" style="background:linear-gradient(135deg,#43A047,#2E7D32);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;">✅ 적용 (즉시 정정)</button>'
+    + '</div>'
+    + '</div>';
+  document.body.appendChild(modal);
+  window._pendingAutoFix = preview;
+}
+
+function _closeAutoFixModal() {
+  var m = document.getElementById('autoFixConfirmModal');
+  if (m) m.remove();
 }
 
 // ★★★ ver8.54: 사용자가 선택한 공종으로 통일 - AI에게 매우 구체적인 지시 자동 전송 ★★★
