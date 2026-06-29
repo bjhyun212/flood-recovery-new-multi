@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.52 (공법-단가 검증 정교화 - "기존 X 철거 후 Y 신설" 패턴 정확 인식)</title>
+<title>복구설계시스템(BJH) ver8.53 (공법-단가 검증 자동호출 시점 보강 - 불러오기/앱시작/비용채팅 적용 후 + 수동검사 버튼)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -126,7 +126,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.52</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.53</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -255,6 +255,7 @@ select.fc option{background:var(--navy2);}
       <button class="btn btn-o" onclick="_expandAllRows(true)" style="font-size:11px;padding:5px 12px;">▼ 전체 펼치기</button>
       <button class="btn btn-o" onclick="_expandAllRows(false)" style="font-size:11px;padding:5px 12px;">▶ 전체 접기</button>
       <button class="btn btn-o" onclick="resetColumnWidths()" style="font-size:11px;padding:5px 12px;" title="드래그로 조절한 열 너비를 기본값으로 되돌립니다.">↔ 열너비 초기화</button>
+      <button class="btn btn-o" onclick="_runMethodCostCheck()" style="font-size:11px;padding:5px 12px;background:rgba(239,83,80,0.18);color:#EF9A9A;border:1px solid rgba(239,83,80,0.45);" title="복구공법·복구물량과 적용단가의 공종이 일치하는지 검사합니다 (예: 석축↔콘크리트옹벽 부분반영 감지)">🔍 공법-단가 검사</button>
       <button class="btn btn-o" onclick="_openRefTableModal()" style="font-size:11px;padding:5px 12px;background:rgba(255,193,7,0.18);color:#FFB74D;border:1px solid rgba(255,193,7,0.45);" title="2024 자연재난조사 복구단가표를 검색·조회합니다">📖 단가표 보기</button>
       <button class="btn btn-o" onclick="toTab2()" id="toTab2Btn">📋 재해대장 생성</button>
     </div>
@@ -1573,6 +1574,18 @@ function importProject(files) {
       if (CUR_SVG) {
         document.getElementById('drawArea').innerHTML = CUR_SVG;
       }
+
+      // ★★★ ver8.53: 불러온 데이터에 이미 공법-단가 불일치가 있으면 즉시 알림 ★★★
+      if (ANA && ANA.items && ANA.items.length > 0) {
+        setTimeout(function() {
+          try {
+            var _mcChk = _detectMethodCostMismatch(ANA.items);
+            if (_mcChk.mismatches.length > 0) {
+              _showMethodCostMismatchAlert(_mcChk);
+            }
+          } catch(_e) { console.warn('공법-단가 검증 오류', _e); }
+        }, 1500);
+      }
       // ★ ver7.98: 분석 버튼 텍스트를 불러온 ANA 상태에 맞춰 갱신
       var _anaBtn = document.getElementById('anaBtn');
       if (_anaBtn) {
@@ -1904,6 +1917,19 @@ window.addEventListener('DOMContentLoaded', function() {
   setTimeout(_initColumnResize, 300);
   // ★ ver8.13: 모든 입력 요소에 자동수정/자동대문자/철자검사 차단 (한글 입력 중 영어 변환 방지)
   _disableInputAutoCorrect();
+  // ★★★ ver8.53: 앱 시작 시 ANA 데이터가 있으면 공법-단가 일관성 자동 검사 ★★★
+  //   (캐시에서 자동 복원되는 경우, localStorage에 저장된 잘못된 데이터 등 즉시 감지)
+  setTimeout(function() {
+    try {
+      if (typeof ANA !== 'undefined' && ANA && ANA.items && ANA.items.length > 0
+          && typeof _detectMethodCostMismatch === 'function') {
+        var _mcChk = _detectMethodCostMismatch(ANA.items);
+        if (_mcChk.mismatches.length > 0) {
+          _showMethodCostMismatchAlert(_mcChk);
+        }
+      }
+    } catch(_e) { console.warn('초기 공법-단가 검증 오류', _e); }
+  }, 2500);
 });
 
 // ★ ver8.13: 입력 요소 자동변환 차단 (input/textarea에 IME 간섭 속성 제거)
@@ -5549,6 +5575,30 @@ function _detectMissingSpecInBasis(anaItems) {
   });
   
   return { missings: missings };
+}
+
+// ★★★ ver8.53: 사용자가 수동으로 호출하는 공법-단가 검사 ★★★
+function _runMethodCostCheck() {
+  if (!ANA || !ANA.items || ANA.items.length === 0) {
+    alert('먼저 피해분석을 완료해주세요.');
+    return;
+  }
+  try {
+    var det = _detectMethodCostMismatch(ANA.items);
+    if (det.mismatches.length > 0) {
+      _showMethodCostMismatchAlert(det);
+    } else {
+      // 통과 - 간단한 통과 안내 (모달 없이 짧게)
+      var toast = document.createElement('div');
+      toast.style.cssText = 'position:fixed;top:20px;right:20px;z-index:10000;background:linear-gradient(135deg,rgba(67,160,71,0.95),rgba(46,125,50,0.95));color:#fff;padding:14px 22px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.4);font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.2);';
+      toast.innerHTML = '✅ 공법-단가 일관성 검사 통과 — 모든 항목 정상';
+      document.body.appendChild(toast);
+      setTimeout(function(){ toast.style.transition = 'opacity 0.5s'; toast.style.opacity = '0'; }, 2500);
+      setTimeout(function(){ toast.remove(); }, 3100);
+    }
+  } catch(e) {
+    alert('검사 중 오류 발생: ' + e.message);
+  }
 }
 
 // ★★★ ver8.51: 복구공법(method)/복구물량(recoveryQty) ↔ 적용단가(damageCostBasis) 일관성 검증 ★★★
@@ -12372,6 +12422,20 @@ function _applyAnaChanges() {
   renderCostChat();
   
   _closeAnaChangeModal();
+
+  // ★★★ ver8.53: 비용 채팅으로 변경 후에도 공법-단가 불일치 자동 검증 ★★★
+  //   AI가 method/recoveryQty만 바꾸고 damageCostBasis는 옛 단가로 남긴 경우 등 감지
+  try {
+    var _mcChk = _detectMethodCostMismatch(ANA.items);
+    if (_mcChk.mismatches.length > 0) {
+      setTimeout(function(){ _showMethodCostMismatchAlert(_mcChk); }, 800);
+      costChatMsgs.push({
+        role:'system',
+        text:'⚠️ 공법-단가 불일치 ' + _mcChk.mismatches.length + '건 자동감지: 복구공법·물량과 적용단가의 공종이 다릅니다. 모달에서 [🤖 AI 상담으로 정리하기] 클릭하면 자동 정정됩니다.'
+      });
+      renderCostChat();
+    }
+  } catch(_e) { console.warn('공법-단가 검증 오류', _e); }
 }
 
 // "아니오" 클릭 → 피해대장 변경 폐기
