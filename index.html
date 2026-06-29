@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.53 (공법-단가 검증 자동호출 시점 보강 - 불러오기/앱시작/비용채팅 적용 후 + 수동검사 버튼)</title>
+<title>복구설계시스템(BJH) ver8.54 (그룹매핑 우선순위 보정 + 모달에 [어느 공종으로 통일?] 직접 선택 버튼)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -126,7 +126,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.53</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.54</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -5609,18 +5609,21 @@ function _detectMethodCostMismatch(anaItems) {
   if (!anaItems || anaItems.length === 0) return { mismatches: [] };
 
   // 공법 키워드 그룹 — 같은 그룹 안의 키워드는 동등하게 취급
+  //   ★ ver8.54: priority 추가 - 합성단가는 그 안의 sub 공종(아스콘 등)보다 우선 매칭
+  //     예: "농어촌도로 표준단면(아스콘 t=50mm)" → 농어촌도로 그룹으로 매핑 (아스콘 X)
   var groups = [
-    { id: '석축',       keys: ['석축', '찰쌓기', '메쌓기'] },
-    { id: '콘크리트옹벽', keys: ['콘크리트옹벽', '콘크리트 옹벽', '콘크리트중력식', '콘크리트 중력식', '옹벽 중력식', '중력식 옹벽', '중력식옹벽', 'RC옹벽', 'L형옹벽', '역T형옹벽', '캔틸레버옹벽', '캔틸레버 옹벽'] },
-    { id: '돌망태',     keys: ['돌망태', '게비온', '개비온'] },
-    { id: '호안블럭',   keys: ['호안블럭', '호안 블럭', '블럭쌓기', '블록쌓기', '호안블록'] },
-    { id: '필터매트',   keys: ['필터매트', '부직포 매트'] },
-    { id: '식생매트',   keys: ['식생매트', '식생블럭', '잔디블럭'] },
-    { id: '농어촌도로', keys: ['농어촌도로', '농어촌 도로'] },
-    { id: '소교량',     keys: ['소교량', 'RC슬래브교', 'PSC빔교', '슬래브교'] },
-    { id: '흄관',       keys: ['흄관', 'PVC관', '관거 재설치', '관 매설'] },
-    { id: '암거',       keys: ['암거', '박스암거', 'BOX'] },
-    { id: '아스콘',     keys: ['아스콘', '아스팔트포장', '아스팔트 포장'] },
+    { id: '농어촌도로', priority: 10, keys: ['농어촌도로', '농어촌 도로'] },
+    { id: '소교량',     priority: 10, keys: ['소교량', 'RC슬래브교', 'PSC빔교', '슬래브교'] },
+    { id: '세천',       priority: 10, keys: ['세천 표준단면', '세천표준단면'] },
+    { id: '콘크리트옹벽', priority: 5,  keys: ['콘크리트옹벽', '콘크리트 옹벽', '콘크리트중력식', '콘크리트 중력식', '옹벽 중력식', '중력식 옹벽', '중력식옹벽', 'RC옹벽', 'L형옹벽', '역T형옹벽', '캔틸레버옹벽', '캔틸레버 옹벽'] },
+    { id: '석축',       priority: 5,  keys: ['석축', '찰쌓기', '메쌓기'] },
+    { id: '돌망태',     priority: 5,  keys: ['돌망태', '게비온', '개비온'] },
+    { id: '호안블럭',   priority: 5,  keys: ['호안블럭', '호안 블럭', '블럭쌓기', '블록쌓기', '호안블록'] },
+    { id: '암거',       priority: 5,  keys: ['암거', '박스암거', 'BOX'] },
+    { id: '필터매트',   priority: 3,  keys: ['필터매트', '부직포 매트'] },
+    { id: '식생매트',   priority: 3,  keys: ['식생매트', '식생블럭', '잔디블럭'] },
+    { id: '흄관',       priority: 3,  keys: ['흄관', 'PVC관', '관거 재설치', '관 매설'] },
+    { id: '아스콘',     priority: 1,  keys: ['아스콘', '아스팔트포장', '아스팔트 포장'] },  // 합성단가 sub 요소 - 가장 낮은 우선순위
   ];
 
   // ★ method/recoveryQty에서 "기존 X 철거" 같은 옛 공법 언급 제거
@@ -5636,19 +5639,27 @@ function _detectMethodCostMismatch(anaItems) {
     return t;
   }
 
-  // 매칭: 그룹 키워드가 텍스트에 있으면 그 그룹 id 반환 (가장 먼저 발견된 그룹)
-  //   여러 그룹이 동시에 매칭되면 가장 늦게(뒤에) 등장하는 그룹 우선
-  //   ← 복구공법은 보통 "기존 X 철거 후 Y 신설" 순으로 쓰여서 뒤에 있는 것이 결과 공법
+  // 매칭: priority 우선 → 같은 priority 내에서는 뒤에 있는 키워드 우선
+  //   "기존 X 철거 후 Y 신설" 패턴 + "합성단가(sub공종)" 패턴 모두 안전 처리
   function findGroup(text) {
     if (!text) return null;
     var t = String(text);
     var bestGroup = null;
+    var bestPriority = -1;
     var bestPos = -1;
     for (var i = 0; i < groups.length; i++) {
       var g = groups[i];
       for (var j = 0; j < g.keys.length; j++) {
         var pos = t.indexOf(g.keys[j]);
-        if (pos >= 0 && pos > bestPos) {
+        if (pos < 0) continue;
+        // 우선순위가 더 높으면 무조건 갱신
+        if (g.priority > bestPriority) {
+          bestPriority = g.priority;
+          bestGroup = g.id;
+          bestPos = pos;
+        }
+        // 같은 우선순위면 뒤에 있는 것 우선 (기존 X 철거 후 Y 신설 패턴 대응)
+        else if (g.priority === bestPriority && pos > bestPos) {
           bestPos = pos;
           bestGroup = g.id;
         }
@@ -5733,13 +5744,22 @@ function _showMethodCostMismatchAlert(detection) {
     var rightGroup = m.basisGroup;
     var kindTag = isInner ? '🔄 공법 ↔ 물량' : '⚠️ 공법 ↔ 단가';
 
-    html += '<div style="margin-bottom:' + (i < detection.mismatches.length - 1 ? '12px' : '0') + ';padding-bottom:' + (i < detection.mismatches.length - 1 ? '10px' : '0') + ';' + (i < detection.mismatches.length - 1 ? 'border-bottom:1px dashed rgba(255,255,255,0.1);' : '') + '">';
+    html += '<div data-mc-no="' + m.no + '" style="margin-bottom:' + (i < detection.mismatches.length - 1 ? '14px' : '0') + ';padding-bottom:' + (i < detection.mismatches.length - 1 ? '12px' : '0') + ';' + (i < detection.mismatches.length - 1 ? 'border-bottom:1px dashed rgba(255,255,255,0.1);' : '') + '">';
     html +=   '<div style="font-weight:700;color:#FFB74D;margin-bottom:4px;">'
         +     '<span style="font-size:10px;background:rgba(229,57,53,0.25);color:#FFB74D;padding:1px 6px;border-radius:8px;margin-right:6px;">' + kindTag + '</span>'
         +     '#' + m.no + ' ' + _escHtmlBatch(m.damageType.substring(0, 50))
         +   '</div>';
-    html +=   '<div><span style="color:#81D4FA;">▸ ' + leftLabel + ':</span> <b style="color:#A5D6A7;">[' + leftGroup + ']</b> ' + _escHtmlBatch(leftText.substring(0, 80)) + '</div>';
+    html +=   '<div style="margin-bottom:3px;"><span style="color:#81D4FA;">▸ ' + leftLabel + ':</span> <b style="color:#A5D6A7;">[' + leftGroup + ']</b> ' + _escHtmlBatch(leftText.substring(0, 80)) + '</div>';
     html +=   '<div><span style="color:#81D4FA;">▸ ' + rightLabel + ':</span> <b style="color:#EF5350;">[' + rightGroup + ']</b> ' + _escHtmlBatch(rightText.substring(0, 80)) + '</div>';
+
+    // ★★★ ver8.54: 어느 공종으로 통일할지 직접 선택 버튼 ★★★
+    //   사용자가 명시적으로 선택 → AI에게 모호하지 않은 명확한 지시 전송
+    html += '<div style="margin-top:8px;padding:7px 9px;background:rgba(124,77,255,0.08);border:1px solid rgba(124,77,255,0.25);border-radius:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px;">';
+    html +=   '<span style="color:#B388FF;font-weight:600;">→ 어느 쪽으로 통일?</span>';
+    html +=   '<button onclick="_unifyMethodCostByGroup(' + m.no + ', \'' + leftGroup + '\')" style="background:linear-gradient(135deg,#43A047,#2E7D32);color:#fff;border:none;padding:5px 11px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;">✓ [' + leftGroup + ']으로 통일</button>';
+    html +=   '<button onclick="_unifyMethodCostByGroup(' + m.no + ', \'' + rightGroup + '\')" style="background:linear-gradient(135deg,#EF6C00,#E65100);color:#fff;border:none;padding:5px 11px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;">✓ [' + rightGroup + ']으로 통일</button>';
+    html +=   '<span style="color:var(--text2);font-size:10px;margin-left:auto;">클릭 시 AI 상담에 명확한 지시 전송</span>';
+    html += '</div>';
     html += '</div>';
   });
 
@@ -5766,6 +5786,84 @@ function _showMethodCostMismatchAlert(detection) {
 
   // 감지 결과를 전역에 저장 (AI 상담 라우팅용)
   window._lastMethodCostMismatch = detection;
+}
+
+// ★★★ ver8.54: 사용자가 선택한 공종으로 통일 - AI에게 매우 구체적인 지시 자동 전송 ★★★
+//   이 함수는 모달의 [✓ X로 통일] 버튼이 누를 때 호출됨.
+//   - ANA.items에서 해당 항목을 찾고
+//   - 사용자가 선택한 공종(targetGroup)과 그 반대편 공종(otherGroup)을 식별
+//   - method, recoveryQty, damageCostBasis, damageCost를 모두 targetGroup 기준으로 재계산하라는 명확한 지시를 만들어 AI 입력란에 자동 입력 + 자동 전송
+function _unifyMethodCostByGroup(no, targetGroup) {
+  var det = window._lastMethodCostMismatch;
+  if (!det || !det.mismatches) {
+    alert('감지 결과가 만료되었습니다. [🔍 공법-단가 검사] 다시 실행해주세요.');
+    return;
+  }
+  var item = det.mismatches.find(function(m){ return m.no === no; });
+  if (!item) {
+    alert('해당 항목을 찾을 수 없습니다.');
+    return;
+  }
+
+  // 사용자가 어느 그룹을 선택했는지에 따라 메시지 구성
+  var otherGroup = (item.methodGroup === targetGroup) ? item.basisGroup : item.methodGroup;
+
+  // ANA에서 해당 항목 전체 데이터 가져오기
+  var anaItem = ANA && ANA.items ? ANA.items.find(function(it){ return it.no === no; }) : null;
+  if (!anaItem) {
+    alert('피해복구대장에서 #' + no + '번 항목을 찾을 수 없습니다.');
+    return;
+  }
+
+  // 매우 명확한 AI 지시문 작성
+  var msg = '【시스템 자동 지시 — #' + no + ' 항목 공종 통일 요청】\n\n'
+    + '사용자가 다음과 같이 명시적으로 결정했습니다:\n'
+    + '◆ 통일할 공종: ★ ' + targetGroup + ' ★\n'
+    + '◆ 제거할 공종: ' + otherGroup + ' (현재 한쪽에 남아있음)\n\n'
+    + '【대상 항목】\n'
+    + '  #' + no + ' ' + (anaItem.damageType || '').substring(0, 80) + '\n'
+    + '  현재 method: ' + (anaItem.method || '').substring(0, 200) + '\n'
+    + '  현재 recoveryQty: ' + (anaItem.recoveryQty || '').substring(0, 200) + '\n'
+    + '  현재 damageCostBasis: ' + (anaItem.damageCostBasis || '').substring(0, 200) + '\n'
+    + '  현재 damageCost: ' + (anaItem.damageCost || 0).toLocaleString() + '원\n\n'
+    + '【다음 4개 필드 모두 ' + targetGroup + ' 기준으로 재작성해주세요】\n'
+    + '1) method: ' + otherGroup + ' 언급을 모두 제거하고 ' + targetGroup + ' 공종으로 전면 재작성\n'
+    + '   (단, "기존 ' + otherGroup + ' 잔재 철거" 같은 철거 부분은 유지 — 옛 상태 묘사)\n'
+    + '2) recoveryQty: ' + targetGroup + ' 공종명·규격으로 재작성 (옛 공종명은 철거분에만 남기기)\n'
+    + '3) damageCostBasis: 2024 NDMS 자연재난조사 단가표에서 ' + targetGroup + '에 해당하는 단가를 찾아\n'
+    + '   "[공통 또는 분류]' + targetGroup + ' 규격 × 단가 = 금액 (p.NNN)" 형식으로 명시\n'
+    + '4) damageCost: ' + targetGroup + ' 단가 × 수량 (천원단위 절사)\n\n'
+    + '【주의 사항】\n'
+    + '• 항목 #' + no + ' 외 다른 항목은 절대 손대지 말 것 (modifyItems에 #' + no + '만 포함)\n'
+    + '• 단가표에 ' + targetGroup + '이 명확히 등재되어 있지 않으면 가장 유사한 표준공종 사용 후 "[현장여건 잠정]" 표기\n'
+    + '• 자기검증: 답변 전송 전 method/recoveryQty/damageCostBasis 모두 [' + targetGroup + '] 그룹 키워드만 등장하는지 확인\n';
+
+  // 입력란에 자동 입력
+  var costInput = document.getElementById('costChatInput');
+  var planInput = document.getElementById('planReq');
+  var target = null;
+  if (costInput && costInput.offsetParent !== null) {
+    target = costInput;
+  } else if (planInput) {
+    target = planInput;
+  }
+  if (target) {
+    target.value = msg;
+    target.focus();
+    try { target.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(e){}
+  }
+
+  // 알림 모달 닫기
+  var alertEl = document.getElementById('methodCostMismatchAlert');
+  if (alertEl) alertEl.style.display = 'none';
+
+  // 토스트 안내
+  var toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:20px;right:20px;z-index:10000;background:linear-gradient(135deg,rgba(124,77,255,0.95),rgba(94,53,177,0.95));color:#fff;padding:14px 22px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.4);font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.2);max-width:380px;line-height:1.5;';
+  toast.innerHTML = '🤖 AI 상담 입력란에 통일 지시 자동입력 완료<br><span style="font-size:11px;color:#E1BEE7;">→ [전송] 버튼을 눌러 #' + no + '번을 [' + targetGroup + ']으로 정리하세요</span>';
+  document.body.appendChild(toast);
+  setTimeout(function(){ toast.style.transition='opacity 0.5s'; toast.style.opacity='0'; }, 4500);
+  setTimeout(function(){ toast.remove(); }, 5100);
 }
 
 // AI 상담 입력란으로 자동 메시지 전송
