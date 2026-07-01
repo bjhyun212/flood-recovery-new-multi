@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>복구설계시스템(BJH) ver8.56 (자동정정 대상 필드 정정 — recoveryCostBasis/recoveryCost 변경, damageCost는 피해 직전 기준 보존)</title>
+<title>복구설계시스템(BJH) ver8.57 (복구계획 공종변경 UI 단순화 — 항목번호+공종만 고르면 단가표에서 자동 산출)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root {
@@ -126,7 +126,7 @@ select.fc option{background:var(--navy2);}
   <div class="logo">
     <div class="logo-icon"><img src="data:image/jpeg;base64,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" alt="BJH"></div>
     <div>
-      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.56</span></div>
+      <div class="logo-text" onclick="_adminTap()" style="cursor:pointer;"><span>AI 피해복구 자동화설계시스템</span> <span class="ver">ver 8.57</span></div>
     </div>
   </div>
   <div class="api-wrap">
@@ -255,7 +255,8 @@ select.fc option{background:var(--navy2);}
       <button class="btn btn-o" onclick="_expandAllRows(true)" style="font-size:11px;padding:5px 12px;">▼ 전체 펼치기</button>
       <button class="btn btn-o" onclick="_expandAllRows(false)" style="font-size:11px;padding:5px 12px;">▶ 전체 접기</button>
       <button class="btn btn-o" onclick="resetColumnWidths()" style="font-size:11px;padding:5px 12px;" title="드래그로 조절한 열 너비를 기본값으로 되돌립니다.">↔ 열너비 초기화</button>
-      <button class="btn btn-o" onclick="_runMethodCostCheck()" style="font-size:11px;padding:5px 12px;background:rgba(239,83,80,0.18);color:#EF9A9A;border:1px solid rgba(239,83,80,0.45);" title="복구공법·복구물량과 적용단가의 공종이 일치하는지 검사합니다 (예: 석축↔콘크리트옹벽 부분반영 감지)">🔍 공법-단가 검사</button>
+      <button class="btn btn-o" onclick="_openSimpleFixModal()" style="font-size:12px;padding:6px 14px;background:linear-gradient(135deg,rgba(124,77,255,0.25),rgba(94,53,177,0.25));color:#D1C4E9;border:1px solid rgba(124,77,255,0.55);font-weight:700;" title="항목번호와 공종만 골라주시면 재난조사단가표에서 찾아 복구계획을 자동으로 잡아드립니다">🛠 복구계획 공종변경</button>
+      <button class="btn btn-o" onclick="_runMethodCostCheck()" style="font-size:11px;padding:5px 12px;background:rgba(239,83,80,0.18);color:#EF9A9A;border:1px solid rgba(239,83,80,0.45);" title="복구공법·복구물량과 적용단가의 공종이 일치하는지 검사합니다">🔍 공법-단가 검사</button>
       <button class="btn btn-o" onclick="_openRefTableModal()" style="font-size:11px;padding:5px 12px;background:rgba(255,193,7,0.18);color:#FFB74D;border:1px solid rgba(255,193,7,0.45);" title="2024 자연재난조사 복구단가표를 검색·조회합니다">📖 단가표 보기</button>
       <button class="btn btn-o" onclick="toTab2()" id="toTab2Btn">📋 재해대장 생성</button>
     </div>
@@ -5729,61 +5730,45 @@ function _detectMethodCostMismatch(anaItems) {
   return { mismatches: mismatches };
 }
 
-// ★★★ ver8.51: 공법-단가 불일치 경고 모달 ★★★
+// ★★★ ver8.51/57: 공법-단가 불일치 경고 모달 — 단순화 버전 ★★★
+//   여러 케이스 나열 대신 짧은 요약. 상세 정정은 상단 [🛠 복구계획 공종변경] 버튼으로 유도
 function _showMethodCostMismatchAlert(detection) {
   if (!detection || !detection.mismatches || detection.mismatches.length === 0) return;
 
+  // 항목별 한 줄 요약
+  var rowsHtml = detection.mismatches.map(function(m) {
+    var short = _escHtmlBatch((m.damageType || '').substring(0, 32));
+    return ''
+      + '<div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(0,0,0,0.2);border-radius:6px;margin-bottom:6px;font-size:12px;">'
+      +   '<span style="color:#FFB74D;font-weight:700;min-width:32px;">#' + m.no + '</span>'
+      +   '<span style="color:var(--text2);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + short + '</span>'
+      +   '<span style="font-size:11px;color:#A5D6A7;background:rgba(67,160,71,0.15);padding:2px 8px;border-radius:10px;">공법 [' + m.methodGroup + ']</span>'
+      +   '<span style="color:var(--text2);font-size:11px;">↔</span>'
+      +   '<span style="font-size:11px;color:#EF9A9A;background:rgba(229,57,53,0.15);padding:2px 8px;border-radius:10px;">단가 [' + m.basisGroup + ']</span>'
+      +   '<button onclick="_openSimpleFixModal();document.getElementById(\'methodCostMismatchAlert\').style.display=\'none\';setTimeout(function(){var s=document.getElementById(\'sfxNo\');if(s)s.value=' + m.no + ';},100)" style="background:rgba(124,77,255,0.25);color:#D1C4E9;border:1px solid rgba(124,77,255,0.5);padding:4px 10px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;">정정 →</button>'
+      + '</div>';
+  }).join('');
+
   var html = ''
-    + '<div style="background:rgba(229,57,53,0.1);border:1px solid #E53935;border-radius:10px;padding:14px 16px;margin-top:14px;">'
-    + '<div style="font-size:14px;font-weight:800;color:#EF5350;margin-bottom:10px;">⚠️ 복구공법 ↔ 적용단가 불일치 ' + detection.mismatches.length + '건 감지</div>'
-    + '<div style="font-size:11px;color:var(--text2);margin-bottom:10px;line-height:1.6;">'
-    +   '복구공법(또는 복구물량) 텍스트와 실제 적용된 단가의 공종이 서로 다릅니다.<br>'
-    +   '단가만 바뀌고 공법 설명이 그대로 남았거나, 반대로 공법은 바꿨는데 단가가 안 따라간 경우입니다.'
+    + '<div style="background:rgba(229,57,53,0.08);border:1px solid #E53935;border-radius:10px;padding:14px 16px;margin-top:14px;">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px;">'
+    +   '<div style="font-size:13px;font-weight:800;color:#EF5350;">⚠️ 복구공법 ↔ 적용단가 불일치 ' + detection.mismatches.length + '건</div>'
+    +   '<div style="font-size:10px;color:var(--text2);">공법쪽 그룹과 단가쪽 그룹이 다른 항목입니다</div>'
     + '</div>'
-    + '<div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px;font-size:11px;line-height:1.7;">';
-
-  detection.mismatches.forEach(function(m, i) {
-    var isInner = (m.kind === '공법내부');
-    var leftLabel = isInner ? '복구공법(method)' : '복구공법(method/물량)';
-    var rightLabel = isInner ? '복구물량(recoveryQty)' : '복구산출근거(recoveryCostBasis)';
-    var leftText = isInner ? (m.method || '') : (m.recoveryQty || m.method || '');
-    var rightText = isInner ? (m.recoveryQty || '') : (m.basis || '');
-    var leftGroup = m.methodGroup;
-    var rightGroup = m.basisGroup;
-    var kindTag = isInner ? '🔄 공법 ↔ 물량' : '⚠️ 공법 ↔ 단가';
-
-    html += '<div data-mc-no="' + m.no + '" style="margin-bottom:' + (i < detection.mismatches.length - 1 ? '14px' : '0') + ';padding-bottom:' + (i < detection.mismatches.length - 1 ? '12px' : '0') + ';' + (i < detection.mismatches.length - 1 ? 'border-bottom:1px dashed rgba(255,255,255,0.1);' : '') + '">';
-    html +=   '<div style="font-weight:700;color:#FFB74D;margin-bottom:4px;">'
-        +     '<span style="font-size:10px;background:rgba(229,57,53,0.25);color:#FFB74D;padding:1px 6px;border-radius:8px;margin-right:6px;">' + kindTag + '</span>'
-        +     '#' + m.no + ' ' + _escHtmlBatch(m.damageType.substring(0, 50))
-        +   '</div>';
-    html +=   '<div style="margin-bottom:3px;"><span style="color:#81D4FA;">▸ ' + leftLabel + ':</span> <b style="color:#A5D6A7;">[' + leftGroup + ']</b> ' + _escHtmlBatch(leftText.substring(0, 80)) + '</div>';
-    html +=   '<div><span style="color:#81D4FA;">▸ ' + rightLabel + ':</span> <b style="color:#EF5350;">[' + rightGroup + ']</b> ' + _escHtmlBatch(rightText.substring(0, 80)) + '</div>';
-
-    // ★★★ ver8.55: 시스템 직접 자동정정 — AI 거치지 않고 단가표에서 찾아 정정 ★★★
-    //   미리보기 모달에서 사용자 확인 후 즉시 적용
-    html += '<div style="margin-top:8px;padding:7px 9px;background:rgba(124,77,255,0.08);border:1px solid rgba(124,77,255,0.25);border-radius:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px;">';
-    html +=   '<span style="color:#B388FF;font-weight:600;">→ 어느 쪽으로 통일?</span>';
-    html +=   '<button onclick="_showAutoFixConfirmModal(' + m.no + ', \'' + leftGroup + '\')" style="background:linear-gradient(135deg,#43A047,#2E7D32);color:#fff;border:none;padding:5px 11px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;">✓ [' + leftGroup + ']으로 통일</button>';
-    html +=   '<button onclick="_showAutoFixConfirmModal(' + m.no + ', \'' + rightGroup + '\')" style="background:linear-gradient(135deg,#EF6C00,#E65100);color:#fff;border:none;padding:5px 11px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;">✓ [' + rightGroup + ']으로 통일</button>';
-    html +=   '<span style="color:var(--text2);font-size:10px;margin-left:auto;">클릭 → 단가표 매칭 미리보기</span>';
-    html += '</div>';
-    html += '</div>';
-  });
-
-  html += '</div>'
-    + '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">'
-    +   '<button class="btn btn-p" onclick="_routeMethodCostMismatchToAI()" style="background:linear-gradient(135deg,#7C4DFF,#5E35B1);font-size:12px;padding:8px 14px;">🤖 AI 상담으로 정리하기</button>'
-    +   '<button class="btn btn-o" onclick="document.getElementById(\'methodCostMismatchAlert\').style.display=\'none\'" style="font-size:12px;padding:8px 14px;">닫기</button>'
+    + rowsHtml
+    + '<div style="margin-top:10px;padding:10px 12px;background:rgba(124,77,255,0.1);border:1px solid rgba(124,77,255,0.3);border-radius:6px;font-size:11px;color:#D1C4E9;line-height:1.6;">'
+    +   '💡 <b>정정하는 법</b>: 각 행의 <b style="color:#B388FF;">[정정 →]</b> 버튼 누르거나, 상단의 <b style="color:#B388FF;">[🛠 복구계획 공종변경]</b> 버튼으로 항목·공종 골라서 처리하세요. 시스템이 재난조사단가표에서 찾아 자동 산출합니다.'
+    + '</div>'
+    + '<div style="margin-top:10px;text-align:right;">'
+    +   '<button onclick="document.getElementById(\'methodCostMismatchAlert\').style.display=\'none\'" style="background:rgba(255,255,255,0.08);color:var(--text2);border:1px solid rgba(255,255,255,0.15);padding:6px 14px;border-radius:5px;font-size:11px;cursor:pointer;">닫기</button>'
     + '</div>'
     + '</div>';
 
-  // 모달 영역 찾아서 표시
+  // 모달 영역 삽입
   var el = document.getElementById('methodCostMismatchAlert');
   if (!el) {
     el = document.createElement('div');
     el.id = 'methodCostMismatchAlert';
-    // 비용 카드 아래 또는 대장 카드 아래에 삽입
     var anchor = document.getElementById('dmgCard') || document.getElementById('anaResult');
     if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(el, anchor.nextSibling);
     else document.body.appendChild(el);
@@ -5792,8 +5777,70 @@ function _showMethodCostMismatchAlert(detection) {
   el.style.display = 'block';
   try { el.scrollIntoView({ behavior:'smooth', block:'nearest' }); } catch(e){}
 
-  // 감지 결과를 전역에 저장 (AI 상담 라우팅용)
   window._lastMethodCostMismatch = detection;
+}
+
+// ★★★ ver8.57: 심플 공종 변경 명령 UI ★★★
+//   형님 요구: "항목번호 + 공종만 입력하면 끝" — 복잡한 감지 모달 없이 직관적으로
+//   흐름: 명령창 → 파싱 → 단가표 매칭 → 자동정정 → 완료
+function _openSimpleFixModal() {
+  if (!ANA || !ANA.items || ANA.items.length === 0) {
+    alert('먼저 피해분석을 완료해주세요.');
+    return;
+  }
+
+  // 항목 옵션 만들기 (번호 + 피해유형 앞 30자)
+  var itemsOpt = ANA.items.map(function(it) {
+    var short = (it.damageType || '').substring(0, 35).replace(/\[.*?\]/g, '').trim() || '(무명)';
+    return '<option value="' + it.no + '">' + it.no + '. ' + _escHtmlBatch(short) + '</option>';
+  }).join('');
+
+  // 지원되는 공종 옵션
+  var groupsOpt = ''
+    + '<option value="콘크리트옹벽">콘크리트 중력식 옹벽 (H=2/3/4m)</option>'
+    + '<option value="석축">석축 찰쌓기 (H<3m / 3~6m)</option>'
+    + '<option value="돌망태">돌망태(게비온) 옹벽</option>'
+    + '<option value="농어촌도로">농어촌도로 표준단면 (합성단가)</option>';
+
+  var modal = document.createElement('div');
+  modal.id = 'simpleFixModal';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;';
+  modal.innerHTML =
+    '<div style="background:var(--bg2,#1a1d2e);border:1px solid rgba(124,77,255,0.4);border-radius:14px;padding:24px 28px;max-width:560px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,0.5);">'
+    + '<div style="font-size:17px;font-weight:800;color:#B388FF;margin-bottom:6px;">🛠 복구계획 공종 변경</div>'
+    + '<div style="font-size:12px;color:var(--text2);margin-bottom:18px;line-height:1.6;">'
+    +   '항목번호와 변경할 공종만 고르면 단가표에서 자동으로 산출해서 반영됩니다.'
+    + '</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;">'
+    +   '<div>'
+    +     '<label style="font-size:12px;font-weight:700;color:var(--accent);display:block;margin-bottom:5px;">① 어느 항목을?</label>'
+    +     '<select id="sfxNo" style="width:100%;padding:8px 10px;background:rgba(0,0,0,0.3);color:var(--text);border:1px solid rgba(255,255,255,0.15);border-radius:6px;font-size:13px;">' + itemsOpt + '</select>'
+    +   '</div>'
+    +   '<div>'
+    +     '<label style="font-size:12px;font-weight:700;color:var(--accent);display:block;margin-bottom:5px;">② 어떤 공종으로?</label>'
+    +     '<select id="sfxGroup" style="width:100%;padding:8px 10px;background:rgba(0,0,0,0.3);color:var(--text);border:1px solid rgba(255,255,255,0.15);border-radius:6px;font-size:13px;">' + groupsOpt + '</select>'
+    +     '<div style="font-size:10px;color:var(--text2);margin-top:4px;">규격(H·L)은 <b style="color:#FFB74D;">복구물량(recoveryQty)</b>에서 자동으로 읽습니다. 없으면 피해물량에서 읽음.</div>'
+    +   '</div>'
+    + '</div>'
+    + '<div style="margin-top:20px;display:flex;gap:10px;justify-content:flex-end;">'
+    +   '<button onclick="_closeSimpleFixModal()" style="background:rgba(255,255,255,0.1);color:var(--text);border:1px solid rgba(255,255,255,0.2);padding:9px 18px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">취소</button>'
+    +   '<button onclick="_runSimpleFix()" style="background:linear-gradient(135deg,#7C4DFF,#5E35B1);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;">▶ 미리보기</button>'
+    + '</div>'
+    + '</div>';
+  document.body.appendChild(modal);
+}
+
+function _closeSimpleFixModal() {
+  var m = document.getElementById('simpleFixModal');
+  if (m) m.remove();
+}
+
+// 미리보기 실행 - 기존 _showAutoFixConfirmModal 재사용 (심플하게 이어짐)
+function _runSimpleFix() {
+  var no = parseInt(document.getElementById('sfxNo').value, 10);
+  var group = document.getElementById('sfxGroup').value;
+  _closeSimpleFixModal();
+  _showAutoFixConfirmModal(no, group);
 }
 
 // ★★★ ver8.55: 시스템 직접 자동정정 — AI 없이 단가표에서 직접 찾아 정정 ★★★
